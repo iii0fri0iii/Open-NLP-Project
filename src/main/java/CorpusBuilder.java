@@ -112,9 +112,62 @@ public class CorpusBuilder {
      * first sentence, the second list holds the Lemmas of the second sentence and so on.
      *
      * @return A List of List with the Lemmas of the text of CorpusBuilder.
-     * @return
      */
     public List<List<String>> getLemmas() {
+
+        try (InputStream modelIn = new FileInputStream("de-lemmatizer.bin"))
+        {
+            LemmatizerModel model = new LemmatizerModel(modelIn);
+            LemmatizerME lemmatizer = new LemmatizerME(model);
+            lemmas = new ArrayList<>();
+
+            for (int i = 0; i<tokens.size(); i++ ) {
+                List<String> sentence = tokens.get(i);
+                List<String> tmpPos = posTags.get(i);
+                String[] tmpLemmas = lemmatizer.lemmatize(sentence.toArray(new String[0]), tmpPos.toArray((new String[0])));
+                lemmas.add(Arrays.asList(tmpLemmas));
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return lemmas;
     }
+
+
+    /**
+     * Create a new ArrayList that contains Lists of [word, POS, lemma] for every word in every sentence in the text.
+     *
+     * @return A List of list of [word, POS, lemma] for every word in every sentence in the text.
+     */
+    public List<List<List<String>>> getWordPosLemma() {
+        List<List<List<String>>> tokPosLemList = new ArrayList<>();
+
+        for (int i = 0; i < tokens.size(); i++) {
+            List<String> sentence = tokens.get(i);
+            List<String> tmpPosTags = posTags.get(i);
+            List<String> tmpLemmas = lemmas.get(i);
+
+            List<List<String>> tokPosLemSent = new ArrayList<>();
+
+            for (int j = 0; j < sentence.size(); j++) {
+                String token = sentence.get(j);
+                String pos = tmpPosTags.get(j);
+                String lemma = tmpLemmas.get(j);
+
+                List<String> tokPosLem = new ArrayList<>();
+                tokPosLem.add(token);
+                tokPosLem.add(pos);
+                tokPosLem.add(lemma);
+
+                tokPosLemSent.add(tokPosLem);
+            }
+
+            tokPosLemList.add(tokPosLemSent);
+        }
+
+        return tokPosLemList;
+    }
+}
 }
