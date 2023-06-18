@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Frame{
@@ -22,7 +23,7 @@ public class Frame{
 
         JButton loadButton = new JButton("load");
         loadButton.setMaximumSize(size);
-        load.addActionListener(new loadButtonHandler());
+        loadButton.addActionListener(new LoadButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
@@ -58,7 +59,7 @@ public class Frame{
 
 
         //This is the common size of the buttons
-
+        frame.setVisible(true);
     }
 
 
@@ -66,6 +67,7 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             String fileName=JOptionPane.showInputDialog(frame,"Enter the file name: ");
             Scanner inputStream;
+            String text=null;
             try{
                 inputStream=new Scanner(new File(fileName));
 
@@ -74,13 +76,16 @@ public class Frame{
                 JOptionPane.showMessageDialog(frame,"File can not be found");
                 throw new RuntimeException(ex);
             }
-            CorpusBuilder corp= new CorpusBuilder(inputStream);
+            while (inputStream.hasNext()){
+                text=text+inputStream.next();
+            }
+            CorpusBuilder corp= new CorpusBuilder(text);
             corp.getSentences();
-            ArrayList<String> src=new ArrayList<String>();
+            List<List<List<String>>> src=new ArrayList<>();
 
 
             for(int i=0; i<corp.getSentences().length; i++){
-                src.add(corp.getWordPosLemma());
+                src=corp.getWordPosLemma();
             }
 
 
@@ -90,7 +95,6 @@ public class Frame{
 
     public static void main ( String[] args )
     {
-        Frame frame= new Frame();
+        new Frame();
     }
-
 }

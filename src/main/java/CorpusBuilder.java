@@ -1,4 +1,6 @@
 
+import opennlp.tools.lemmatizer.LemmatizerME;
+import opennlp.tools.lemmatizer.LemmatizerModel;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.sentdetect.SentenceDetectorME;
@@ -9,6 +11,7 @@ import opennlp.tools.tokenize.TokenizerModel;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,6 +24,7 @@ public class CorpusBuilder {
     private String[] sentences;
     private List<List<String>> tokens;
     private List<List<String>> posTags;
+    private List<List<String>> lemmas;
 
 
 
@@ -169,5 +173,4 @@ public class CorpusBuilder {
 
         return tokPosLemList;
     }
-}
 }
