@@ -67,6 +67,7 @@ public class Frame{
 
         panelSpoiler.add(firstTextField);
 
+
         JPanel panel3=new JPanel();
         BoxLayout cBoxLayout = new BoxLayout(panel3,BoxLayout.X_AXIS);
         panel3.setLayout(cBoxLayout);
@@ -116,11 +117,14 @@ public class Frame{
             corp.getSentences();
             List<List<List<String>>> src=new ArrayList<>();
 
-
+            /*
             for(int i=0; i<corp.getSentences().length; i++){
                 src=corp.getWordPosLemma();
             }
+                   */
+            System.out.println(corp.getSentences());
 
+            System.out.println(corp.getTokens());
 
             inputStream.close();
         }

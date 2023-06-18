@@ -46,7 +46,7 @@ public class CorpusBuilder {
      * @return An array with the sentences of the CorpusBuildr
      */
     public String[] getSentences() {
-        try (InputStream modelIn = new FileInputStream("de-sent.bin")) {
+        try (InputStream modelIn = new FileInputStream("en-sent.bin")) {
             SentenceModel model = new SentenceModel(modelIn);
             SentenceDetectorME sentenceDetector = new SentenceDetectorME(model);
             this.sentences = sentenceDetector.sentDetect(this.text);
@@ -64,7 +64,7 @@ public class CorpusBuilder {
      * @return A List of List the tokens/words of the text of the CorpusBuilder.
      */
     public List<List<String>> getTokens() {
-        try (InputStream modelIn = new FileInputStream("detoken.bin")) {
+        try (InputStream modelIn = new FileInputStream("en-token.bin")) {
             TokenizerModel model = new TokenizerModel(modelIn);
             Tokenizer tokenizer = new TokenizerME(model);
             tokens=new ArrayList<>();
@@ -91,7 +91,7 @@ public class CorpusBuilder {
      */
     public List<List<String>> getPosTags() {
         try (InputStream modelIn = new
-                FileInputStream("de-pos-maxent.bin")) {
+                FileInputStream("en-pos-maxent.bin")) {
             POSModel model = new POSModel(modelIn);
             POSTaggerME tagger = new POSTaggerME(model);
             posTags=new ArrayList<>();
@@ -119,7 +119,7 @@ public class CorpusBuilder {
      */
     public List<List<String>> getLemmas() {
 
-        try (InputStream modelIn = new FileInputStream("de-lemmatizer.bin"))
+        try (InputStream modelIn = new FileInputStream("en-lemmatizer.bin"))
         {
             LemmatizerModel model = new LemmatizerModel(modelIn);
             LemmatizerME lemmatizer = new LemmatizerME(model);
