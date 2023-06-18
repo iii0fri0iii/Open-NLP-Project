@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -62,6 +64,8 @@ public class Frame{
         frame.getContentPane().add(panel2);
         frame.getContentPane().add(panel3);
         //This is the common size of the buttons
+
+        frame.addWindowListener(new MyWindowListener());
         frame.setVisible(true);
     }
 
@@ -93,6 +97,18 @@ public class Frame{
 
 
             inputStream.close();
+        }
+    }
+    private class QuitButtonHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    }
+    private class MyWindowListener extends WindowAdapter {
+
+        public void windowClosing(WindowEvent e) {
+            System.exit(0);
         }
     }
 
