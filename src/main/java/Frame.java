@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,9 +16,13 @@ public class Frame{
     private JFrame frame;
     private JTextField firstTextField;
     private JPanel panelSpoiler;
+    private JPanel panelNeighbours;
+    private  JPanel panelDisplayedResults;
 
     private String searchBy;
     private List<List<List<String>>> src;
+    private int numberOfNeighbours=2;
+    private int numberOfDesplayedResults = 10;
 
     Frame(){
         frame=new JFrame("Test");
@@ -57,25 +63,72 @@ public class Frame{
         panel1.add(loadButton);
         panel1.add(firstTextField);
         panel1.add(box1);
-
+        //panel with spoiler panel
         JPanel panel2=new JPanel();
-        BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.X_AXIS);
+        BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
         panel2.setLayout(bBoxLayout);
 
         panel2.add(Box.createRigidArea(new Dimension(0,5)));
 
         JButton spoilerButton = new JButton("Additional filters");
-        spoilerButton.setMaximumSize(size);
+        spoilerButton.setMaximumSize(new Dimension(frame.getWidth(),30));
         spoilerButton.addActionListener(new SpoilerButtonHandler());
+        spoilerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        panel2.add(spoilerButton);
+
+        panel2.add(Box.createRigidArea(new Dimension(0,5)));
+        //spoiler panel
         panelSpoiler=new JPanel();
         BoxLayout spoilerBoxLayout = new BoxLayout(panelSpoiler,BoxLayout.X_AXIS);
         panelSpoiler.setLayout(spoilerBoxLayout);
 
-        panel2.add(spoilerButton);
         panel2.add(panelSpoiler);
 
-        panelSpoiler.add(firstTextField);
+
+        panelNeighbours=new JPanel();
+        BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
+        panelNeighbours.setLayout(neigboursBoxLayout);
+        panelSpoiler.add(panelNeighbours);
+
+        JLabel neighbours= new JLabel("Neighbours");
+        neighbours.setMaximumSize(size);
+
+        Integer[] neighboursStrings = {0, 1,2,3,4,5,6,7,8,9,10};
+        SpinnerListModel neighboursModel = new SpinnerListModel(neighboursStrings);
+        JSpinner spinner = new JSpinner(neighboursModel);
+        spinner.setMaximumSize(size);
+        spinner.setValue(numberOfNeighbours);
+        spinner.addChangeListener(new spinnerListener());
+
+        panelNeighbours.add(neighbours);
+        panelNeighbours.add(spinner);
+        neighbours.setAlignmentX(Component.CENTER_ALIGNMENT);
+        spinner.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        panelSpoiler.add(Box.createRigidArea(new Dimension(5,0)));
+
+        panelDisplayedResults=new JPanel();
+        BoxLayout displayedResultsLayout = new BoxLayout(panelDisplayedResults,BoxLayout.Y_AXIS);
+        panelDisplayedResults.setLayout(displayedResultsLayout);
+        panelSpoiler.add(panelDisplayedResults);
+
+        JLabel displayedResults= new JLabel("Amount of displayed results");
+        displayedResults.setMaximumSize(new Dimension(300,30));
+
+        JSlider slider = new JSlider(JSlider.HORIZONTAL,
+                1, 50, numberOfDesplayedResults);
+        slider.setMaximumSize(new Dimension(300,100));
+        slider.setMajorTickSpacing(10);
+        slider.setMinorTickSpacing(1);
+        slider.setPaintTicks(true);
+        slider.setPaintLabels(true);
+        slider.addChangeListener(new sliderListener());
+
+        panelDisplayedResults.add(displayedResults);
+        panelDisplayedResults.add(slider);
+        displayedResults.setAlignmentX(Component.CENTER_ALIGNMENT);
+        slider.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
         JPanel panel3=new JPanel();
@@ -87,7 +140,6 @@ public class Frame{
         frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
         frame.getContentPane().add(panel1);
         frame.getContentPane().add(panel2);
-        frame.getContentPane().add(panelSpoiler);
         frame.getContentPane().add(panel3);
         //This is the common size of the buttons
 
@@ -99,9 +151,12 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             if (panelSpoiler.isVisible()){
                 panelSpoiler.setVisible(false);
+                panelNeighbours.setVisible(false);
+
             } else {
 
                 panelSpoiler.setVisible(true);
+                panelNeighbours.setVisible(true);
             }
         }
     }
@@ -143,6 +198,28 @@ public class Frame{
             inputStream.close();
             }
         }
+    }
+
+    private class spinnerListener implements ChangeListener {
+        public void stateChanged(ChangeEvent e) {
+            JSpinner spinner= (JSpinner) e.getSource();
+            SpinnerModel spinnerModel = (SpinnerModel) spinner.getModel();
+            if (spinnerModel instanceof SpinnerDateModel) {
+                numberOfNeighbours=(int)spinnerModel.getValue();
+            }
+        }
+    }
+    private class sliderListener implements ChangeListener {
+        public void stateChanged(ChangeEvent e) {
+
+        JSlider source = (JSlider) e.getSource();
+        if(!source.getValueIsAdjusting())
+
+        {
+             numberOfDesplayedResults= source.getValue();
+
+        }
+    }
     }
     private class QuitButtonHandler implements ActionListener {
 
