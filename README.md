@@ -19,3 +19,18 @@
 
 5. уже сделано: nlp методы
 https://us05web.zoom.us/j/81943613963?pwd=L1daTjRZZUZweGcwYkRWaUF1QTRBQT09
+
+CorpusBuilder corp= new CorpusBuilder(inputStream);
+                corp.getSentences();
+                ArrayList<String> src=new ArrayList<String>();
+                
+                for(int i=0; i<corp.getSentences().length; i++){
+                    src.add(corp.getWordPosLemma());
+                }
+                
+                
+                inputStream.close();
+
+
+            }
+        }
