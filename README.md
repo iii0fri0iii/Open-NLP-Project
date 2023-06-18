@@ -19,3 +19,36 @@
 
 5. уже сделано: nlp методы
 https://us05web.zoom.us/j/81943613963?pwd=L1daTjRZZUZweGcwYkRWaUF1QTRBQT09
+
+
+
+JButton loadButton = new JButton("Load");
+        loadButton.setMaximumSize(size);
+        loadButton.addActionListener(new LoadButtonHandler());
+
+        public class LoadButtonHandler implements ActionListener {
+            public void actionPerformed(ActionEvent e) {
+                String fileName=JOptionPane.showInputDialog(frame,"Enter the file name: ");
+                Scanner inputStream;
+                try{
+                    inputStream=new Scanner(new File(fileName));
+
+                } catch (FileNotFoundException ex) {
+                    JOptionPane.showMessageDialog(frame,"File can not be found");
+                    throw new RuntimeException(ex);
+                }
+
+                ArrayList<String> src=new ArrayList<String>();
+
+                while(inputStream.hasNext()){
+                    int numItems=src.size();
+
+                    String word= inputStream.next();
+                    for(int i=0; i< numItems; i++){
+                        
+                        src.add(word.getWordPosLemma());
+                    }
+                }
+                inputStream.close();
+            }
+        }
