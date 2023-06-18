@@ -57,7 +57,10 @@ public class Frame{
 
         panel3.add(Box.createRigidArea(new Dimension(0,5)));
 
-
+        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
+        frame.getContentPane().add(panel1);
+        frame.getContentPane().add(panel2);
+        frame.getContentPane().add(panel3);
         //This is the common size of the buttons
         frame.setVisible(true);
     }
