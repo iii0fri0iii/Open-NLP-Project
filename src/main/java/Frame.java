@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.Scanner;
 public class Frame{
     private JFrame frame;
     private JTextField firstTextField;
+    private String searchBy;
+    private String s; //text entry
 
     Frame(){
         frame=new JFrame("Test");
@@ -63,30 +67,54 @@ public class Frame{
 
 
     public class LoadButtonHandler implements ActionListener {
+            public void actionPerformed(ActionEvent e) {
+                String fileName=JOptionPane.showInputDialog(frame,"Enter the file name: ");
+                Scanner inputStream;
+                try{
+                    inputStream=new Scanner(new File(fileName));
+
+
+                } catch (FileNotFoundException ex) {
+                    JOptionPane.showMessageDialog(frame,"File can not be found");
+                    throw new RuntimeException(ex);
+                }
+                CorpusBuilder corp= new CorpusBuilder(inputStream);
+                corp.getSentences();
+                ArrayList<String> src=new ArrayList<String>();
+
+
+                for(int i=0; i<corp.getSentences().length; i++){
+                    src.add(corp.getWordPosLemma());
+                }
+
+
+                inputStream.close();
+            }
+    }
+    private class WordPosLemmaButtonHandler implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
-            String fileName=JOptionPane.showInputDialog(frame,"Enter the file name: ");
-            Scanner inputStream;
-            try{
-                inputStream=new Scanner(new File(fileName));
+            JRadioButton button = (JRadioButton) e.getSource();
 
-
-            } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(frame,"File can not be found");
-                throw new RuntimeException(ex);
+            if (button == word) {
+                searchBy = "word";
+            } else if (button == pos) {
+                searchBy = "pos";
+            } else if (button == lemma) {
+                searchBy = "lemma";
             }
-            CorpusBuilder corp= new CorpusBuilder(inputStream);
-            corp.getSentences();
-            ArrayList<String> src=new ArrayList<String>();
-
-
-            for(int i=0; i<corp.getSentences().length; i++){
-                src.add(corp.getWordPosLemma());
-            }
-
-
-            inputStream.close();
         }
     }
+
+    private class SearchButtonHandler implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String s = firstTextField.getText();
+        }
+    }
+
+
+
+
 
     public static void main ( String[] args )
     {
