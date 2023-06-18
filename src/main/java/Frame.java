@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Frame{
     private JFrame frame;
     private JTextField firstTextField;
+    private JPanel panelSpoiler;
 
     private String searchBy;
     private String s; //text entry
@@ -63,6 +64,19 @@ public class Frame{
 
         panel2.add(Box.createRigidArea(new Dimension(0,5)));
 
+        JButton spoilerButton = new JButton("Additional filters");
+        spoilerButton.setMaximumSize(size);
+        spoilerButton.addActionListener(new SpoilerButtonHandler());
+
+        panelSpoiler=new JPanel();
+        BoxLayout spoilerBoxLayout = new BoxLayout(panelSpoiler,BoxLayout.X_AXIS);
+        panelSpoiler.setLayout(spoilerBoxLayout);
+
+        panel2.add(spoilerButton);
+        panel2.add(panelSpoiler);
+
+        panelSpoiler.add(firstTextField);
+
         JPanel panel3=new JPanel();
         BoxLayout cBoxLayout = new BoxLayout(panel3,BoxLayout.X_AXIS);
         panel3.setLayout(cBoxLayout);
@@ -72,11 +86,23 @@ public class Frame{
         frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
         frame.getContentPane().add(panel1);
         frame.getContentPane().add(panel2);
+        frame.getContentPane().add(panelSpoiler);
         frame.getContentPane().add(panel3);
         //This is the common size of the buttons
 
         frame.addWindowListener(new MyWindowListener());
         frame.setVisible(true);
+
+    }
+    public class SpoilerButtonHandler implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (panelSpoiler.isVisible()){
+                panelSpoiler.setVisible(false);
+            } else {
+
+                panelSpoiler.setVisible(true);
+            }
+        }
     }
 
 
@@ -152,7 +178,6 @@ public class Frame{
             }
         }
     }
-
 
     public static void main ( String[] args )
     {
