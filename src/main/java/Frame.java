@@ -16,7 +16,7 @@ public class Frame{
     private JPanel panelSpoiler;
 
     private String searchBy;
-    private String s; //text entry
+    private List<List<List<String>>> src;
 
     Frame(){
         frame=new JFrame("Test");
@@ -109,12 +109,16 @@ public class Frame{
 
     public class LoadButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String fileName=JOptionPane.showInputDialog(frame,"Enter the file name: ");
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            int result = fileChooser.showOpenDialog(frame);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+
             Scanner inputStream;
             String text=null;
             try{
-                inputStream=new Scanner(new File(fileName));
-
+                inputStream=new Scanner(selectedFile);
 
             } catch (FileNotFoundException ex) {
                 JOptionPane.showMessageDialog(frame,"File can not be found");
@@ -125,11 +129,11 @@ public class Frame{
             }
             CorpusBuilder corp= new CorpusBuilder(text);
             corp.getSentences();
-            List<List<List<String>>> src=new ArrayList<>();
+            //List<List<List<String>>> src=new ArrayList<>();
 
             /*
             for(int i=0; i<corp.getSentences().length; i++){
-                src=corp.getWordPosLemma();
+                src = corp.getWordPosLemma();
             }
                    */
             System.out.println(corp.getSentences());
@@ -137,6 +141,7 @@ public class Frame{
             System.out.println(corp.getTokens());
 
             inputStream.close();
+            }
         }
     }
     private class QuitButtonHandler implements ActionListener {
@@ -157,19 +162,13 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
-            System.out.println(searchBy);
-        }
-    }
-
-
-    private class TextFieldButtonHandler implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            String s = firstTextField.getText();
+            //System.out.println(searchBy);
         }
     }
 
 
     private class SearchButtonHandler implements ActionListener {
+        String s = firstTextField.getText();
         public void actionPerformed(ActionEvent e) {
             if (searchBy.equals("Word")){
 
