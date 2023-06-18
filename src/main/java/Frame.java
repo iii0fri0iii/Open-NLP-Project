@@ -15,8 +15,16 @@ public class Frame{
         Dimension size = new Dimension(95, 30);
 
         JButton loadButton = new JButton("load");
-        firstButton.setMaximumSize(size);
-        firstButton.addActionListener(new loadButtonHandler());
+        loadButton.setMaximumSize(size);
+        load.addActionListener(new loadButtonHandler());
+
+        JRadioButton lemma = new JRadioButton("Lemma");
+        JRadioButton pos = new JRadioButton("POS");
+        JRadioButton word = new JRadioButton("Word");
+        Box box1 = Box.createVerticalBox();
+        box1.add(lemma);
+        box1.add(pos);
+        box1.add(word);
 
 
 
@@ -28,6 +36,7 @@ public class Frame{
         panel1.add(Box.createRigidArea(new Dimension(0,5)));
         panel1.add(loadButton);
         panel1.add(firstTextField);
+        panel1.add(box1);
 
         JPanel panel2=new JPanel();
         BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.X_AXIS);
@@ -41,15 +50,12 @@ public class Frame{
 
         panel3.add(Box.createRigidArea(new Dimension(0,5)));
 
-        JButton firstButton = new JButton("first");
-        frame.getContentPane().add(firstButton);
 
         //This is the common size of the buttons
-        Dimension size = new Dimension(95, 30);
 
-
-
-
-
+    }
+    public static void main ( String[] args )
+    {
+        Frame frame= new Frame();
     }
 }
