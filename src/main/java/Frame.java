@@ -15,6 +15,9 @@ public class Frame{
     private JTextField firstTextField;
     private JPanel panelSpoiler;
 
+    private String searchBy;
+    private String s; //text entry
+
     Frame(){
         frame=new JFrame("Test");
         frame.setSize(1000,600);
@@ -31,13 +34,20 @@ public class Frame{
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
         JRadioButton word = new JRadioButton("Word");
+
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(lemma);
+        buttonGroup.add(pos);
+        buttonGroup.add(word);
+
+        lemma.addActionListener(new WordPosLemmaButtonHandler());
+        pos.addActionListener(new WordPosLemmaButtonHandler());
+        word.addActionListener(new WordPosLemmaButtonHandler());
+
         Box box1 = Box.createVerticalBox();
         box1.add(lemma);
         box1.add(pos);
         box1.add(word);
-
-
-
 
         JPanel panel1=new JPanel();
         BoxLayout aBoxLayout = new BoxLayout(panel1,BoxLayout.X_AXIS);
@@ -142,7 +152,36 @@ public class Frame{
         }
     }
 
+    private class WordPosLemmaButtonHandler implements ActionListener {
 
+        public void actionPerformed(ActionEvent e) {
+            JRadioButton button = (JRadioButton) e.getSource();
+            searchBy = button.getText();
+            System.out.println(searchBy);
+        }
+    }
+
+
+    private class TextFieldButtonHandler implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String s = firstTextField.getText();
+        }
+    }
+
+
+    private class SearchButtonHandler implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (searchBy.equals("Word")){
+
+            } else if (searchBy.equals("Lemma")) {
+
+
+            } else if (searchBy.equals("POS")) {
+
+
+            }
+        }
+    }
 
     public static void main ( String[] args )
     {
