@@ -26,7 +26,7 @@ public class Frame{
 
         JButton loadButton = new JButton("load");
         loadButton.setMaximumSize(size);
-        load.addActionListener(new loadButtonHandler());
+        loadButton.addActionListener(new loadButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
