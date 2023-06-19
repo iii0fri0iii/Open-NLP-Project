@@ -10,6 +10,8 @@ import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +48,7 @@ public class CorpusBuilder {
      * @return An array with the sentences of the CorpusBuildr
      */
     public String[] getSentences() {
-        try (InputStream modelIn = new FileInputStream("en-sent.bin")) {
+        try (InputStream modelIn = Files.newInputStream(Paths.get("en-sent.bin"))) {
             SentenceModel model = new SentenceModel(modelIn);
             SentenceDetectorME sentenceDetector = new SentenceDetectorME(model);
             this.sentences = sentenceDetector.sentDetect(this.text);
@@ -64,7 +66,7 @@ public class CorpusBuilder {
      * @return A List of List the tokens/words of the text of the CorpusBuilder.
      */
     public List<List<String>> getTokens() {
-        try (InputStream modelIn = new FileInputStream("en-token.bin")) {
+        try (InputStream modelIn = Files.newInputStream(Paths.get("en-token.bin"))) {
             TokenizerModel model = new TokenizerModel(modelIn);
             Tokenizer tokenizer = new TokenizerME(model);
             tokens=new ArrayList<>();
@@ -90,8 +92,7 @@ public class CorpusBuilder {
      * @return A List of List with the POS tags of the text of CorpusBuilder.
      */
     public List<List<String>> getPosTags() {
-        try (InputStream modelIn = new
-                FileInputStream("en-pos-maxent.bin")) {
+        try (InputStream modelIn = Files.newInputStream(Paths.get("en-pos-maxent.bin"))) {
             POSModel model = new POSModel(modelIn);
             POSTaggerME tagger = new POSTaggerME(model);
             posTags=new ArrayList<>();
@@ -119,7 +120,7 @@ public class CorpusBuilder {
      */
     public List<List<String>> getLemmas() {
 
-        try (InputStream modelIn = new FileInputStream("en-lemmatizer.bin"))
+        try (InputStream modelIn = Files.newInputStream(Paths.get("en-lemmatizer.bin")))
         {
             LemmatizerModel model = new LemmatizerModel(modelIn);
             LemmatizerME lemmatizer = new LemmatizerME(model);
@@ -143,7 +144,7 @@ public class CorpusBuilder {
     /**
      * Create a new ArrayList that contains Lists of [word, POS, lemma] for every word in every sentence in the text.
      *
-     * @return A List of list of [word, POS, lemma] for every word in every sentence in the text.
+     * @return A List of lists of [word, POS, lemma] for every word in every sentence in the text.
      */
     public List<List<List<String>>> getWordPosLemma() {
         List<List<List<String>>> tokPosLemList = new ArrayList<>();

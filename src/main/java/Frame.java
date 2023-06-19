@@ -9,6 +9,7 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,9 +21,12 @@ public class Frame{
     private  JPanel panelDisplayedResults;
 
     private String searchBy;
+
+
     private List<List<List<String>>> src;
     private int numberOfNeighbours=2;
-    private int numberOfDesplayedResults = 10;
+    private int numberOfDisplayedResults = 10;
+
 
     Frame(){
         frame=new JFrame("Test");
@@ -117,7 +121,7 @@ public class Frame{
         displayedResults.setMaximumSize(new Dimension(300,30));
 
         JSlider slider = new JSlider(JSlider.HORIZONTAL,
-                1, 50, numberOfDesplayedResults);
+                1, 50, numberOfDisplayedResults);
         slider.setMaximumSize(new Dimension(300,100));
         slider.setMajorTickSpacing(10);
         slider.setMinorTickSpacing(1);
@@ -170,8 +174,8 @@ public class Frame{
             if (result == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = fileChooser.getSelectedFile();
 
+            String text="";
             Scanner inputStream;
-            String text=null;
             try{
                 inputStream=new Scanner(selectedFile);
 
@@ -179,21 +183,17 @@ public class Frame{
                 JOptionPane.showMessageDialog(frame,"File can not be found");
                 throw new RuntimeException(ex);
             }
-            while (inputStream.hasNext()){
-                text=text+inputStream.next();
+            while (inputStream.hasNextLine()){
+                text=text+inputStream.nextLine();
             }
+
             CorpusBuilder corp= new CorpusBuilder(text);
             corp.getSentences();
-            //List<List<List<String>>> src=new ArrayList<>();
+            corp.getTokens();
+            corp.getPosTags();
+            corp.getLemmas();
 
-            /*
-            for(int i=0; i<corp.getSentences().length; i++){
-                src = corp.getWordPosLemma();
-            }
-                   */
-            System.out.println(corp.getSentences());
-
-            System.out.println(corp.getTokens());
+            src = corp.getWordPosLemma();
 
             inputStream.close();
             }
@@ -216,7 +216,7 @@ public class Frame{
         if(!source.getValueIsAdjusting())
 
         {
-             numberOfDesplayedResults= source.getValue();
+             numberOfDisplayedResults= source.getValue();
 
         }
     }
@@ -239,7 +239,6 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
-            //System.out.println(searchBy);
         }
     }
 
@@ -248,7 +247,13 @@ public class Frame{
         String s = firstTextField.getText();
         public void actionPerformed(ActionEvent e) {
             if (searchBy.equals("Word")){
-
+                for (int i=0;i<src.size();i++){   //iteration by sentences
+                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
+                        if (src.get(i).get(k).get(2).equals(s)){
+                            System.out.println(src.get(i)); //this should be fixed in the future
+                        }
+                    }
+                }
             } else if (searchBy.equals("Lemma")) {
 
 
