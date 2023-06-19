@@ -155,12 +155,10 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             if (panelSpoiler.isVisible()){
                 panelSpoiler.setVisible(false);
-                panelNeighbours.setVisible(false);
 
             } else {
 
                 panelSpoiler.setVisible(true);
-                panelNeighbours.setVisible(true);
             }
         }
     }
