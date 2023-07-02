@@ -98,6 +98,17 @@ public class Frame{
 
         panel2.add(panelSpoiler);
 
+        JList<CheckboxListItem> list = new JList<CheckboxListItem>(
+                new CheckboxListItem[] { new CheckboxListItem("apple"),
+                        new CheckboxListItem("orange"),
+                        new CheckboxListItem("mango"),
+                        new CheckboxListItem("paw paw"),
+                        new CheckboxListItem("banana") });
+
+        list.setCellRenderer(new CheckboxListRenderer());
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        panelSpoiler.add(new JScrollPane(list));
 
         panelNeighbours=new JPanel();
         BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
@@ -312,6 +323,46 @@ public class Frame{
 
         return String.join(", ", contextWords);
     }
+
+    class CheckboxListRenderer extends JCheckBox implements
+            ListCellRenderer<CheckboxListItem> {
+
+        @Override
+        public Component getListCellRendererComponent(
+                JList<? extends CheckboxListItem> list, CheckboxListItem value,
+                int index, boolean isSelected, boolean cellHasFocus) {
+            setEnabled(list.isEnabled());
+            setSelected(value.isSelected());
+            setFont(list.getFont());
+            setBackground(list.getBackground());
+            setForeground(list.getForeground());
+            setText(value.toString());
+            return this;
+        }
+    }
+    public class CheckboxListItem {
+
+        private String label;
+        private boolean isSelected = false;
+
+        public CheckboxListItem(String label) {
+            this.label = label;
+        }
+
+        public boolean isSelected() {
+            return isSelected;
+        }
+
+        public void setSelected(boolean isSelected) {
+            this.isSelected = isSelected;
+        }
+
+        public String toString() {
+            return label;
+        }
+
+    }
+
 
     public static void main ( String[] args )
     {
