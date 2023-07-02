@@ -20,6 +20,8 @@ public class Frame{
     private JPanel panelNeighbours;
     private  JPanel panelDisplayedResults;
 
+    private JTextArea outputArea;
+
     private String searchBy;
 
 
@@ -150,6 +152,12 @@ public class Frame{
         frame.addWindowListener(new MyWindowListener());
         frame.setVisible(true);
 
+
+        // Create the JTextArea for displaying the output
+        outputArea = new JTextArea();
+        outputArea.setEditable(false); // Make it read-only
+        frame.add(outputArea);
+
     }
     public class SpoilerButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -278,6 +286,7 @@ public class Frame{
             }
         }
     }
+
 
     public static void main ( String[] args )
     {
