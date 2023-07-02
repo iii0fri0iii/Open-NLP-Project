@@ -72,6 +72,7 @@ public class Frame{
         frame.setSize(1000,600);
         firstTextField=new JTextField(60);
 
+
         firstTextField.setMaximumSize(new Dimension(200,50));
 
 
@@ -223,11 +224,13 @@ public class Frame{
 
 
         Design.applyTextFieldStyle(firstTextField);
+        Design.applyPanelStyle(panelSpoiler);
         Design.applyButtonStyle(loadButton);
         Design.applyButtonStyle(searchButton);
         Design.applyRadioButtonStyle(lemma);
         Design.applyRadioButtonStyle(pos);
         Design.applyRadioButtonStyle(word);
+        Design.applyDesign(frame);
 
 
     }

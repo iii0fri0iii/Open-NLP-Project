@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
+import javax.swing.plaf.PanelUI;
+import java.awt.*;
 
 public class Design {
     private Color color1 = Color.decode("#0099F7");
@@ -19,6 +21,10 @@ public class Design {
 
     public static void applyDesign(JFrame frame) {
         frame.setSize(1000, 600);
+        frame.setBackground(Color.WHITE);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.weightx = 1.0;
 
     }
 
@@ -31,6 +37,10 @@ public class Design {
         Dimension size = new Dimension(95, 30);
         button.setMaximumSize(size);
         button.setBackground(Color.PINK);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.weightx = 1.0;
+
+
         //button.setContentAreaFilled(false); // Empty buttons without background
         //button.setForeground(Color.BLUE); // Text color is set to blue
     }
@@ -41,18 +51,29 @@ public class Design {
 
     public static void applyPanelStyle(JPanel panel) {
         panel.setOpaque(false);
+        panel.setUI(new CustomPanelUI());
     }
-    private void paintComponent(Graphics g){
-
-        Graphics2D g2d=(Graphics2D) g;
-        int width=10;
-        int heigth=15;
-        Color color1=new Color(52,143,80);
-        Color color2=new Color(86,180,211);
-        GradientPaint gp=new GradientPaint(0,0,color1,180,15,color2);
-        g2d.setPaint(gp);
-        g2d.fillRect(0,0,10,15);
-    }
-
 
 }
+
+
+class CustomPanelUI extends PanelUI {
+
+    @Override
+    public void paint(Graphics g, JComponent c) {
+        super.paint(g, c);
+
+        Graphics2D g2d = (Graphics2D) g.create();
+        int width = c.getWidth();
+        int height = c.getHeight();
+
+        Paint p = new GradientPaint(0.0f, 0.0f, Color.RED,
+                width, height, Color.YELLOW, true);
+
+        g2d.setPaint(p);
+        g2d.fillRect(0, 0, width, height);
+
+        g2d.dispose();
+    }
+}
+
