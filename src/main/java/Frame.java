@@ -2,10 +2,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -98,17 +95,18 @@ public class Frame{
 
         panel2.add(panelSpoiler);
 
-        JList<CheckboxListItem> list = new JList<CheckboxListItem>(
+        JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
                 new CheckboxListItem[] { new CheckboxListItem("apple"),
                         new CheckboxListItem("orange"),
                         new CheckboxListItem("mango"),
                         new CheckboxListItem("paw paw"),
                         new CheckboxListItem("banana") });
 
-        list.setCellRenderer(new CheckboxListRenderer());
-        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        posList.setCellRenderer(new CheckboxListRenderer());
+        posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        posList.addMouseListener(new PosListListener());
 
-        panelSpoiler.add(new JScrollPane(list));
+        panelSpoiler.add(new JScrollPane(posList));
 
         panelNeighbours=new JPanel();
         BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
@@ -272,6 +270,28 @@ public class Frame{
         }
     }
 
+    private class PosListListener extends MouseAdapter {
+
+        public void mouseClicked(MouseEvent e) {
+            JList<CheckboxListItem> list =
+                    (JList<CheckboxListItem>) e.getSource();
+
+            // Get index of item clicked
+
+            int index = list.locationToIndex(e.getPoint());
+            CheckboxListItem item = (CheckboxListItem) list.getModel()
+                    .getElementAt(index);
+
+            // Toggle selected state
+
+            item.setSelected(!item.isSelected());
+
+            // Repaint cell
+
+            list.repaint(list.getCellBounds(index, index));
+        }
+    }
+
     private class WordPosLemmaButtonHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -375,6 +395,8 @@ public class Frame{
         }
 
     }
+
+
 
 
     public static void main ( String[] args )
