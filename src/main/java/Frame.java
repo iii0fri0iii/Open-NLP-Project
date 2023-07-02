@@ -19,44 +19,8 @@ public class Frame{
 
     private String searchBy;
 
-    private JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
-            new CheckboxListItem[] { new CheckboxListItem("CC Coordinating conjunction"),
-                    new CheckboxListItem("CD Cardinal number"),
-                    new CheckboxListItem("DT Determiner"),
-                    new CheckboxListItem("EX Existential there"),
-                    new CheckboxListItem("FW Foreign word"),
-                    new CheckboxListItem("IN Preposition or subordinating conjunction"),
-                    new CheckboxListItem("JJ Adjective"),
-                    new CheckboxListItem("JJR Adjective, comparative"),
-                    new CheckboxListItem("JJS Adjective, superlative"),
-                    new CheckboxListItem("LS List item marker"),
-                    new CheckboxListItem("MD Modal"),
-                    new CheckboxListItem("NN Noun, singular or mass"),
-                    new CheckboxListItem("NNS Noun, plural"),
-                    new CheckboxListItem("NNP Proper noun, singular"),
-                    new CheckboxListItem("NNPS Proper noun, plural"),
-                    new CheckboxListItem("PDT Predeterminer"),
-                    new CheckboxListItem("POS Possessive ending"),
-                    new CheckboxListItem("PRP Personal pronoun"),
-                    new CheckboxListItem("PRP$ Possessive pronoun"),
-                    new CheckboxListItem("RB Adverb"),
-                    new CheckboxListItem("RBR Adverb, comparative"),
-                    new CheckboxListItem("RBS Adverb, superlative"),
-                    new CheckboxListItem("RP Particle"),
-                    new CheckboxListItem("SYM Symbol"),
-                    new CheckboxListItem("TO to"),
-                    new CheckboxListItem("UH Interjection"),
-                    new CheckboxListItem("VB Verb, base form"),
-                    new CheckboxListItem("VBD Verb, past tense"),
-                    new CheckboxListItem("VBG Verb, gerund or present participle"),
-                    new CheckboxListItem("VBN Verb, past participle"),
-                    new CheckboxListItem("VBP Verb, non3rd person singular present"),
-                    new CheckboxListItem("VBZ Verb, 3rd person singular present"),
-                    new CheckboxListItem("WDT Whdeterminer"),
-                    new CheckboxListItem("WP Whpronoun"),
-                    new CheckboxListItem("WP$ Possessive whpronoun"),
-                    new CheckboxListItem("WRB Whadverb"),
-            });
+    private DefaultListModel model = new DefaultListModel();
+    private JList posList = new JList(model);
     List<String> posListStringInitial = null;
     List<String> posListString = null;
     List<String> posListSelected = null;
@@ -135,17 +99,46 @@ public class Frame{
         panelSpoiler.setLayout(spoilerBoxLayout);
 
         panel2.add(panelSpoiler);
-        /*
-        for (CheckboxListItem item: (List<CheckboxListItem>)posList.getModel()
-             ) {
-            posListStringInitial.add(item.toString());
-            posListString.add(item.toString());
-        }
 
-         */
+        model.addElement("CC Coordinating conjunction");
+                model.addElement("CD Cardinal number");
+                model.addElement("DT Determiner");
+                model.addElement("EX Existential there");
+                model.addElement("FW Foreign word");
+                model.addElement("IN Preposition or subordinating conjunction");
+                model.addElement("JJ Adjective");
+                model.addElement("JJR Adjective; comparative");
+                model.addElement("JJS Adjective; superlative");
+                model.addElement("LS List item marker");
+                model.addElement("MD Modal");
+                model.addElement("NN Noun; singular or mass");
+                model.addElement("NNS Noun; plural");
+                model.addElement("NNP Proper noun; singular");
+                model.addElement("NNPS Proper noun; plural");
+                model.addElement("PDT Predeterminer");
+                model.addElement("POS Possessive ending");
+                model.addElement("PRP Personal pronoun");
+                model.addElement("PRP$ Possessive pronoun");
+                model.addElement("RB Adverb");
+                model.addElement("RBR Adverb; comparative");
+                model.addElement("RBS Adverb; superlative");
+                model.addElement("RP Particle");
+                model.addElement("SYM Symbol");
+                model.addElement("TO to");
+                model.addElement("UH Interjection");
+                model.addElement("VB Verb, base form");
+                model.addElement("VBD Verb, past tense");
+                model.addElement("VBG Verb, gerund or present participle");
+                model.addElement("VBN Verb, past participle");
+                model.addElement("VBP Verb, non3rd person singular present");
+                model.addElement("VBZ Verb, 3rd person singular present");
+                model.addElement("WDT Whdeterminer");
+                model.addElement("WP Whpronoun");
+                model.addElement("WP$ Possessive whpronoun");
+                model.addElement("WRB Whadverb");
+                posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        posList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
-        posList.setCellRenderer(new CheckboxListRenderer());
-        posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         posList.addMouseListener(new PosListListener());
 
         panelSpoiler.add(new JScrollPane(posList));
@@ -316,25 +309,14 @@ public class Frame{
     private class PosListListener extends MouseAdapter {
 
         public void mouseClicked(MouseEvent e) {
-            JList<CheckboxListItem> list =
-                    (JList<CheckboxListItem>) e.getSource();
+            if (e.getClickCount() == 1) {
+                int index = posList.locationToIndex(e.getPoint());
+                String item = (String) model.getElementAt(index);
+                posListSelected.add(item);
 
-            // Get index of item clicked
-
-            int index = list.locationToIndex(e.getPoint());
-            String element = list.getModel().getElementAt(index).toString();
-            CheckboxListItem item = (CheckboxListItem) list.getModel()
-                    .getElementAt(index);
-
-            // Toggle selected state
-
-            item.setSelected(!item.isSelected());
-            posListSelected.add(element);
-
-            // Repaint cell
-
-            list.repaint(list.getCellBounds(index, index));
+            }
         }
+
     }
 
     private class WordPosLemmaButtonHandler implements ActionListener {
@@ -362,7 +344,6 @@ public class Frame{
                         }
                     }
                 }
-                posList=new JList<CheckboxListItem>(new CheckboxListItem[]{});
                 for (String element: recreatedPosList
                      ) {
                     for (String el: posListStringInitial
@@ -427,45 +408,6 @@ public class Frame{
         }
 
         return String.join(" ", contextWords);
-    }
-
-    class CheckboxListRenderer extends JCheckBox implements
-            ListCellRenderer<CheckboxListItem> {
-
-        @Override
-        public Component getListCellRendererComponent(
-                JList<? extends CheckboxListItem> list, CheckboxListItem value,
-                int index, boolean isSelected, boolean cellHasFocus) {
-            setEnabled(list.isEnabled());
-            setSelected(value.isSelected());
-            setFont(list.getFont());
-            setBackground(list.getBackground());
-            setForeground(list.getForeground());
-            setText(value.toString());
-            return this;
-        }
-    }
-    public class CheckboxListItem {
-
-        private String label;
-        private boolean isSelected = false;
-
-        public CheckboxListItem(String label) {
-            this.label = label;
-        }
-
-        public boolean isSelected() {
-            return isSelected;
-        }
-
-        public void setSelected(boolean isSelected) {
-            this.isSelected = isSelected;
-        }
-
-        public String toString() {
-            return label;
-        }
-
     }
 
 
