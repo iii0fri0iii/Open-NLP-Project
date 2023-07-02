@@ -335,6 +335,7 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             ListModel<CheckboxListItem> recreatedPosList = posList.getModel();
             String s = firstTextField.getText();
+            outputArea.setText("");
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
@@ -367,7 +368,6 @@ public class Frame{
                     }
                 }
             }
-            //outputArea.setText("");
         }
     }
 
