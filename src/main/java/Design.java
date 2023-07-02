@@ -33,23 +33,17 @@ public class Design {
         button.setBackground(Color.PINK);
         //button.setContentAreaFilled(false); // Empty buttons without background
         //button.setForeground(Color.BLUE); // Text color is set to blue
-
-
     }
-
 
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
         // Apply styling to the radio button
     }
 
-
-
     public static void applyPanelStyle(JPanel panel) {
-
-
+        panel.setOpaque(false);
     }
     private void paintComponent(Graphics g){
-        super.paintComponent(g);
+
         Graphics2D g2d=(Graphics2D) g;
         int width=10;
         int heigth=15;
@@ -59,8 +53,6 @@ public class Design {
         g2d.setPaint(gp);
         g2d.fillRect(0,0,10,15);
     }
-
-
 
 
 }
