@@ -21,7 +21,44 @@ public class Frame{
 
     private String searchBy;
 
-
+    private JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
+            new CheckboxListItem[] { new CheckboxListItem("CC Coordinating conjunction"),
+                    new CheckboxListItem("CD Cardinal number"),
+                    new CheckboxListItem("DT Determiner"),
+                    new CheckboxListItem("EX Existential there"),
+                    new CheckboxListItem("FW Foreign word"),
+                    new CheckboxListItem("IN Preposition or subordinating conjunction"),
+                    new CheckboxListItem("JJ Adjective"),
+                    new CheckboxListItem("JJR Adjective, comparative"),
+                    new CheckboxListItem("JJS Adjective, superlative"),
+                    new CheckboxListItem("LS List item marker"),
+                    new CheckboxListItem("MD Modal"),
+                    new CheckboxListItem("NN Noun, singular or mass"),
+                    new CheckboxListItem("NNS Noun, plural"),
+                    new CheckboxListItem("NNP Proper noun, singular"),
+                    new CheckboxListItem("NNPS Proper noun, plural"),
+                    new CheckboxListItem("PDT Predeterminer"),
+                    new CheckboxListItem("POS Possessive ending"),
+                    new CheckboxListItem("PRP Personal pronoun"),
+                    new CheckboxListItem("PRP$ Possessive pronoun"),
+                    new CheckboxListItem("RB Adverb"),
+                    new CheckboxListItem("RBR Adverb, comparative"),
+                    new CheckboxListItem("RBS Adverb, superlative"),
+                    new CheckboxListItem("RP Particle"),
+                    new CheckboxListItem("SYM Symbol"),
+                    new CheckboxListItem("TO to"),
+                    new CheckboxListItem("UH Interjection"),
+                    new CheckboxListItem("VB Verb, base form"),
+                    new CheckboxListItem("VBD Verb, past tense"),
+                    new CheckboxListItem("VBG Verb, gerund or present participle"),
+                    new CheckboxListItem("VBN Verb, past participle"),
+                    new CheckboxListItem("VBP Verb, non3rd person singular present"),
+                    new CheckboxListItem("VBZ Verb, 3rd person singular present"),
+                    new CheckboxListItem("WDT Whdeterminer"),
+                    new CheckboxListItem("WP Whpronoun"),
+                    new CheckboxListItem("WP$ Possessive whpronoun"),
+                    new CheckboxListItem("WRB Whadverb"),
+            });
     private List<List<List<String>>> src;
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
@@ -95,44 +132,7 @@ public class Frame{
 
         panel2.add(panelSpoiler);
 
-        JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
-                new CheckboxListItem[] { new CheckboxListItem("CC Coordinating conjunction"),
-                        new CheckboxListItem("CD Cardinal number"),
-                        new CheckboxListItem("DT Determiner"),
-                        new CheckboxListItem("EX Existential there"),
-                        new CheckboxListItem("FW Foreign word"),
-                        new CheckboxListItem("IN Preposition or subordinating conjunction"),
-                        new CheckboxListItem("JJ Adjective"),
-                        new CheckboxListItem("JJR Adjective, comparative"),
-                        new CheckboxListItem("JJS Adjective, superlative"),
-                        new CheckboxListItem("LS List item marker"),
-                        new CheckboxListItem("MD Modal"),
-                        new CheckboxListItem("NN Noun, singular or mass"),
-                        new CheckboxListItem("NNS Noun, plural"),
-                        new CheckboxListItem("NNP Proper noun, singular"),
-                        new CheckboxListItem("NNPS Proper noun, plural"),
-                        new CheckboxListItem("PDT Predeterminer"),
-                        new CheckboxListItem("POS Possessive ending"),
-                        new CheckboxListItem("PRP Personal pronoun"),
-                        new CheckboxListItem("PRP$ Possessive pronoun"),
-                        new CheckboxListItem("RB Adverb"),
-                        new CheckboxListItem("RBR Adverb, comparative"),
-                        new CheckboxListItem("RBS Adverb, superlative"),
-                        new CheckboxListItem("RP Particle"),
-                        new CheckboxListItem("SYM Symbol"),
-                        new CheckboxListItem("TO to"),
-                        new CheckboxListItem("UH Interjection"),
-                        new CheckboxListItem("VB Verb, base form"),
-                        new CheckboxListItem("VBD Verb, past tense"),
-                        new CheckboxListItem("VBG Verb, gerund or present participle"),
-                        new CheckboxListItem("VBN Verb, past participle"),
-                        new CheckboxListItem("VBP Verb, non3rd person singular present"),
-                        new CheckboxListItem("VBZ Verb, 3rd person singular present"),
-                        new CheckboxListItem("WDT Whdeterminer"),
-                        new CheckboxListItem("WP Whpronoun"),
-                        new CheckboxListItem("WP$ Possessive whpronoun"),
-                        new CheckboxListItem("WRB Whadverb"),
-                });
+
 
         posList.setCellRenderer(new CheckboxListRenderer());
         posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -333,13 +333,15 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            ListModel<CheckboxListItem> recreatedPosList = posList.getModel();
             String s = firstTextField.getText();
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equals(s)){
                             //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
-                            //src.get(i).get(k).get(1) -- POS tag of the word
+                            src.get(i).get(k).get(1);
+
                             //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
