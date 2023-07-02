@@ -46,6 +46,7 @@ public class Frame{
         loadButton.setMaximumSize(size);
         loadButton.addActionListener(new LoadButtonHandler());
 
+
         JButton searchButton = new JButton("search");
         searchButton.setMaximumSize(size);
         searchButton.addActionListener(new SearchButtonHandler());
