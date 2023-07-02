@@ -96,11 +96,43 @@ public class Frame{
         panel2.add(panelSpoiler);
 
         JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
-                new CheckboxListItem[] { new CheckboxListItem("apple"),
-                        new CheckboxListItem("orange"),
-                        new CheckboxListItem("mango"),
-                        new CheckboxListItem("paw paw"),
-                        new CheckboxListItem("banana") });
+                new CheckboxListItem[] { new CheckboxListItem("CC Coordinating conjunction"),
+                        new CheckboxListItem("CD Cardinal number"),
+                        new CheckboxListItem("DT Determiner"),
+                        new CheckboxListItem("EX Existential there"),
+                        new CheckboxListItem("FW Foreign word"),
+                        new CheckboxListItem("IN Preposition or subordinating conjunction"),
+                        new CheckboxListItem("JJ Adjective"),
+                        new CheckboxListItem("JJR Adjective, comparative"),
+                        new CheckboxListItem("JJS Adjective, superlative"),
+                        new CheckboxListItem("LS List item marker"),
+                        new CheckboxListItem("MD Modal"),
+                        new CheckboxListItem("NN Noun, singular or mass"),
+                        new CheckboxListItem("NNS Noun, plural"),
+                        new CheckboxListItem("NNP Proper noun, singular"),
+                        new CheckboxListItem("NNPS Proper noun, plural"),
+                        new CheckboxListItem("PDT Predeterminer"),
+                        new CheckboxListItem("POS Possessive ending"),
+                        new CheckboxListItem("PRP Personal pronoun"),
+                        new CheckboxListItem("PRP$ Possessive pronoun"),
+                        new CheckboxListItem("RB Adverb"),
+                        new CheckboxListItem("RBR Adverb, comparative"),
+                        new CheckboxListItem("RBS Adverb, superlative"),
+                        new CheckboxListItem("RP Particle"),
+                        new CheckboxListItem("SYM Symbol"),
+                        new CheckboxListItem("TO to"),
+                        new CheckboxListItem("UH Interjection"),
+                        new CheckboxListItem("VB Verb, base form"),
+                        new CheckboxListItem("VBD Verb, past tense"),
+                        new CheckboxListItem("VBG Verb, gerund or present participle"),
+                        new CheckboxListItem("VBN Verb, past participle"),
+                        new CheckboxListItem("VBP Verb, non3rd person singular present"),
+                        new CheckboxListItem("VBZ Verb, 3rd person singular present"),
+                        new CheckboxListItem("WDT Whdeterminer"),
+                        new CheckboxListItem("WP Whpronoun"),
+                        new CheckboxListItem("WP$ Possessive whpronoun"),
+                        new CheckboxListItem("WRB Whadverb"),
+                });
 
         posList.setCellRenderer(new CheckboxListRenderer());
         posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -241,9 +273,7 @@ public class Frame{
         public void stateChanged(ChangeEvent e) {
             JSpinner spinner= (JSpinner) e.getSource();
             SpinnerModel spinnerModel = (SpinnerModel) spinner.getModel();
-            if (spinnerModel instanceof SpinnerDateModel) {
                 numberOfNeighbours=(int)spinnerModel.getValue();
-            }
         }
     }
     private class sliderListener implements ChangeListener {
