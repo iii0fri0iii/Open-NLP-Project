@@ -2,10 +2,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -24,7 +21,44 @@ public class Frame{
 
     private String searchBy;
 
-
+    private JList<CheckboxListItem> posList = new JList<CheckboxListItem>(
+            new CheckboxListItem[] { new CheckboxListItem("CC Coordinating conjunction"),
+                    new CheckboxListItem("CD Cardinal number"),
+                    new CheckboxListItem("DT Determiner"),
+                    new CheckboxListItem("EX Existential there"),
+                    new CheckboxListItem("FW Foreign word"),
+                    new CheckboxListItem("IN Preposition or subordinating conjunction"),
+                    new CheckboxListItem("JJ Adjective"),
+                    new CheckboxListItem("JJR Adjective, comparative"),
+                    new CheckboxListItem("JJS Adjective, superlative"),
+                    new CheckboxListItem("LS List item marker"),
+                    new CheckboxListItem("MD Modal"),
+                    new CheckboxListItem("NN Noun, singular or mass"),
+                    new CheckboxListItem("NNS Noun, plural"),
+                    new CheckboxListItem("NNP Proper noun, singular"),
+                    new CheckboxListItem("NNPS Proper noun, plural"),
+                    new CheckboxListItem("PDT Predeterminer"),
+                    new CheckboxListItem("POS Possessive ending"),
+                    new CheckboxListItem("PRP Personal pronoun"),
+                    new CheckboxListItem("PRP$ Possessive pronoun"),
+                    new CheckboxListItem("RB Adverb"),
+                    new CheckboxListItem("RBR Adverb, comparative"),
+                    new CheckboxListItem("RBS Adverb, superlative"),
+                    new CheckboxListItem("RP Particle"),
+                    new CheckboxListItem("SYM Symbol"),
+                    new CheckboxListItem("TO to"),
+                    new CheckboxListItem("UH Interjection"),
+                    new CheckboxListItem("VB Verb, base form"),
+                    new CheckboxListItem("VBD Verb, past tense"),
+                    new CheckboxListItem("VBG Verb, gerund or present participle"),
+                    new CheckboxListItem("VBN Verb, past participle"),
+                    new CheckboxListItem("VBP Verb, non3rd person singular present"),
+                    new CheckboxListItem("VBZ Verb, 3rd person singular present"),
+                    new CheckboxListItem("WDT Whdeterminer"),
+                    new CheckboxListItem("WP Whpronoun"),
+                    new CheckboxListItem("WP$ Possessive whpronoun"),
+                    new CheckboxListItem("WRB Whadverb"),
+            });
     private List<List<List<String>>> src;
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
@@ -98,17 +132,13 @@ public class Frame{
 
         panel2.add(panelSpoiler);
 
-        JList<CheckboxListItem> list = new JList<CheckboxListItem>(
-                new CheckboxListItem[] { new CheckboxListItem("apple"),
-                        new CheckboxListItem("orange"),
-                        new CheckboxListItem("mango"),
-                        new CheckboxListItem("paw paw"),
-                        new CheckboxListItem("banana") });
 
-        list.setCellRenderer(new CheckboxListRenderer());
-        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        panelSpoiler.add(new JScrollPane(list));
+        posList.setCellRenderer(new CheckboxListRenderer());
+        posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        posList.addMouseListener(new PosListListener());
+
+        panelSpoiler.add(new JScrollPane(posList));
 
         panelNeighbours=new JPanel();
         BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
@@ -243,9 +273,7 @@ public class Frame{
         public void stateChanged(ChangeEvent e) {
             JSpinner spinner= (JSpinner) e.getSource();
             SpinnerModel spinnerModel = (SpinnerModel) spinner.getModel();
-            if (spinnerModel instanceof SpinnerDateModel) {
                 numberOfNeighbours=(int)spinnerModel.getValue();
-            }
         }
     }
     private class sliderListener implements ChangeListener {
@@ -273,6 +301,28 @@ public class Frame{
         }
     }
 
+    private class PosListListener extends MouseAdapter {
+
+        public void mouseClicked(MouseEvent e) {
+            JList<CheckboxListItem> list =
+                    (JList<CheckboxListItem>) e.getSource();
+
+            // Get index of item clicked
+
+            int index = list.locationToIndex(e.getPoint());
+            CheckboxListItem item = (CheckboxListItem) list.getModel()
+                    .getElementAt(index);
+
+            // Toggle selected state
+
+            item.setSelected(!item.isSelected());
+
+            // Repaint cell
+
+            list.repaint(list.getCellBounds(index, index));
+        }
+    }
+
     private class WordPosLemmaButtonHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -283,12 +333,16 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            ListModel<CheckboxListItem> recreatedPosList = posList.getModel();
             String s = firstTextField.getText();
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equals(s)){
-                            //src.get(i).get(k).get(1) -- POS tag of the word
+                            //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
+                            src.get(i).get(k).get(1);
+
+                            //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
                         }
@@ -388,6 +442,8 @@ public class Frame{
         }
 
     }
+
+
 
 
     public static void main ( String[] args )
