@@ -134,12 +134,14 @@ public class Frame{
         panelSpoiler.setLayout(spoilerBoxLayout);
 
         panel2.add(panelSpoiler);
-
+        /*
         for (CheckboxListItem item: (List<CheckboxListItem>)posList.getModel()
              ) {
             posListStringInitial.add(item.toString());
             posListString.add(item.toString());
         }
+
+         */
 
         posList.setCellRenderer(new CheckboxListRenderer());
         posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
