@@ -288,21 +288,32 @@ public class Frame{
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equals(s)){
-                            //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
                             //src.get(i).get(k).get(1) -- POS tag of the word
-                            //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
                         }
                     }
                 }
             } else if (searchBy.equals("Lemma")) {
-
-
+                for (int i=0;i<src.size();i++){   //iteration by sentences
+                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
+                        if (src.get(i).get(k).get(2).equals(s)){
+                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
+                            outputArea.append("\n");
+                        }
+                    }
+                }
             } else if (searchBy.equals("POS")) {
-
-
+                for (int i=0;i<src.size();i++){   //iteration by sentences
+                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
+                        if (src.get(i).get(k).get(1).equals(s)){
+                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
+                            outputArea.append("\n");
+                        }
+                    }
+                }
             }
+            outputArea.setText("");
         }
     }
 
