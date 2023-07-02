@@ -37,11 +37,16 @@ public class Frame{
 
         firstTextField.setMaximumSize(new Dimension(200,50));
 
+
         Dimension size = new Dimension(95, 30);
 
         JButton loadButton = new JButton("load");
         loadButton.setMaximumSize(size);
         loadButton.addActionListener(new LoadButtonHandler());
+
+        JButton searchButton = new JButton("search");
+        searchButton.setMaximumSize(size);
+        searchButton.addActionListener(new SearchButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
@@ -69,6 +74,8 @@ public class Frame{
         panel1.add(loadButton);
         panel1.add(firstTextField);
         panel1.add(box1);
+        panel1.add(Box.createHorizontalGlue());
+        panel1.add(searchButton);
         //panel with spoiler panel
         JPanel panel2=new JPanel();
         BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
@@ -142,6 +149,7 @@ public class Frame{
         panel3.setLayout(cBoxLayout);
 
         panel3.add(Box.createRigidArea(new Dimension(0,5)));
+
 
         frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
         frame.getContentPane().add(panel1);
