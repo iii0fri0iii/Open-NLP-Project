@@ -221,6 +221,10 @@ public class Frame{
 
         Design.applyTextFieldStyle(firstTextField);
         Design.applyPanelStyle(panelSpoiler);
+
+        Design.applyPanelStyle(panel1);
+        Design.applyPanelStyle(panel2);
+
         Design.applyButtonStyle(loadButton);
         Design.applyButtonStyle(searchButton);
         Design.applyRadioButtonStyle(lemma);

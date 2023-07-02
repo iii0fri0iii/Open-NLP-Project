@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import javax.swing.plaf.ButtonUI;
+import javax.swing.plaf.InternalFrameUI;
 import javax.swing.plaf.PanelUI;
 import java.awt.*;
 
@@ -22,10 +23,9 @@ public class Design {
 
     public static void applyDesign(JFrame frame) {
         frame.setSize(1000, 600);
-        frame.setBackground(Color.WHITE);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.weightx = 1.0;
+
+
 
     }
 
@@ -76,7 +76,8 @@ class CustomPanelUI extends PanelUI {
         g2d.dispose();
     }
 }
-/**class CustomButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
+
+class CustomFrameUI extends InternalFrameUI {
     @Override
     public void paint(Graphics g, JComponent c) {
         Graphics2D g2d = (Graphics2D) g.create();
@@ -96,5 +97,5 @@ class CustomPanelUI extends PanelUI {
 
         g2d.dispose();
     }
-}*/
+}
 
