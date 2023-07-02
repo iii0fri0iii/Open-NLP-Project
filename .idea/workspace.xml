@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="нормальная рабочая версия">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="нормальная рабочая версия2">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_10_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_10_37__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_11_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_11_04__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_11_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_07_2023_11_36__Changes_.xml" afterDir="false" />
@@ -113,7 +112,7 @@
       <workItem from="1687506904065" duration="993000" />
       <workItem from="1687944654976" duration="376000" />
       <workItem from="1687968192552" duration="85000" />
-      <workItem from="1688287931605" duration="9047000" />
+      <workItem from="1688287931605" duration="11251000" />
     </task>
     <task id="LOCAL-00001" summary="обновляю">
       <created>1687084851965</created>
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688296307427</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="нормальная рабочая версия2">
+      <created>1688297177962</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688297177963</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +227,18 @@
     <MESSAGE value="добавил лист с POS" />
     <MESSAGE value="лист с ПОС теперь работает" />
     <MESSAGE value="нормальная рабочая версия" />
-    <option name="LAST_COMMIT_MESSAGE" value="нормальная рабочая версия" />
+    <MESSAGE value="нормальная рабочая версия2" />
+    <option name="LAST_COMMIT_MESSAGE" value="нормальная рабочая версия2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Frame.java</url>
+          <line>355</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -101,8 +101,8 @@ public class Frame{
         panel2.add(panelSpoiler);
 
         model.addElement("CC Coordinating conjunction");
-                model.addElement("CD Cardinal number");
-                model.addElement("DT Determiner");
+        model.addElement("CD Cardinal number");
+        model.addElement("DT Determiner");
                 model.addElement("EX Existential there");
                 model.addElement("FW Foreign word");
                 model.addElement("IN Preposition or subordinating conjunction");
@@ -136,7 +136,9 @@ public class Frame{
                 model.addElement("WP Whpronoun");
                 model.addElement("WP$ Possessive whpronoun");
                 model.addElement("WRB Whadverb");
-                posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        posListString= Arrays.asList(Arrays.toString(model.toArray()));
+        posListStringInitial=posListString;
+                posList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         posList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
         posList.addMouseListener(new PosListListener());
@@ -309,10 +311,15 @@ public class Frame{
     private class PosListListener extends MouseAdapter {
 
         public void mouseClicked(MouseEvent e) {
+
             if (e.getClickCount() == 1) {
-                int index = posList.locationToIndex(e.getPoint());
-                String item = (String) model.getElementAt(index);
-                posListSelected.add(item);
+                posListSelected=new ArrayList<>();
+                int[] indecies= posList.getSelectedIndices();
+                for (int i:indecies){
+                    String item= (String) model.getElementAt(i);
+                    posListSelected.add(item.substring(0,item.indexOf(" ")));
+                }
+
 
             }
         }
@@ -329,7 +336,7 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            List<String> recreatedPosList = (List<String>) posList.getModel();
+            List<String> recreatedPosList=new ArrayList<>();
             String s = firstTextField.getText();
             outputArea.setText("");
             if (searchBy.equals("Word")){
@@ -344,17 +351,20 @@ public class Frame{
                         }
                     }
                 }
+                model.clear();
                 for (String element: recreatedPosList
                      ) {
                     for (String el: posListStringInitial
                          ) {
-                        if (el.startsWith(element)){
+                        if (el.startsWith(element.toUpperCase())){
                             posListString.add(el);
+                            model.addElement(el);
+
                         }
                     }
                 }
+                //posList=new JList(model);
 
-                posListSelected=null;
             } else if (searchBy.equals("Lemma")) {
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
