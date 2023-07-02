@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="af30a821-50de-4f9a-8f0f-139ee4524b37" name="Changes" comment="upload">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design.java" afterDir="false" />
-=======
-    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="equals ignore case">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> origin/main
+    <list default="true" id="741280e3-4f7c-4363-bbb0-1b7745f26dca" name="Changes" comment="upd">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,29 +18,17 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectId" id="2RNMQFSuSpLGjLUwK6rDIRsxX6Z" />
-=======
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2RNHFbAW2TzpcUiKcFvSiKIX3xJ" />
->>>>>>> origin/main
+  <component name="ProjectId" id="2RNQMFDyTIvA2zgb5Wru8OyVi0i" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Katarina/group2/Open-NLP-Project",
+    "last_opened_file_path": "C:/Users/Nutzer/Java2/Open-NLP-Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,235 +36,48 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-=======
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/iii0f/Open-NLP-Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\iii0f\Open-NLP-Project" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\iii0f\Open-NLP-Project" />
-      <recent name="C:\Users\iii0f\Open-NLP-Project\src" />
-    </key>
-  </component>
->>>>>>> origin/main
   <component name="RunManager">
-    <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Frame" />
-      <module name="CorpusBuilder" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
-<<<<<<< HEAD
-      <module name="main" />
-=======
->>>>>>> origin/main
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-<<<<<<< HEAD
-      <module name="main" />
-=======
->>>>>>> origin/main
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Frame" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="af30a821-50de-4f9a-8f0f-139ee4524b37" name="Changes" comment="" />
-      <created>1687086067386</created>
+      <changelist id="741280e3-4f7c-4363-bbb0-1b7745f26dca" name="Changes" comment="" />
+      <created>1687088012864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1687086067386</updated>
-      <workItem from="1687086068349" duration="3377000" />
-      <workItem from="1687185253670" duration="412000" />
-      <workItem from="1687971959524" duration="208000" />
-      <workItem from="1688060654576" duration="155000" />
-      <workItem from="1688285774061" duration="8379000" />
+      <updated>1687088012864</updated>
+      <workItem from="1687088014037" duration="36000" />
+      <workItem from="1687088094044" duration="63000" />
+      <workItem from="1687088167336" duration="1327000" />
+      <workItem from="1687507662822" duration="684000" />
+      <workItem from="1688287069214" duration="6070000" />
     </task>
-    <task id="LOCAL-00001" summary="upload">
-      <created>1687086420051</created>
+    <task id="LOCAL-00001" summary="upd">
+      <created>1688288573796</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1687086420051</updated>
+      <updated>1688288573796</updated>
     </task>
-    <task id="LOCAL-00002" summary="upload">
-      <created>1688287028092</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1688287028092</updated>
-    </task>
-    <task id="LOCAL-00003" summary="upload">
-      <created>1688288462734</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1688288462734</updated>
-    </task>
-    <task id="LOCAL-00004" summary="upload">
-      <created>1688290388047</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1688290388047</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
-=======
-      <changelist id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="" />
-      <created>1687083521233</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1687083521233</updated>
-      <workItem from="1687083522497" duration="6211000" />
-      <workItem from="1687093416339" duration="65000" />
-      <workItem from="1687109553754" duration="4488000" />
-      <workItem from="1687187765900" duration="2074000" />
-      <workItem from="1687280270052" duration="264000" />
-      <workItem from="1687436751658" duration="70000" />
-      <workItem from="1687506904065" duration="993000" />
-      <workItem from="1687944654976" duration="376000" />
-      <workItem from="1687968192552" duration="85000" />
-      <workItem from="1688287931605" duration="5411000" />
-    </task>
-    <task id="LOCAL-00001" summary="обновляю">
-      <created>1687084851965</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1687084851965</updated>
-    </task>
-    <task id="LOCAL-00002" summary="обновляю">
-      <created>1687085134980</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1687085134980</updated>
-    </task>
-    <task id="LOCAL-00003" summary="спойлер добавил">
-      <created>1687087015902</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1687087015903</updated>
-    </task>
-    <task id="LOCAL-00004" summary="обновлено всё.">
-      <created>1687089412401</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1687089412401</updated>
-    </task>
-    <task id="LOCAL-00005" summary="добавил спиннер(neighbours) и слайдер(displayed results)">
-      <created>1687113969758</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1687113969758</updated>
-    </task>
-    <task id="LOCAL-00006" summary="просто удалил две строчки">
-      <created>1687189256449</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1687189256449</updated>
-    </task>
-    <task id="LOCAL-00007" summary="добавил лист с POS">
-      <created>1688289918476</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1688289918476</updated>
-    </task>
-    <task id="LOCAL-00008" summary="лист с ПОС теперь работает">
-      <created>1688291156608</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1688291156608</updated>
-    </task>
-    <task id="LOCAL-00009" summary="лист с ПОС теперь работает">
-      <created>1688291223743</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1688291223743</updated>
-    </task>
-    <task id="LOCAL-00010" summary="лист с ПОС теперь работает">
-      <created>1688292864062</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1688292864062</updated>
-    </task>
-    <task id="LOCAL-00011" summary="update">
-      <created>1688293652045</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1688293652045</updated>
-    </task>
-    <task id="LOCAL-00012" summary="equals ignore case">
-      <created>1688293940317</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1688293940317</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
->>>>>>> origin/main
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-<<<<<<< HEAD
-    <MESSAGE value="upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload" />
-=======
-    <MESSAGE value="обновляю" />
-    <MESSAGE value="спойлер добавил" />
-    <MESSAGE value="обновлено всё." />
-    <MESSAGE value="добавил спиннер(neighbours) и слайдер(displayed results)" />
-    <MESSAGE value="просто удалил две строчки" />
-    <MESSAGE value="добавил лист с POS" />
-    <MESSAGE value="лист с ПОС теперь работает" />
-    <MESSAGE value="update" />
-    <MESSAGE value="equals ignore case" />
-    <option name="LAST_COMMIT_MESSAGE" value="equals ignore case" />
->>>>>>> origin/main
+    <MESSAGE value="upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd" />
   </component>
 </project>
