@@ -177,6 +177,7 @@ public class Frame{
         outputArea.setEditable(false);
 
         frame.add(outputArea);
+        outputArea.setVisible(true);
 
 
         Design.applyDesign(frame);
@@ -280,17 +281,18 @@ public class Frame{
         }
     }
 
-
     private class SearchButtonHandler implements ActionListener {
-        String s = firstTextField.getText();
         public void actionPerformed(ActionEvent e) {
+            String s = firstTextField.getText();
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equals(s)){
-                            System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
+                            //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
                             //src.get(i).get(k).get(1) -- POS tag of the word
-                            System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
+                            //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
+                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
+                            outputArea.append("\n");
                         }
                     }
                 }
@@ -329,12 +331,12 @@ public class Frame{
         }
 
         if (index < sentenceList.size() - numNeighbours - 1) {
-            contextWords.addAll(sentenceArrayList.subList(index + 1, index + numNeighbours + 1));
+            contextWords.addAll(sentenceArrayList.subList(index, index + numNeighbours + 1));
         } else {
-            contextWords.addAll(sentenceArrayList.subList(index + 1, sentenceList.size()));
+            contextWords.addAll(sentenceArrayList.subList(index, sentenceList.size()));
         }
 
-        return String.join(", ", contextWords);
+        return String.join(" ", contextWords);
     }
 
     class CheckboxListRenderer extends JCheckBox implements
