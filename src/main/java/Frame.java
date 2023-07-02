@@ -263,28 +263,13 @@ public class Frame{
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(2).equals(s)){
-                            System.out.println(src.get(i)); //this should be fixed in the future
+                        if (src.get(i).get(k).get(0).equals(s)){
+                            System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
+                            //src.get(i).get(k).get(1) -- POS tag of the word
+                            System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
                         }
                     }
                 }
-                //**public static ArrayList<String> getContextWords(ArrayList<String> sentence, int index) {
-                //        ArrayList<String> contextWords = new ArrayList<>();
-                //
-                //        if (index >= 2) {
-                //            contextWords.addAll(sentence.subList(index - 2, index));
-                //        } else {
-                //            contextWords.addAll(sentence.subList(0, index));
-                //        }
-                //
-                //        if (index < sentence.size() - 3) {
-                //            contextWords.addAll(sentence.subList(index + 1, index + 4));
-                //        } else {
-                //            contextWords.addAll(sentence.subList(index + 1, sentence.size()));
-                //        }
-                //
-                //        return contextWords;
-                //    }*/
             } else if (searchBy.equals("Lemma")) {
 
 
@@ -295,6 +280,38 @@ public class Frame{
         }
     }
 
+
+    /**
+     * Helper method that gets a list from CorpusBuilder, index of the word and the number of neighbours
+     * @param sentenceList
+     * @param index
+     * @param numNeighbours
+     * @return a string with word and his neighbours
+     */
+    private static String getContextWords (List<List<String>> sentenceList, int index, int numNeighbours){
+        ArrayList<String> contextWords = new ArrayList<>();
+        ArrayList<String> sentenceArrayList = new ArrayList<>();
+
+        for (List<String> list : sentenceList) {
+            if (!list.isEmpty()) {
+                sentenceArrayList.add(list.get(0));
+            }
+        }
+
+        if (index >= numNeighbours) {
+            contextWords.addAll(sentenceArrayList.subList((index - numNeighbours), index));
+        } else {
+            contextWords.addAll(sentenceArrayList.subList(0, index));
+        }
+
+        if (index < sentenceList.size() - numNeighbours - 1) {
+            contextWords.addAll(sentenceArrayList.subList(index + 1, index + numNeighbours + 1));
+        } else {
+            contextWords.addAll(sentenceArrayList.subList(index + 1, sentenceList.size()));
+        }
+
+        return String.join(", ", contextWords);
+    }
 
     public static void main ( String[] args )
     {
