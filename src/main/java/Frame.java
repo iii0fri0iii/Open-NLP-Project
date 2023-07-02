@@ -21,8 +21,8 @@ public class Frame{
 
     private DefaultListModel model = new DefaultListModel();
     private JList posList = new JList(model);
-    List<String> posListStringInitial = null;
-    List<String> posListString = null;
+    List<Object> posListStringInitial = null;
+    List<Object> posListString = null;
     List<String> posListSelected = null;
 
     HashMap<String, Integer> words = null;
@@ -137,7 +137,7 @@ public class Frame{
                 model.addElement("WP Whpronoun");
                 model.addElement("WP$ Possessive whpronoun");
                 model.addElement("WRB Whadverb");
-        posListString= Arrays.asList(Arrays.toString(model.toArray()));
+        posListString= Arrays.asList(model.toArray());
         posListStringInitial=posListString;
                 posList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         posList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
@@ -359,16 +359,15 @@ public class Frame{
                 model.clear();
                 for (String element: recreatedPosList
                      ) {
-                    for (String el: posListStringInitial
+                    for (Object item: posListStringInitial
                          ) {
-                        if (el.startsWith(element.toUpperCase())){
-                            posListString.add(el);
-                            model.addElement(el);
-
+                        String el = (String) item;
+                        if (el.substring(0, el.indexOf(" ")).equalsIgnoreCase(element)){
+                            model.addElement(item);
                         }
                     }
                 }
-                //posList=new JList(model);
+                posList=new JList(model);
 
             } else if (searchBy.equals("Lemma")) {
                 for (int i=0;i<src.size();i++){   //iteration by sentences
