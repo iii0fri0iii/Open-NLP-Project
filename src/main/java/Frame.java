@@ -5,10 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Scanner;
 
 public class Frame{
     private JFrame frame;
@@ -59,6 +57,11 @@ public class Frame{
                     new CheckboxListItem("WP$ Possessive whpronoun"),
                     new CheckboxListItem("WRB Whadverb"),
             });
+    List<String> posListStringInitial = null;
+    List<String> posListString = null;
+    List<String> posListSelected = null;
+
+    HashMap<String, Integer> words = null;
     private List<List<List<String>>> src;
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
@@ -132,7 +135,11 @@ public class Frame{
 
         panel2.add(panelSpoiler);
 
-
+        for (CheckboxListItem item: (List<CheckboxListItem>)posList.getModel()
+             ) {
+            posListStringInitial.add(item.toString());
+            posListString.add(item.toString());
+        }
 
         posList.setCellRenderer(new CheckboxListRenderer());
         posList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -310,12 +317,14 @@ public class Frame{
             // Get index of item clicked
 
             int index = list.locationToIndex(e.getPoint());
+            String element = list.getModel().getElementAt(index).toString();
             CheckboxListItem item = (CheckboxListItem) list.getModel()
                     .getElementAt(index);
 
             // Toggle selected state
 
             item.setSelected(!item.isSelected());
+            posListSelected.add(element);
 
             // Repaint cell
 
@@ -333,7 +342,7 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            ListModel<CheckboxListItem> recreatedPosList = posList.getModel();
+            List<String> recreatedPosList = (List<String>) posList.getModel();
             String s = firstTextField.getText();
             outputArea.setText("");
             if (searchBy.equals("Word")){
@@ -341,14 +350,25 @@ public class Frame{
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equalsIgnoreCase(s)){
                             //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
-                            src.get(i).get(k).get(1);
-
+                            recreatedPosList.add(src.get(i).get(k).get(1));
                             //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
                         }
                     }
                 }
+                posList=new JList<CheckboxListItem>(new CheckboxListItem[]{});
+                for (String element: recreatedPosList
+                     ) {
+                    for (String el: posListStringInitial
+                         ) {
+                        if (el.startsWith(element)){
+                            posListString.add(el);
+                        }
+                    }
+                }
+
+                posListSelected=null;
             } else if (searchBy.equals("Lemma")) {
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
