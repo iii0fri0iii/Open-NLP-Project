@@ -163,8 +163,21 @@ public class Frame{
 
         // Create the JTextArea for displaying the output
         outputArea = new JTextArea();
-        outputArea.setEditable(false); // Make it read-only
+        outputArea.setEditable(false);
+
         frame.add(outputArea);
+
+
+        Design.applyDesign(frame);
+
+
+        Design.applyTextFieldStyle(firstTextField);
+        Design.applyButtonStyle(loadButton);
+        Design.applyButtonStyle(searchButton);
+        Design.applyRadioButtonStyle(lemma);
+        Design.applyRadioButtonStyle(pos);
+        Design.applyRadioButtonStyle(word);
+
 
     }
     public class SpoilerButtonHandler implements ActionListener {
