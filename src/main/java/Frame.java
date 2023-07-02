@@ -338,7 +338,7 @@ public class Frame{
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(0).equals(s)){
+                        if (src.get(i).get(k).get(0).equalsIgnoreCase(s)){
                             //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
                             src.get(i).get(k).get(1);
 
@@ -351,7 +351,7 @@ public class Frame{
             } else if (searchBy.equals("Lemma")) {
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(2).equals(s)){
+                        if (src.get(i).get(k).get(2).equalsIgnoreCase(s)){
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
                         }
@@ -360,14 +360,14 @@ public class Frame{
             } else if (searchBy.equals("POS")) {
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(1).equals(s)){
+                        if (src.get(i).get(k).get(1).equalsIgnoreCase(s)){
                             outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
                             outputArea.append("\n");
                         }
                     }
                 }
             }
-            outputArea.setText("");
+            //outputArea.setText("");
         }
     }
 
