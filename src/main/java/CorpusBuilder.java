@@ -1,4 +1,4 @@
-
+/**Group 3 Members: Ramil Fatkiev, Ekaterina Nikitina, Oleksii Ariasov, Ekaterina Akhmetshina*/
 import opennlp.tools.lemmatizer.LemmatizerME;
 import opennlp.tools.lemmatizer.LemmatizerModel;
 import opennlp.tools.postag.POSModel;

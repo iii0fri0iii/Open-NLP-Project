@@ -252,6 +252,23 @@ public class Frame{
                         }
                     }
                 }
+                //**public static ArrayList<String> getContextWords(ArrayList<String> sentence, int index) {
+                //        ArrayList<String> contextWords = new ArrayList<>();
+                //
+                //        if (index >= 2) {
+                //            contextWords.addAll(sentence.subList(index - 2, index));
+                //        } else {
+                //            contextWords.addAll(sentence.subList(0, index));
+                //        }
+                //
+                //        if (index < sentence.size() - 3) {
+                //            contextWords.addAll(sentence.subList(index + 1, index + 4));
+                //        } else {
+                //            contextWords.addAll(sentence.subList(index + 1, sentence.size()));
+                //        }
+                //
+                //        return contextWords;
+                //    }*/
             } else if (searchBy.equals("Lemma")) {
 
 
