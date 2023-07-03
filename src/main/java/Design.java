@@ -11,20 +11,20 @@ import java.awt.image.BufferedImage;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.InternalFrameUI;
 import javax.swing.plaf.PanelUI;
+import javax.swing.text.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Design {
     private Color color1 = Color.decode("#0099F7");
     private Color color2 = Color.decode("#F11712");
 
-    public Design(){
+    public Design() {
         super();
     }
 
     public static void applyDesign(JFrame frame) {
         frame.setSize(1000, 600);
-
-
 
 
     }
@@ -45,6 +45,7 @@ public class Design {
         //button.setForeground(Color.BLUE); // Text color is set to blue
     }
 
+
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
         // Apply styling to the radio button
     }
@@ -54,6 +55,29 @@ public class Design {
         panel.setUI(new CustomPanelUI());
     }
 
+    public static void textOutputStyle(String string1, String string2, String string3, JTextPane outputArea) {
+        outputArea.setFont(new Font("Arial", Font.PLAIN, 14));
+        StyledDocument doc = outputArea.getStyledDocument();
+
+        outputArea.setFont(new Font("Arial", Font.PLAIN, 14)); // Set default font size and style
+        Style defaultStyle = StyleContext.getDefaultStyleContext().getStyle(StyleContext.DEFAULT_STYLE);
+        Style blackStyle = doc.addStyle("black", defaultStyle);
+        StyleConstants.setForeground(blackStyle, Color.BLACK);
+        Style redStyle = doc.addStyle("pink", defaultStyle);
+        StyleConstants.setForeground(redStyle, Color.RED);
+        StyleConstants.setFontSize(redStyle, 15);
+        StyleConstants.setItalic(redStyle, true);
+        StyleConstants.setBold(redStyle, true);
+
+        try {
+            doc.insertString(doc.getLength(), string1 + " ", blackStyle);
+            doc.insertString(doc.getLength(), string2 + " ", redStyle);
+            doc.insertString(doc.getLength(), string3 + "\n", blackStyle);
+        } catch (BadLocationException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 
 
@@ -98,4 +122,3 @@ class CustomFrameUI extends InternalFrameUI {
         g2d.dispose();
     }
 }
-

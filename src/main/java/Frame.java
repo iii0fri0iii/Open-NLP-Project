@@ -15,7 +15,7 @@ public class Frame{
     private JPanel panelNeighbours;
     private  JPanel panelDisplayedResults;
 
-    private JTextArea outputArea;
+    private JTextPane outputArea;
 
     private String searchBy;
 
@@ -209,12 +209,11 @@ public class Frame{
 
 
         // Create the JTextArea for displaying the output
-        outputArea = new JTextArea();
+        outputArea = new JTextPane();
         outputArea.setEditable(false);
 
         frame.add(outputArea);
         outputArea.setVisible(true);
-
 
         Design.applyDesign(frame);
 
@@ -348,11 +347,13 @@ public class Frame{
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equalsIgnoreCase(s)){
-                            //System.out.println(src.get(i)); //prints a list of tokens, lemmas and pos tags
                             recreatedPosList.add(src.get(i).get(k).get(1));
-                            //System.out.println(getContextWords(src.get(i), k, numberOfNeighbours)); //prints final sentences with neighbours
-                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
-                            outputArea.append("\n");
+
+                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours)) + " ";
+                            String string2 = outputArrayList.get(numberOfNeighbours);
+                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
+                            Design.textOutputStyle(string1, string2, string3, outputArea);
                         }
                     }
                 }
@@ -373,8 +374,11 @@ public class Frame{
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(2).equalsIgnoreCase(s)){
-                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
-                            outputArea.append("\n");
+                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
+                            String string2 = outputArrayList.get(numberOfNeighbours);
+                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
+                            Design.textOutputStyle(string1, string2, string3, outputArea);
                         }
                     }
                 }
@@ -382,8 +386,11 @@ public class Frame{
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(1).equalsIgnoreCase(s)){
-                            outputArea.append(getContextWords(src.get(i), k, numberOfNeighbours));
-                            outputArea.append("\n");
+                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours)) + " ";
+                            String string2 = outputArrayList.get(numberOfNeighbours);
+                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
+                            Design.textOutputStyle(string1, string2, string3, outputArea);
                         }
                     }
                 }
@@ -399,7 +406,7 @@ public class Frame{
      * @param numNeighbours
      * @return a string with word and his neighbours
      */
-    private static String getContextWords (List<List<String>> sentenceList, int index, int numNeighbours){
+    private static ArrayList<String> getContextWords (List<List<String>> sentenceList, int index, int numNeighbours){
         ArrayList<String> contextWords = new ArrayList<>();
         ArrayList<String> sentenceArrayList = new ArrayList<>();
 
@@ -421,7 +428,7 @@ public class Frame{
             contextWords.addAll(sentenceArrayList.subList(index, sentenceList.size()));
         }
 
-        return String.join(" ", contextWords);
+        return contextWords;
     }
 
 
