@@ -350,7 +350,7 @@ public class Frame{
                             recreatedPosList.add(src.get(i).get(k).get(1));
 
                             ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours)) + " ";
+                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
                             String string2 = outputArrayList.get(numberOfNeighbours);
                             String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
                             Design.textOutputStyle(string1, string2, string3, outputArea);
@@ -387,7 +387,7 @@ public class Frame{
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(1).equalsIgnoreCase(s)){
                             ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours)) + " ";
+                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
                             String string2 = outputArrayList.get(numberOfNeighbours);
                             String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
                             Design.textOutputStyle(string1, string2, string3, outputArea);
