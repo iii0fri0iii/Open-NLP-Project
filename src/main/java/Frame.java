@@ -180,10 +180,10 @@ public class Frame{
         displayedResults.setMaximumSize(new Dimension(300,30));
 
         JSlider slider = new JSlider(JSlider.HORIZONTAL,
-                1, 50, numberOfDisplayedResults);
+                0, 50, numberOfDisplayedResults);
         slider.setMaximumSize(new Dimension(300,100));
         slider.setMajorTickSpacing(10);
-        slider.setMinorTickSpacing(1);
+        slider.setMinorTickSpacing(0);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.addChangeListener(new sliderListener());
@@ -344,17 +344,14 @@ public class Frame{
             List<String> recreatedPosList=new ArrayList<>();
             String s = firstTextField.getText();
             outputArea.setText("");
+            ArrayList<ArrayList> results = new ArrayList<>();
             if (searchBy.equals("Word")){
                 for (int i=0;i<src.size();i++){   //iteration by sentences
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(0).equalsIgnoreCase(s)){
                             recreatedPosList.add(src.get(i).get(k).get(1));
-
                             ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
-                            String string2 = outputArrayList.get(numberOfNeighbours);
-                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
-                            Design.textOutputStyle(string1, string2, string3, outputArea);
+                            results.add(outputArrayList);
                         }
                     }
                 }
@@ -376,10 +373,7 @@ public class Frame{
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(2).equalsIgnoreCase(s)){
                             ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
-                            String string2 = outputArrayList.get(numberOfNeighbours);
-                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
-                            Design.textOutputStyle(string1, string2, string3, outputArea);
+                            results.add(outputArrayList);
                         }
                     }
                 }
@@ -388,13 +382,18 @@ public class Frame{
                     for (int k=0;k<src.get(i).size();k++){   //iteration by words
                         if (src.get(i).get(k).get(1).equalsIgnoreCase(s)){
                             ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            String string1 = String.join(" ", outputArrayList.subList(0, numberOfNeighbours));
-                            String string2 = outputArrayList.get(numberOfNeighbours);
-                            String string3 = String.join(" ", outputArrayList.subList(numberOfNeighbours + 1,outputArrayList.size()));
-                            Design.textOutputStyle(string1, string2, string3, outputArea);
+                            results.add(outputArrayList);
                         }
                     }
                 }
+            }
+
+            //displaying the correct amount of results
+            int i = 0;
+            while ((i <= numberOfDisplayedResults)&&(i <= results.size())){
+                ArrayList<String> outputArrayList = results.get(i);
+                Design.textOutputStyle(outputArrayList.get(0), outputArrayList.get(1), outputArrayList.get(2), outputArea);
+                i++;
             }
         }
     }
@@ -408,8 +407,11 @@ public class Frame{
      * @return a string with word and his neighbours
      */
     private static ArrayList<String> getContextWords (List<List<String>> sentenceList, int index, int numNeighbours){
-        ArrayList<String> contextWords = new ArrayList<>();
         ArrayList<String> sentenceArrayList = new ArrayList<>();
+        String string1;
+        String string2;
+        String string3;
+
 
         for (List<String> list : sentenceList) {
             if (!list.isEmpty()) {
@@ -418,18 +420,20 @@ public class Frame{
         }
 
         if (index >= numNeighbours) {
-            contextWords.addAll(sentenceArrayList.subList((index - numNeighbours), index));
+            string1 = String.join(" ", sentenceArrayList.subList((index - numNeighbours), index));
         } else {
-            contextWords.addAll(sentenceArrayList.subList(0, index));
+            string1 = String.join(" ", sentenceArrayList.subList(0, index));
         }
 
         if (index < sentenceList.size() - numNeighbours - 1) {
-            contextWords.addAll(sentenceArrayList.subList(index, index + numNeighbours + 1));
+            string3 = String.join(" ", sentenceArrayList.subList(index + 1, index + numNeighbours + 1));
         } else {
-            contextWords.addAll(sentenceArrayList.subList(index, sentenceList.size()));
+            string3 = String.join(" ", sentenceArrayList.subList(index + 1, sentenceList.size()));
         }
 
-        return contextWords;
+        string2 = sentenceArrayList.get(index);
+
+        return new ArrayList<String>(Arrays.asList(string1, string2, string3));
     }
 
 
