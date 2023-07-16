@@ -55,6 +55,35 @@ public class Design {
             }
         });
     }
+    public static void spoilerButtonStyler(JButton button){
+        button.setUI(new BasicButtonUI() {
+            @Override
+            public void paint(Graphics g, JComponent c) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                JButton button = (JButton) c;
+                if (button.getModel().isPressed()) {
+                    g2d.setColor(Color.decode("#F11712"));
+                } else {
+                    g2d.setColor(Color.LIGHT_GRAY);
+                }
+
+                g2d.fillRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 20, 20);
+
+                g2d.setColor(Color.black);
+                FontMetrics fm = g2d.getFontMetrics();
+                Rectangle2D r = fm.getStringBounds(button.getText(), g2d);
+
+                int x = (c.getWidth() - (int) r.getWidth()) / 2;
+                int y = (c.getHeight() - (int) r.getHeight()) / 2 + fm.getAscent();
+
+                g2d.drawString(button.getText(), x, y);
+                g2d.dispose();
+
+            }
+        });
+    }
 
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
         // Apply styling to the radio button
