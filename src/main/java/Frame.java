@@ -5,8 +5,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+
+
 
 public class Frame{
     private JFrame frame;
@@ -293,6 +299,25 @@ public class Frame{
                 String link = JOptionPane.showInputDialog(frame, "Enter the link:");
 
                 if (link != null && !link.isEmpty()) {
+                    try {
+                        // Fetch the web page content using Jsoup
+                        Document doc = Jsoup.connect(link).get();
+                        String htmlContent = doc.html();
+
+                        // Process the web page content as needed
+                        CorpusBuilder corp = new CorpusBuilder(htmlContent);
+                        corp.getSentences();
+                        corp.getTokens();
+                        corp.getPosTags();
+                        corp.getLemmas();
+
+                        src = corp.getWordPosLemma();
+
+                        // Continue with the rest of your code
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(frame, "Error occurred while fetching the web page");
+                        ex.printStackTrace();
+                    }
 
                 }
             }
@@ -467,4 +492,5 @@ public class Frame{
     {
         new Frame();
     }
+
 }
