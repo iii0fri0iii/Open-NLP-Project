@@ -216,21 +216,16 @@ public class Frame{
         outputArea.setVisible(true);
 
         Design.applyDesign(frame);
-
-
         Design.applyTextFieldStyle(firstTextField);
         Design.applyPanelStyle(panelSpoiler);
-
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
-
         Design.applyButtonStyle(loadButton);
         Design.applyButtonStyle(searchButton);
         Design.applyRadioButtonStyle(lemma);
         Design.applyRadioButtonStyle(pos);
         Design.applyRadioButtonStyle(word);
         Design.applyDesign(frame);
-
 
     }
     public class SpoilerButtonHandler implements ActionListener {
