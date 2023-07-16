@@ -6,6 +6,8 @@ import javax.swing.plaf.PanelUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.text.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 
@@ -252,6 +254,5 @@ class ImagePanel extends JPanel {
         g2d.dispose();
     }
 }*/
-
 
 
