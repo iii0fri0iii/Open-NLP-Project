@@ -417,7 +417,9 @@ public class Frame{
                         for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
                             if (src.get(i).get(k).get(2).equalsIgnoreCase(s)) {
                                 String pos = src.get(i).get(k).get(1);
-                                recreatedPosList.add(pos);
+                                if (!recreatedPosList.contains(pos)) {
+                                    recreatedPosList.add(pos);
+                                }
                                 if (!posListSelected.isEmpty()) {
                                     if (containsPos(pos)) {
                                 ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
