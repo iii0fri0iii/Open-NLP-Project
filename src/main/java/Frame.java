@@ -29,6 +29,7 @@ public class Frame{
     private List<List<List<String>>> src;
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
+    private boolean hasFile = false;
 
 
     Frame(){
@@ -261,6 +262,7 @@ public class Frame{
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
+                    hasFile = true;
 
                     String text="";
                     Scanner inputStream;
@@ -362,55 +364,60 @@ public class Frame{
             String s = firstTextField.getText();
             outputArea.setText("");
             ArrayList<ArrayList> results = new ArrayList<>();
-            if (searchBy.equals("Word")){
-                for (int i=0;i<src.size();i++){   //iteration by sentences
-                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(0).equalsIgnoreCase(s)){
-                            recreatedPosList.add(src.get(i).get(k).get(1));
-                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            results.add(outputArrayList);
+            if (hasFile) {
+                if (searchBy.equals("Word")) {
+                    for (int i = 0; i < src.size(); i++) {   //iteration by sentences
+                        for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
+                            if (src.get(i).get(k).get(0).equalsIgnoreCase(s)) {
+                                recreatedPosList.add(src.get(i).get(k).get(1));
+                                ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                results.add(outputArrayList);
+                            }
                         }
                     }
-                }
-                model.clear();
-                for (String element: recreatedPosList
-                     ) {
-                    for (Object item: posListStringInitial
-                         ) {
-                        String el = (String) item;
-                        if (el.substring(0, el.indexOf(" ")).equalsIgnoreCase(element)){
-                            model.addElement(item);
+                    model.clear();
+                    for (String element : recreatedPosList
+                    ) {
+                        for (Object item : posListStringInitial
+                        ) {
+                            String el = (String) item;
+                            if (el.substring(0, el.indexOf(" ")).equalsIgnoreCase(element)) {
+                                model.addElement(item);
+                            }
                         }
                     }
-                }
-                posList=new JList(model);
+                    posList = new JList(model);
 
-            } else if (searchBy.equals("Lemma")) {
-                for (int i=0;i<src.size();i++){   //iteration by sentences
-                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(2).equalsIgnoreCase(s)){
-                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            results.add(outputArrayList);
+                } else if (searchBy.equals("Lemma")) {
+                    for (int i = 0; i < src.size(); i++) {   //iteration by sentences
+                        for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
+                            if (src.get(i).get(k).get(2).equalsIgnoreCase(s)) {
+                                ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                results.add(outputArrayList);
+                            }
+                        }
+                    }
+                } else if (searchBy.equals("POS")) {
+                    for (int i = 0; i < src.size(); i++) {   //iteration by sentences
+                        for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
+                            if (src.get(i).get(k).get(1).equalsIgnoreCase(s)) {
+                                ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                results.add(outputArrayList);
+                            }
                         }
                     }
                 }
-            } else if (searchBy.equals("POS")) {
-                for (int i=0;i<src.size();i++){   //iteration by sentences
-                    for (int k=0;k<src.get(i).size();k++){   //iteration by words
-                        if (src.get(i).get(k).get(1).equalsIgnoreCase(s)){
-                            ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                            results.add(outputArrayList);
-                        }
-                    }
+
+                //displaying the correct amount of results
+                int i = 0;
+                while ((i <= numberOfDisplayedResults) && (i <= results.size())) {
+                    ArrayList<String> outputArrayList = results.get(i);
+                    Design.textOutputStyle(outputArrayList.get(0), outputArrayList.get(1), outputArrayList.get(2), outputArea);
+                    i++;
                 }
             }
-
-            //displaying the correct amount of results
-            int i = 0;
-            while ((i <= numberOfDisplayedResults)&&(i <= results.size())){
-                ArrayList<String> outputArrayList = results.get(i);
-                Design.textOutputStyle(outputArrayList.get(0), outputArrayList.get(1), outputArrayList.get(2), outputArea);
-                i++;
+            else{
+                JOptionPane.showMessageDialog(frame, "Please select the file first.");
             }
         }
     }
