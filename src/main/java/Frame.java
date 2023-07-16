@@ -8,12 +8,12 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.List;
 
-public class Frame {
+public class Frame{
     private JFrame frame;
     private JTextField firstTextField;
     private JPanel panelSpoiler;
     private JPanel panelNeighbours;
-    private JPanel panelDisplayedResults;
+    private  JPanel panelDisplayedResults;
 
     private JTextPane outputArea;
 
@@ -27,17 +27,17 @@ public class Frame {
 
     HashMap<String, Integer> words = null;
     private List<List<List<String>>> src;
-    private int numberOfNeighbours = 2;
+    private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
 
 
-    Frame() {
-        frame = new JFrame("Test");
-        frame.setSize(1000, 600);
-        firstTextField = new JTextField(60);
+    Frame(){
+        frame=new JFrame("Test");
+        frame.setSize(1000,600);
+        firstTextField=new JTextField(60);
 
 
-        firstTextField.setMaximumSize(new Dimension(200, 50));
+        firstTextField.setMaximumSize(new Dimension(200,50));
 
 
         Dimension size = new Dimension(95, 30);
@@ -50,10 +50,6 @@ public class Frame {
         JButton searchButton = new JButton("search");
         searchButton.setMaximumSize(size);
         searchButton.addActionListener(new SearchButtonHandler());
-
-        /**ImageIcon searchIcon = new ImageIcon("searchicon.png");
-         searchButton.setIcon(searchIcon);*/
-
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
@@ -73,34 +69,34 @@ public class Frame {
         box1.add(pos);
         box1.add(word);
 
-        JPanel panel1 = new JPanel();
-        BoxLayout aBoxLayout = new BoxLayout(panel1, BoxLayout.X_AXIS);
+        JPanel panel1=new JPanel();
+        BoxLayout aBoxLayout = new BoxLayout(panel1,BoxLayout.X_AXIS);
         panel1.setLayout(aBoxLayout);
 
-        panel1.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel1.add(Box.createRigidArea(new Dimension(0,5)));
         panel1.add(loadButton);
         panel1.add(firstTextField);
         panel1.add(box1);
         panel1.add(Box.createHorizontalGlue());
         panel1.add(searchButton);
         //panel with spoiler panel
-        JPanel panel2 = new JPanel();
-        BoxLayout bBoxLayout = new BoxLayout(panel2, BoxLayout.Y_AXIS);
+        JPanel panel2=new JPanel();
+        BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
         panel2.setLayout(bBoxLayout);
 
-        panel2.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel2.add(Box.createRigidArea(new Dimension(0,5)));
 
         JButton spoilerButton = new JButton("Additional filters");
-        spoilerButton.setMaximumSize(new Dimension(frame.getWidth(), 30));
+        spoilerButton.setMaximumSize(new Dimension(frame.getWidth(),30));
         spoilerButton.addActionListener(new SpoilerButtonHandler());
         spoilerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         panel2.add(spoilerButton);
 
-        panel2.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel2.add(Box.createRigidArea(new Dimension(0,5)));
         //spoiler panel
-        panelSpoiler = new JPanel();
-        BoxLayout spoilerBoxLayout = new BoxLayout(panelSpoiler, BoxLayout.X_AXIS);
+        panelSpoiler=new JPanel();
+        BoxLayout spoilerBoxLayout = new BoxLayout(panelSpoiler,BoxLayout.X_AXIS);
         panelSpoiler.setLayout(spoilerBoxLayout);
         Design.applyPanelStyle(panelSpoiler);
 
@@ -109,58 +105,58 @@ public class Frame {
         model.addElement("CC Coordinating conjunction");
         model.addElement("CD Cardinal number");
         model.addElement("DT Determiner");
-        model.addElement("EX Existential there");
-        model.addElement("FW Foreign word");
-        model.addElement("IN Preposition or subordinating conjunction");
-        model.addElement("JJ Adjective");
-        model.addElement("JJR Adjective; comparative");
-        model.addElement("JJS Adjective; superlative");
-        model.addElement("LS List item marker");
-        model.addElement("MD Modal");
-        model.addElement("NN Noun; singular or mass");
-        model.addElement("NNS Noun; plural");
-        model.addElement("NNP Proper noun; singular");
-        model.addElement("NNPS Proper noun; plural");
-        model.addElement("PDT Predeterminer");
-        model.addElement("POS Possessive ending");
-        model.addElement("PRP Personal pronoun");
-        model.addElement("PRP$ Possessive pronoun");
-        model.addElement("RB Adverb");
-        model.addElement("RBR Adverb; comparative");
-        model.addElement("RBS Adverb; superlative");
-        model.addElement("RP Particle");
-        model.addElement("SYM Symbol");
-        model.addElement("TO to");
-        model.addElement("UH Interjection");
-        model.addElement("VB Verb, base form");
-        model.addElement("VBD Verb, past tense");
-        model.addElement("VBG Verb, gerund or present participle");
-        model.addElement("VBN Verb, past participle");
-        model.addElement("VBP Verb, non3rd person singular present");
-        model.addElement("VBZ Verb, 3rd person singular present");
-        model.addElement("WDT Whdeterminer");
-        model.addElement("WP Whpronoun");
-        model.addElement("WP$ Possessive whpronoun");
-        model.addElement("WRB Whadverb");
-        posListString = Arrays.asList(model.toArray());
-        posListStringInitial = posListString;
-        posList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                model.addElement("EX Existential there");
+                model.addElement("FW Foreign word");
+                model.addElement("IN Preposition or subordinating conjunction");
+                model.addElement("JJ Adjective");
+                model.addElement("JJR Adjective; comparative");
+                model.addElement("JJS Adjective; superlative");
+                model.addElement("LS List item marker");
+                model.addElement("MD Modal");
+                model.addElement("NN Noun; singular or mass");
+                model.addElement("NNS Noun; plural");
+                model.addElement("NNP Proper noun; singular");
+                model.addElement("NNPS Proper noun; plural");
+                model.addElement("PDT Predeterminer");
+                model.addElement("POS Possessive ending");
+                model.addElement("PRP Personal pronoun");
+                model.addElement("PRP$ Possessive pronoun");
+                model.addElement("RB Adverb");
+                model.addElement("RBR Adverb; comparative");
+                model.addElement("RBS Adverb; superlative");
+                model.addElement("RP Particle");
+                model.addElement("SYM Symbol");
+                model.addElement("TO to");
+                model.addElement("UH Interjection");
+                model.addElement("VB Verb, base form");
+                model.addElement("VBD Verb, past tense");
+                model.addElement("VBG Verb, gerund or present participle");
+                model.addElement("VBN Verb, past participle");
+                model.addElement("VBP Verb, non3rd person singular present");
+                model.addElement("VBZ Verb, 3rd person singular present");
+                model.addElement("WDT Whdeterminer");
+                model.addElement("WP Whpronoun");
+                model.addElement("WP$ Possessive whpronoun");
+                model.addElement("WRB Whadverb");
+        posListString= Arrays.asList(model.toArray());
+        posListStringInitial=posListString;
+                posList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         posList.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
         posList.addMouseListener(new PosListListener());
 
         panelSpoiler.add(new JScrollPane(posList));
 
-        panelNeighbours = new JPanel();
-        BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours, BoxLayout.Y_AXIS);
+        panelNeighbours=new JPanel();
+        BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
         panelNeighbours.setLayout(neigboursBoxLayout);
         Design.applyPanelStyle(panelNeighbours);
         panelSpoiler.add(panelNeighbours);
 
-        JLabel neighbours = new JLabel("Neighbours");
+        JLabel neighbours= new JLabel("Neighbours");
         neighbours.setMaximumSize(size);
 
-        Integer[] neighboursStrings = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Integer[] neighboursStrings = {0, 1,2,3,4,5,6,7,8,9,10};
         SpinnerListModel neighboursModel = new SpinnerListModel(neighboursStrings);
         JSpinner spinner = new JSpinner(neighboursModel);
         spinner.setMaximumSize(size);
@@ -172,20 +168,20 @@ public class Frame {
         neighbours.setAlignmentX(Component.CENTER_ALIGNMENT);
         spinner.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panelSpoiler.add(Box.createRigidArea(new Dimension(5, 0)));
+        panelSpoiler.add(Box.createRigidArea(new Dimension(5,0)));
 
-        panelDisplayedResults = new JPanel();
-        BoxLayout displayedResultsLayout = new BoxLayout(panelDisplayedResults, BoxLayout.Y_AXIS);
+        panelDisplayedResults=new JPanel();
+        BoxLayout displayedResultsLayout = new BoxLayout(panelDisplayedResults,BoxLayout.Y_AXIS);
         panelDisplayedResults.setLayout(displayedResultsLayout);
         panelSpoiler.add(panelDisplayedResults);
         Design.applyPanelStyle(panelDisplayedResults);
 
-        JLabel displayedResults = new JLabel("Amount of displayed results");
-        displayedResults.setMaximumSize(new Dimension(300, 30));
+        JLabel displayedResults= new JLabel("Amount of displayed results");
+        displayedResults.setMaximumSize(new Dimension(300,30));
 
         JSlider slider = new JSlider(JSlider.HORIZONTAL,
                 0, 50, numberOfDisplayedResults);
-        slider.setMaximumSize(new Dimension(300, 100));
+        slider.setMaximumSize(new Dimension(300,100));
         slider.setMajorTickSpacing(10);
         slider.setMinorTickSpacing(0);
         slider.setPaintTicks(true);
@@ -198,14 +194,14 @@ public class Frame {
         slider.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
-        JPanel panel3 = new JPanel();
-        BoxLayout cBoxLayout = new BoxLayout(panel3, BoxLayout.X_AXIS);
+        JPanel panel3=new JPanel();
+        BoxLayout cBoxLayout = new BoxLayout(panel3,BoxLayout.X_AXIS);
         panel3.setLayout(cBoxLayout);
 
-        panel3.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel3.add(Box.createRigidArea(new Dimension(0,5)));
 
 
-        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+        frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(),BoxLayout.Y_AXIS));
         frame.getContentPane().add(panel1);
         frame.getContentPane().add(panel2);
         frame.getContentPane().add(panel3);
@@ -226,6 +222,7 @@ public class Frame {
         Design.applyTextFieldStyle(firstTextField);
 
 
+
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);
@@ -236,12 +233,10 @@ public class Frame {
         Design.applyRadioButtonStyle(word);
         Design.applyDesign(frame);
 
-
     }
-
     public class SpoilerButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (panelSpoiler.isVisible()) {
+            if (panelSpoiler.isVisible()){
                 panelSpoiler.setVisible(false);
 
             } else {
@@ -254,58 +249,37 @@ public class Frame {
 
     public class LoadButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String[] options = {"Load File", "Load Link"};
-            int choice = JOptionPane.showOptionDialog(frame, "Choose an option", "Load", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            int result = fileChooser.showOpenDialog(frame);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
 
-            if (choice == 0) {
-                //Load File
-                JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-                int result = fileChooser.showOpenDialog(frame);
-                if (result == JFileChooser.APPROVE_OPTION) {
-                    File selectedFile = fileChooser.getSelectedFile();
+            String text="";
+            Scanner inputStream;
+            try{
+                inputStream=new Scanner(selectedFile);
 
-                    String text = "";
-                    Scanner inputStream;
-                    try {
-                        inputStream = new Scanner(selectedFile);
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(frame,"File can not be found");
+                throw new RuntimeException(ex);
+            }
+            while (inputStream.hasNextLine()){
+                text=text+inputStream.nextLine();
+            }
 
-                    } catch (FileNotFoundException ex) {
-                        JOptionPane.showMessageDialog(frame, "File can not be found");
-                        throw new RuntimeException(ex);
-                    }
-                    while (inputStream.hasNextLine()) {
-                        text = text + inputStream.nextLine();
-                    }
+            CorpusBuilder corp= new CorpusBuilder(text);
+            corp.getSentences();
+            corp.getTokens();
+            corp.getPosTags();
+            corp.getLemmas();
 
-                    CorpusBuilder corp = new CorpusBuilder(text);
-                    corp.getSentences();
-                    corp.getTokens();
-                    corp.getPosTags();
-                    corp.getLemmas();
+            src = corp.getWordPosLemma();
 
-                    src = corp.getWordPosLemma();
-
-                    inputStream.close();
-                }
-
-            }else if(choice ==1)
-
-            {
-                //Load Link
-                String link = JOptionPane.showInputDialog(frame, "Enter the link:");
-
-                if (link != null && !link.isEmpty()) {
-
-                }
+            inputStream.close();
+            }
         }
     }
-    }
-
-
-
-
-
 
     private class spinnerListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
