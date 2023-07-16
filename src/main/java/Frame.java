@@ -29,7 +29,7 @@ public class Frame{
     private JList posList = new JList(model);
     List<Object> posListStringInitial = null;
     List<Object> posListString = null;
-    List<String> posListSelected = null;
+    List<String> posListSelected = new ArrayList<>();
 
     HashMap<String, Integer> words = null;
     private List<List<List<String>>> src;
@@ -361,16 +361,16 @@ public class Frame{
 
         public void mouseClicked(MouseEvent e) {
 
-            if (e.getClickCount() == 1) {
-                posListSelected=new ArrayList<>();
-                int[] indecies= posList.getSelectedIndices();
-                for (int i:indecies){
-                    String item= (String) model.getElementAt(i);
-                    posListSelected.add(item.substring(0,item.indexOf(" ")));
-                }
-
-
+            JList list = (JList) e.getSource();
+            posListSelected=new ArrayList<>();
+            int[] indecies= list.getSelectedIndices();
+            for (int i:indecies){
+                String item= (String) model.getElementAt(i);
+                posListSelected.add(item.substring(0,item.indexOf(" ")));
             }
+
+
+
         }
 
     }
@@ -394,24 +394,21 @@ public class Frame{
                     for (int i = 0; i < src.size(); i++) {   //iteration by sentences
                         for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
                             if (src.get(i).get(k).get(0).equalsIgnoreCase(s)) {
-                                recreatedPosList.add(src.get(i).get(k).get(1));
-                                ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                                results.add(outputArrayList);
+                                String pos = src.get(i).get(k).get(1);
+                                recreatedPosList.add(pos);
+                                if (!posListSelected.isEmpty()) {
+                                    if (containsPos(pos)) {
+                                        ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                        results.add(outputArrayList);
+                                    }
+                                }else {
+                                    ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                    results.add(outputArrayList);
+                                }
                             }
                         }
                     }
-                    model.clear();
-                    for (String element : recreatedPosList
-                    ) {
-                        for (Object item : posListStringInitial
-                        ) {
-                            String el = (String) item;
-                            if (el.substring(0, el.indexOf(" ")).equalsIgnoreCase(element)) {
-                                model.addElement(item);
-                            }
-                        }
-                    }
-                    posList = new JList(model);
+                    recreatePosList(recreatedPosList);
 
                 } else if (searchBy.equals("Lemma")) {
                     for (int i = 0; i < src.size(); i++) {   //iteration by sentences
@@ -435,7 +432,7 @@ public class Frame{
 
                 //displaying the correct amount of results
                 int i = 0;
-                while ((i <= numberOfDisplayedResults) && (i <= results.size())) {
+                while ((i < numberOfDisplayedResults) && (i < results.size())) {
                     ArrayList<String> outputArrayList = results.get(i);
                     Design.textOutputStyle(outputArrayList.get(0), outputArrayList.get(1), outputArrayList.get(2), outputArea);
                     i++;
@@ -445,6 +442,32 @@ public class Frame{
                 JOptionPane.showMessageDialog(frame, "Please select the file first.");
             }
         }
+    }
+
+    public boolean containsPos(String pos){
+        for (Object item: posListSelected
+        ) {
+            String el = (String) item;
+            if (el.equalsIgnoreCase(pos)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void recreatePosList(List<String> recreatedPosList){
+        model.clear();
+        for (String element: recreatedPosList
+        ) {
+            for (Object item: posListStringInitial
+            ) {
+                String el = (String) item;
+                if (el.substring(0, el.indexOf(" ")).equalsIgnoreCase(element)){
+                    model.addElement(item);
+                }
+            }
+        }
+        posList=new JList(model);
     }
 
 
