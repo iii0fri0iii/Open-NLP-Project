@@ -249,36 +249,53 @@ public class Frame{
 
     public class LoadButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-            int result = fileChooser.showOpenDialog(frame);
-            if (result == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = fileChooser.getSelectedFile();
+            String[] options = { "Load File", "Load Link" };
 
-            String text="";
-            Scanner inputStream;
-            try{
-                inputStream=new Scanner(selectedFile);
 
-            } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(frame,"File can not be found");
-                throw new RuntimeException(ex);
-            }
-            while (inputStream.hasNextLine()){
-                text=text+inputStream.nextLine();
-            }
+            int choice = JOptionPane.showOptionDialog(frame, "Choose an option", "Load", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-            CorpusBuilder corp= new CorpusBuilder(text);
-            corp.getSentences();
-            corp.getTokens();
-            corp.getPosTags();
-            corp.getLemmas();
+            if (choice == 0) {
+                //Load File
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                int result = fileChooser.showOpenDialog(frame);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File selectedFile = fileChooser.getSelectedFile();
 
-            src = corp.getWordPosLemma();
+                    String text="";
+                    Scanner inputStream;
+                    try{
+                        inputStream=new Scanner(selectedFile);
 
-            inputStream.close();
+                    } catch (FileNotFoundException ex) {
+                        JOptionPane.showMessageDialog(frame,"File can not be found");
+                        throw new RuntimeException(ex);
+                    }
+                    while (inputStream.hasNextLine()){
+                        text=text+inputStream.nextLine();
+                    }
+
+                    CorpusBuilder corp= new CorpusBuilder(text);
+                    corp.getSentences();
+                    corp.getTokens();
+                    corp.getPosTags();
+                    corp.getLemmas();
+
+                    src = corp.getWordPosLemma();
+
+                    inputStream.close();
+                }
+
+            }else if (choice == 1) {
+                //Load Link
+                String link = JOptionPane.showInputDialog(frame, "Enter the link:");
+
+                if (link != null && !link.isEmpty()) {
+
+                }
             }
         }
+
     }
 
     private class spinnerListener implements ChangeListener {
