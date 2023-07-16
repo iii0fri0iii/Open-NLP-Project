@@ -313,7 +313,7 @@ public class Frame{
 
                         src = corp.getWordPosLemma();
 
-                        // Continue with the rest of your code
+
                     } catch (IOException ex) {
                         JOptionPane.showMessageDialog(frame, "Error occurred while fetching the web page");
                         ex.printStackTrace();
