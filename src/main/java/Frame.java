@@ -98,6 +98,7 @@ public class Frame{
         panelSpoiler=new JPanel();
         BoxLayout spoilerBoxLayout = new BoxLayout(panelSpoiler,BoxLayout.X_AXIS);
         panelSpoiler.setLayout(spoilerBoxLayout);
+        Design.applyPanelStyle(panelSpoiler);
 
         panel2.add(panelSpoiler);
 
@@ -149,6 +150,7 @@ public class Frame{
         panelNeighbours=new JPanel();
         BoxLayout neigboursBoxLayout = new BoxLayout(panelNeighbours,BoxLayout.Y_AXIS);
         panelNeighbours.setLayout(neigboursBoxLayout);
+        Design.applyPanelStyle(panelNeighbours);
         panelSpoiler.add(panelNeighbours);
 
         JLabel neighbours= new JLabel("Neighbours");
@@ -172,6 +174,7 @@ public class Frame{
         BoxLayout displayedResultsLayout = new BoxLayout(panelDisplayedResults,BoxLayout.Y_AXIS);
         panelDisplayedResults.setLayout(displayedResultsLayout);
         panelSpoiler.add(panelDisplayedResults);
+        Design.applyPanelStyle(panelDisplayedResults);
 
         JLabel displayedResults= new JLabel("Amount of displayed results");
         displayedResults.setMaximumSize(new Dimension(300,30));
@@ -217,7 +220,9 @@ public class Frame{
 
         Design.applyDesign(frame);
         Design.applyTextFieldStyle(firstTextField);
-        Design.applyPanelStyle(panelSpoiler);
+
+
+
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);

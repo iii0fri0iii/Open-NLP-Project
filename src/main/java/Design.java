@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.LabelUI;
 import javax.swing.plaf.PanelUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.text.*;
@@ -92,6 +93,14 @@ public class Design {
     public static void applyPanelStyle(JPanel panel) {
         panel.setOpaque(false);
         panel.setUI(new CustomPanelUI());
+
+        // Iterate over the components of the panel
+        for (Component component : panel.getComponents()) {
+            if (component instanceof JLabel) {
+                JLabel label = (JLabel) component;
+                label.setForeground(Color.WHITE);
+            }
+        }
     }
 
     public static void textOutputStyle(String string1, String string2, String string3, JTextPane outputArea) {
@@ -201,6 +210,7 @@ class CustomPanelUI extends PanelUI {
         g2d.dispose();
     }
 }
+
 
 class ImagePanel extends JPanel {
     private Image backgroundImage;
