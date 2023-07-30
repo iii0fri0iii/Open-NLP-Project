@@ -10,8 +10,8 @@ import java.util.*;
 import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
-
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 
 public class Frame{
@@ -56,6 +56,10 @@ public class Frame{
         loadButton.setMaximumSize(size);
         loadButton.addActionListener(new LoadButtonHandler());
 
+        JButton saveButton = new JButton("save to XML");
+        saveButton.setMaximumSize(size);
+        saveButton.addActionListener(new SaveButtonHandler());
+
 
         JButton searchButton = new JButton("search");
         searchButton.setMaximumSize(size);
@@ -92,6 +96,8 @@ public class Frame{
         panel1.add(firstTextField);
         panel1.add(box1);
         panel1.add(Box.createHorizontalGlue());
+        panel1.add(saveButton);
+        panel1.add(Box.createRigidArea(new Dimension(5,0)));
         panel1.add(searchButton);
         panel1.add(clearAllButton);
         //panel with spoiler panel
@@ -241,7 +247,9 @@ public class Frame{
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);
+        Design.applyButtonStyle(saveButton);
         Design.applyButtonStyle(searchButton);
+        Design.applyButtonStyle(clearAllButton);
         Design.spoilerButtonStyler(spoilerButton);
         Design.applyRadioButtonStyle(lemma);
         Design.applyRadioButtonStyle(pos);
@@ -319,10 +327,12 @@ public class Frame{
                     try {
                         // Fetch the web page content using Jsoup
                         Document doc = Jsoup.connect(link).get();
-                        String htmlContent = doc.html();
+                        //String htmlContent = doc.html();
+                        Elements divsDescendant = doc.select("div");
+                        String webContent=divsDescendant.text();
 
                         // Process the web page content as needed
-                        CorpusBuilder corp = new CorpusBuilder(htmlContent);
+                        CorpusBuilder corp = new CorpusBuilder(webContent);
                         corp.getSentences();
                         corp.getTokens();
                         corp.getPosTags();
@@ -361,6 +371,7 @@ public class Frame{
         }
     }
     }
+
     private class QuitButtonHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
@@ -397,6 +408,12 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
+        }
+    }
+
+    private class SaveButtonHandler implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+
         }
     }
 
