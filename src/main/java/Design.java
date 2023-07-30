@@ -14,8 +14,9 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 
 public class Design {
-    private Color color1 = Color.decode("#0099F7");
-    private Color color2 = Color.decode("#F11712");
+    public static Color color1 = new Color(115, 201, 177);
+
+
 
     public Design() {
         super();
@@ -43,14 +44,14 @@ public class Design {
 
                 JButton button = (JButton) c;
                 if (button.getModel().isPressed()) {
-                    g2d.setColor(Color.decode("#F11712"));
+                    g2d.setColor(Color.decode("#388087"));
                 } else {
-                    g2d.setColor(Color.ORANGE);
+                    g2d.setColor(Color.decode("#6FB3B8"));
                 }
 
                 g2d.fillRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 20, 20);
 
-                g2d.setColor(Color.BLUE);
+                g2d.setColor(Color.BLACK);
                 FontMetrics fm = g2d.getFontMetrics();
                 Rectangle2D r = fm.getStringBounds(button.getText(), g2d);
 
@@ -71,14 +72,14 @@ public class Design {
 
                 JButton button = (JButton) c;
                 if (button.getModel().isPressed()) {
-                    g2d.setColor(Color.decode("#F11712"));
+                    g2d.setColor(Color.decode("#388087"));
                 } else {
-                    g2d.setColor(Color.ORANGE);
+                    g2d.setColor(Color.decode("#6FB3B8"));
                 }
 
                 g2d.fillRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 20, 20);
 
-                g2d.setColor(Color.BLUE);
+                g2d.setColor(Color.BLACK);
                 FontMetrics fm = g2d.getFontMetrics();
                 Rectangle2D r = fm.getStringBounds(button.getText(), g2d);
 
@@ -94,7 +95,7 @@ public class Design {
 
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
         radioButton.setUI(new CustomRadioButtonUI());
-        radioButton.setForeground(Color.LIGHT_GRAY);
+        radioButton.setForeground(Color.decode("#F6F6F2"));
     }
 
     public static void applyPanelStyle(JPanel panel) {
@@ -119,7 +120,7 @@ public class Design {
         Style blackStyle = doc.addStyle("black", defaultStyle);
         StyleConstants.setForeground(blackStyle, Color.BLACK);
         Style redStyle = doc.addStyle("pink", defaultStyle);
-        StyleConstants.setForeground(redStyle, Color.RED);
+        StyleConstants.setForeground(redStyle, color1);
         StyleConstants.setFontSize(redStyle, 15);
         StyleConstants.setItalic(redStyle, true);
         StyleConstants.setBold(redStyle, true);
@@ -197,12 +198,12 @@ class CustomRadioButtonIcon implements Icon {
         ButtonModel model = button.getModel();
 
         // border of the icon
-        g.setColor(Color.ORANGE);
+        g.setColor(Color.decode("#6BB5DE"));
         g.drawOval(x, y, RADIUS * 2, RADIUS * 2);
 
 
         if (model.isSelected()) {
-            g.setColor(Color.BLUE);
+            g.setColor(Color.decode("#A4E0F2"));
         } else {
             g.setColor(Color.WHITE);
         }
@@ -256,8 +257,8 @@ class CustomPanelUI extends PanelUI {
         int width = c.getWidth();
         int height = c.getHeight();
 
-        Paint p = new GradientPaint(0.0f, 0.0f, Color.WHITE,
-                width, height, Color.BLACK, true);
+        Paint p = new GradientPaint(0.0f, 0.0f, Color.decode("#BADFE7"),
+                width, height, Color.decode("#BADFE7"), true);
 
         g2d.setPaint(p);
         g2d.fillRect(0, 0, width, height);
