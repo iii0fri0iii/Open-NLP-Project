@@ -3,15 +3,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import javax.xml.stream.*;
+
 
 
 public class Frame{
@@ -412,7 +412,12 @@ public class Frame{
 
     private class SaveButtonHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
-
+            try {
+                XMLSaver.wholeFileSaver(src);
+            }
+            catch (Exception ex){
+                ex.getMessage();
+            }
         }
     }
 
