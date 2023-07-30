@@ -1,3 +1,5 @@
+
+
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;
 import javax.swing.border.EmptyBorder;
@@ -28,8 +30,10 @@ public class Design {
     }
 
     public static void applyButtonStyle(JButton button) {
-        Dimension size = new Dimension(95, 30);
+        Dimension size = new Dimension(160, 30);
         button.setMaximumSize(size);
+
+        button.setUI(new CustomButtonUI());
 
         button.setUI(new BasicButtonUI() {
             @Override
@@ -89,7 +93,8 @@ public class Design {
     }
 
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
-        // Apply styling to the radio button
+        radioButton.setUI(new CustomRadioButtonUI());
+        radioButton.setForeground(Color.LIGHT_GRAY);
     }
 
     public static void applyPanelStyle(JPanel panel) {
@@ -132,12 +137,13 @@ public class Design {
 class CustomButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
     private static final int ARC_WIDTH = 15;
     private static final int ARC_HEIGHT = 15;
+    private static final int BUTTON_WIDTH = 150; // Set your desired width here DOESNT WORK!!!!!!!!!
 
     @Override
     protected void installDefaults(AbstractButton b) {
         super.installDefaults(b);
         b.setOpaque(false);
-        b.setBorder(new RoundedCornerBorder());
+        b.setBorder(BorderFactory.createEmptyBorder()); // Set an empty border
     }
 
     @Override
@@ -145,7 +151,8 @@ class CustomButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
         Graphics2D g2d = (Graphics2D) g.create();
         AbstractButton button = (AbstractButton) c;
         ButtonModel model = button.getModel();
-        int width = button.getWidth();
+        int width = BUTTON_WIDTH; // Use the custom button width
+
         int height = button.getHeight();
 
         // Draw rounded rectangle background
@@ -160,10 +167,56 @@ class CustomButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
         int y = (height + fm.getAscent() - fm.getDescent()) / 2;
         g2d.drawString(button.getText(), x, y);
 
-
-
-
         g2d.dispose();
+    }
+}
+
+class CustomRadioButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
+    @Override
+    protected void installDefaults(AbstractButton b) {
+        super.installDefaults(b);
+        b.setOpaque(false); // Set the button to be non-opaque
+
+        // Set the background to be semi-transparent (e.g., 50% transparent white)
+        Color transparentWhite = new Color(255, 255, 255, 128);
+        b.setBackground(transparentWhite);
+
+        b.setBorder(BorderFactory.createEmptyBorder()); // Set an empty border
+
+        // Set the custom radio button icon
+        b.setIcon(new CustomRadioButtonIcon());
+    }
+}
+class CustomRadioButtonIcon implements Icon {
+    private static final int RADIUS = 8;
+    private static final int BORDER_THICKNESS = 2;
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        AbstractButton button = (AbstractButton) c;
+        ButtonModel model = button.getModel();
+
+        // border of the icon
+        g.setColor(Color.BLACK);
+        g.drawOval(x, y, RADIUS * 2, RADIUS * 2);
+
+
+        if (model.isSelected()) {
+            g.setColor(Color.WHITE);
+        } else {
+            g.setColor(Color.LIGHT_GRAY);
+        }
+        g.fillOval(x + BORDER_THICKNESS, y + BORDER_THICKNESS, (RADIUS - BORDER_THICKNESS) * 2, (RADIUS - BORDER_THICKNESS) * 2);
+    }
+
+    @Override
+    public int getIconWidth() {
+        return (RADIUS + BORDER_THICKNESS) * 2;
+    }
+
+    @Override
+    public int getIconHeight() {
+        return (RADIUS + BORDER_THICKNESS) * 2;
     }
 }
 
@@ -233,26 +286,5 @@ class ImagePanel extends JPanel {
     }
 }
 
-/**class CustomFrameUI extends InternalFrameUI {
-    @Override
-    public void paint(Graphics g, JComponent c) {
-        Graphics2D g2d = (Graphics2D) g.create();
-        int width = c.getWidth();
-        int height = c.getHeight();
-
-        // Call superclass paint method to ensure proper button rendering
-        super.paint(g2d, c);
-
-        // Set the foreground color for the button text
-        c.setForeground(Color.BLACK);
-
-        // Draw the gradient-filled rectangle
-        Paint p = new GradientPaint(0.0f, 0.0f, Color.RED, width, height, Color.YELLOW, true);
-        g2d.setPaint(p);
-        g2d.fillRect(0, 0, width, height);
-
-        g2d.dispose();
-    }
-}*/
 
 

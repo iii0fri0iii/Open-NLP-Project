@@ -47,7 +47,7 @@ public class Frame{
         firstTextField=new JTextField(60);
 
 
-        firstTextField.setMaximumSize(new Dimension(200,50));
+        firstTextField.setMaximumSize(new Dimension(150,40));
 
 
         Dimension size = new Dimension(95, 30);
