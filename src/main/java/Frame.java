@@ -8,10 +8,7 @@ import java.util.*;
 import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import javax.xml.stream.*;
-
 
 
 public class Frame{
@@ -43,9 +40,10 @@ public class Frame{
 
     Frame(){
         frame=new JFrame("Test");
-        frame.setSize(1000,600);
-        firstTextField=new JTextField(60);
 
+        frame.setSize(1000,600);
+
+        firstTextField=new JTextField(60);
 
         firstTextField.setMaximumSize(new Dimension(150,40));
 
@@ -243,7 +241,6 @@ public class Frame{
         Design.applyTextFieldStyle(firstTextField);
 
 
-
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);
@@ -255,6 +252,9 @@ public class Frame{
         Design.applyRadioButtonStyle(pos);
         Design.applyRadioButtonStyle(word);
         Design.applyDesign(frame);
+
+        showInstructionMessage();
+
 
     }
     public class SpoilerButtonHandler implements ActionListener {
@@ -391,6 +391,7 @@ public class Frame{
 
     }
 
+
     private class spinnerListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
             JSpinner spinner= (JSpinner) e.getSource();
@@ -463,6 +464,7 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+
             List<String> recreatedPosList=new ArrayList<>();
             if (isCleared){
                 s = firstTextField.getText();
@@ -550,7 +552,7 @@ public class Frame{
         return false;
     }
 
-    public void recreatePosList(List<String> recreatedPosList){
+        public void recreatePosList(List<String> recreatedPosList){
         model.clear();
         for (String element: recreatedPosList
         ) {
@@ -564,8 +566,6 @@ public class Frame{
         }
         posList=new JList(model);
     }
-
-
     /**
      * Helper method that gets a list from CorpusBuilder, index of the word and the number of neighbours
      * @param sentenceList
@@ -602,13 +602,13 @@ public class Frame{
 
         return new ArrayList<String>(Arrays.asList(string1, string2, string3));
     }
-
-
-
-
+    private void showInstructionMessage() {
+        String message = "Here is the instructions:";
+        JOptionPane.showMessageDialog(frame, message, "Welcome", JOptionPane.INFORMATION_MESSAGE);
+    }
     public static void main ( String[] args )
     {
         new Frame();
-    }
 
+    }
 }
