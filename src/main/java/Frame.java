@@ -479,7 +479,6 @@ public class Frame{
 
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
             List<String> recreatedPosList=new ArrayList<>();
             if (isCleared){
                 s = firstTextField.getText();
@@ -620,7 +619,17 @@ public class Frame{
         return new ArrayList<String>(Arrays.asList(string1, string2, string3));
     }
     private void showInstructionMessage() {
-        String message = "Here is the instructions:";
+        String message = "Here is the instruction: \n " +
+                "1. Load text options:\n" +
+                "- From file\n" +
+                "- Using URL link\n" +
+                "2. Search options:\n" +
+                "- Input word\n" +
+                "-- by Lemma\n" +
+                "-- or by Word\n" +
+                "- Leave Text Field empty to search by POS\n" +
+                "3. Clear to Search again\n" +
+                "4. Save to XML\n";
         JOptionPane.showMessageDialog(frame, message, "Welcome", JOptionPane.INFORMATION_MESSAGE);
     }
     public static void main ( String[] args )

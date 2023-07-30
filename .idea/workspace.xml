@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="clear all button">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
