@@ -242,6 +242,7 @@ public class Frame{
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);
         Design.applyButtonStyle(searchButton);
+        Design.applyButtonStyle(clearAllButton);
         Design.spoilerButtonStyler(spoilerButton);
         Design.applyRadioButtonStyle(lemma);
         Design.applyRadioButtonStyle(pos);
