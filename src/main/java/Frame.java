@@ -624,11 +624,11 @@ public class Frame{
                 "- From file\n" +
                 "- Using URL link\n" +
                 "2. Search options:\n" +
-                "- Input word\n" +
-                "-- by Lemma\n" +
+                "- Input text in Text Field\n" +
+                "-- then select to search by Lemma\n" +
                 "-- or by Word\n" +
-                "- Leave Text Field empty to search by POS\n" +
-                "3. Clear to Search again\n" +
+                "- or leave Text Field empty to search by POS\n" +
+                "3. Clear All to Search again\n" +
                 "4. Save to XML\n";
         JOptionPane.showMessageDialog(frame, message, "Welcome", JOptionPane.INFORMATION_MESSAGE);
     }
