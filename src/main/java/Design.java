@@ -45,12 +45,12 @@ public class Design {
                 if (button.getModel().isPressed()) {
                     g2d.setColor(Color.decode("#F11712"));
                 } else {
-                    g2d.setColor(Color.LIGHT_GRAY);
+                    g2d.setColor(Color.ORANGE);
                 }
 
                 g2d.fillRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 20, 20);
 
-                g2d.setColor(Color.black);
+                g2d.setColor(Color.BLUE);
                 FontMetrics fm = g2d.getFontMetrics();
                 Rectangle2D r = fm.getStringBounds(button.getText(), g2d);
 
@@ -73,12 +73,12 @@ public class Design {
                 if (button.getModel().isPressed()) {
                     g2d.setColor(Color.decode("#F11712"));
                 } else {
-                    g2d.setColor(Color.LIGHT_GRAY);
+                    g2d.setColor(Color.ORANGE);
                 }
 
                 g2d.fillRoundRect(0, 0, c.getWidth() - 1, c.getHeight() - 1, 20, 20);
 
-                g2d.setColor(Color.black);
+                g2d.setColor(Color.BLUE);
                 FontMetrics fm = g2d.getFontMetrics();
                 Rectangle2D r = fm.getStringBounds(button.getText(), g2d);
 
@@ -197,14 +197,14 @@ class CustomRadioButtonIcon implements Icon {
         ButtonModel model = button.getModel();
 
         // border of the icon
-        g.setColor(Color.BLACK);
+        g.setColor(Color.ORANGE);
         g.drawOval(x, y, RADIUS * 2, RADIUS * 2);
 
 
         if (model.isSelected()) {
-            g.setColor(Color.WHITE);
+            g.setColor(Color.BLUE);
         } else {
-            g.setColor(Color.LIGHT_GRAY);
+            g.setColor(Color.WHITE);
         }
         g.fillOval(x + BORDER_THICKNESS, y + BORDER_THICKNESS, (RADIUS - BORDER_THICKNESS) * 2, (RADIUS - BORDER_THICKNESS) * 2);
     }
