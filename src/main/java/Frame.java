@@ -20,7 +20,7 @@ public class Frame{
 
     private JTextPane outputArea;
 
-    private String searchBy;
+    private String searchBy = "POS";
 
     private String s; //users input in the text field, word, pos or lemma
 
@@ -37,6 +37,9 @@ public class Frame{
     private int numberOfDisplayedResults = 10;
     private boolean hasFile = false;
     private boolean isCleared = true;
+    private JButton lemma = null;
+    private JButton word = null;
+    private ButtonGroup buttonGroup = new ButtonGroup();
 
 
     Frame(){
@@ -69,21 +72,20 @@ public class Frame{
         clearAllButton.addActionListener(new ClearAllButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
-        JRadioButton pos = new JRadioButton("POS");
+        //JRadioButton pos = new JRadioButton("POS");
         JRadioButton word = new JRadioButton("Word");
 
-        ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(lemma);
-        buttonGroup.add(pos);
+        //buttonGroup.add(pos);
         buttonGroup.add(word);
 
         lemma.addActionListener(new WordPosLemmaButtonHandler());
-        pos.addActionListener(new WordPosLemmaButtonHandler());
+        //pos.addActionListener(new WordPosLemmaButtonHandler());
         word.addActionListener(new WordPosLemmaButtonHandler());
 
         Box box1 = Box.createVerticalBox();
         box1.add(lemma);
-        box1.add(pos);
+        //box1.add(pos);
         box1.add(word);
 
         JPanel panel1=new JPanel();
@@ -251,7 +253,7 @@ public class Frame{
         Design.applyButtonStyle(clearAllButton);
         Design.spoilerButtonStyler(spoilerButton);
         Design.applyRadioButtonStyle(lemma);
-        Design.applyRadioButtonStyle(pos);
+        //Design.applyRadioButtonStyle(pos);
         Design.applyRadioButtonStyle(word);
         Design.applyDesign(frame);
 
@@ -316,6 +318,13 @@ public class Frame{
             model.addElement("WP$ Possessive whpronoun");
             model.addElement("WRB Whadverb");
             posList=new JList(model);
+            posListString= Arrays.asList(model.toArray());
+            posListStringInitial=posListString;
+            posListSelected=new ArrayList<>();
+            searchBy = "POS";
+            lemma.setEnabled(true);
+            word.setEnabled(true);
+            buttonGroup.clearSelection();
         }
     }
 
@@ -450,6 +459,10 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
+            lemma.setEnabled(false);
+            lemma.setSelected(false);
+            word.setEnabled(false);
+            word.setSelected(false);
         }
     }
 
@@ -518,6 +531,8 @@ public class Frame{
                             }
                         }
                     }
+                    recreatePosList(recreatedPosList);
+
                 } else if (searchBy.equals("POS")) {
                     for (int i = 0; i < src.size(); i++) {   //iteration by sentences
                         for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
@@ -547,7 +562,7 @@ public class Frame{
         for (Object item: posListSelected
         ) {
             String el = (String) item;
-            if (el.equalsIgnoreCase(pos)){
+            if (pos.equalsIgnoreCase(el)){
                 return true;
             }
         }
