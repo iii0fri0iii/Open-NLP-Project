@@ -253,7 +253,6 @@ public class Frame{
 
         frame.getContentPane().add(bottomPanel);
 
-        Design.applyDesign(frame);
         Design.applyTextFieldStyle(firstTextField);
 
 
@@ -472,9 +471,7 @@ public class Frame{
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
             lemma.setEnabled(false);
-            lemma.setSelected(false);
             word.setEnabled(false);
-            word.setSelected(false);
         }
     }
 
@@ -500,7 +497,7 @@ public class Frame{
             outputArea.setText("");
             ArrayList<ArrayList> results = new ArrayList<>();
             if (hasFile) {
-                if (searchBy.equals("Word")) {
+                if (searchBy.equals("WORD")) {
                     for (int i = 0; i < src.size(); i++) {   //iteration by sentences
                         for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
                             if (src.get(i).get(k).get(0).equalsIgnoreCase(s)) {
@@ -522,7 +519,7 @@ public class Frame{
                     }
                     recreatePosList(recreatedPosList);
 
-                } else if (searchBy.equals("Lemma")) {
+                } else if (searchBy.equals("LEMMA")) {
                     for (int i = 0; i < src.size(); i++) {   //iteration by sentences
                         for (int k = 0; k < src.get(i).size(); k++) {   //iteration by words
                             if (src.get(i).get(k).get(2).equalsIgnoreCase(s)) {
