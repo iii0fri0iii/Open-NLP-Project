@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="pos работает для word">
-      <change afterPath="$PROJECT_DIR$/src/main/java/XMLSaver.java" afterDir="false" />
+    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="jsoup katya">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2023_12_26_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_30_2023_10_34_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_30_2023_10_34_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,13 +82,17 @@
       <recent name="C:\Users\iii0f\Open-NLP-Project\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.CorpusBuilder-1.0-jar-with-dependencies.jar">
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Frame" />
       <module name="CorpusBuilder" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="CorpusBuilder-1.0-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -91,6 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.CorpusBuilder-1.0-jar-with-dependencies.jar" />
         <item itemvalue="Application.Frame" />
       </list>
     </recent_temporary>
@@ -234,12 +251,12 @@
       <option name="project" value="LOCAL" />
       <updated>1689504032791</updated>
     </task>
-    <task id="LOCAL-00018" summary="pos работает для word">
-      <created>1690708048911</created>
+    <task id="LOCAL-00018" summary="jsoup katya">
+      <created>1690707543449</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1690708048911</updated>
+      <updated>1690707543449</updated>
     </task>
     <option name="localTasksCounter" value="19" />
     <servers />
@@ -259,6 +276,7 @@
     <MESSAGE value="нормальная рабочая версия" />
     <MESSAGE value="design" />
     <MESSAGE value="pos работает для word" />
-    <option name="LAST_COMMIT_MESSAGE" value="pos работает для word" />
+    <MESSAGE value="jsoup katya" />
+    <option name="LAST_COMMIT_MESSAGE" value="jsoup katya" />
   </component>
 </project>

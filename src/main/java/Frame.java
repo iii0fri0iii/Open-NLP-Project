@@ -38,7 +38,7 @@ public class Frame{
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
     private boolean hasFile = false;
-    private boolean isCleared = false;
+    private boolean isCleared = true;
 
 
     Frame(){
@@ -47,7 +47,7 @@ public class Frame{
         firstTextField=new JTextField(60);
 
 
-        firstTextField.setMaximumSize(new Dimension(200,50));
+        firstTextField.setMaximumSize(new Dimension(150,40));
 
 
         Dimension size = new Dimension(95, 30);
@@ -66,8 +66,8 @@ public class Frame{
         searchButton.addActionListener(new SearchButtonHandler());
 
         JButton clearAllButton = new JButton("clear all");
-        searchButton.setMaximumSize(size);
-        //searchButton.addActionListener(new ClearAllButtonHandler());
+        clearAllButton.setMaximumSize(size);
+        clearAllButton.addActionListener(new ClearAllButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
@@ -249,6 +249,7 @@ public class Frame{
         Design.applyButtonStyle(loadButton);
         Design.applyButtonStyle(saveButton);
         Design.applyButtonStyle(searchButton);
+        Design.applyButtonStyle(clearAllButton);
         Design.spoilerButtonStyler(spoilerButton);
         Design.applyRadioButtonStyle(lemma);
         Design.applyRadioButtonStyle(pos);
@@ -269,13 +270,52 @@ public class Frame{
     }
 
 
-//    public class ClearAllButtonHandler implements ActionListener {
-//        public void actionPerformed(ActionEvent e){
-//            isCleared = true;
-//            firstTextField.setText("");
-//            firstTextField.setEditable(true);
-//        }
-//    }
+    public class ClearAllButtonHandler implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            isCleared = true;
+            firstTextField.setText("");
+            firstTextField.setEditable(true);
+            outputArea.setText("");
+            model.clear();
+            model.addElement("CC Coordinating conjunction");
+            model.addElement("CD Cardinal number");
+            model.addElement("DT Determiner");
+            model.addElement("EX Existential there");
+            model.addElement("FW Foreign word");
+            model.addElement("IN Preposition or subordinating conjunction");
+            model.addElement("JJ Adjective");
+            model.addElement("JJR Adjective; comparative");
+            model.addElement("JJS Adjective; superlative");
+            model.addElement("LS List item marker");
+            model.addElement("MD Modal");
+            model.addElement("NN Noun; singular or mass");
+            model.addElement("NNS Noun; plural");
+            model.addElement("NNP Proper noun; singular");
+            model.addElement("NNPS Proper noun; plural");
+            model.addElement("PDT Predeterminer");
+            model.addElement("POS Possessive ending");
+            model.addElement("PRP Personal pronoun");
+            model.addElement("PRP$ Possessive pronoun");
+            model.addElement("RB Adverb");
+            model.addElement("RBR Adverb; comparative");
+            model.addElement("RBS Adverb; superlative");
+            model.addElement("RP Particle");
+            model.addElement("SYM Symbol");
+            model.addElement("TO to");
+            model.addElement("UH Interjection");
+            model.addElement("VB Verb, base form");
+            model.addElement("VBD Verb, past tense");
+            model.addElement("VBG Verb, gerund or present participle");
+            model.addElement("VBN Verb, past participle");
+            model.addElement("VBP Verb, non3rd person singular present");
+            model.addElement("VBZ Verb, 3rd person singular present");
+            model.addElement("WDT Whdeterminer");
+            model.addElement("WP Whpronoun");
+            model.addElement("WP$ Possessive whpronoun");
+            model.addElement("WRB Whadverb");
+            posList=new JList(model);
+        }
+    }
 
     public class LoadButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -424,7 +464,11 @@ public class Frame{
     private class SearchButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             List<String> recreatedPosList=new ArrayList<>();
-            String s = firstTextField.getText();
+            if (isCleared){
+                s = firstTextField.getText();
+                isCleared = false;
+                firstTextField.setEditable(false);
+            }
             outputArea.setText("");
             ArrayList<ArrayList> results = new ArrayList<>();
             if (hasFile) {
