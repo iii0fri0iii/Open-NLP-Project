@@ -53,9 +53,7 @@ public class Design {
         });
     }
     public static void spoilerButtonStyler(JButton button){
-        Dimension size = new Dimension(1000, 80);
-        button.setMaximumSize(size);
-        button.setUI(new CustomButtonUI());
+
 
 
         button.setUI(new BasicButtonUI() {
