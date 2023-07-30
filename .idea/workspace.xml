@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="pos работает для lemma">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.pom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.pom.md5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.pom.sha1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +81,26 @@
       <recent name="C:\Users\iii0f\Open-NLP-Project\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Frame" />
-      <module name="CorpusBuilder" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="JAR Application.CorpusBuilder-1.0-jar-with-dependencies.jar (1)">
+    <configuration name="CorpusBuilder-1.0-jar-with-dependencies.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CorpusBuilder-1.0-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CorpusBuilder-1.0.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KWICSearcher-1.0-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/java/KWICSearcher/KWICSearcher/1.0/KWICSearcher-1.0-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KWICSearcher-1.0.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/java/KWICSearcher/KWICSearcher/1.0/KWICSearcher-1.0.jar" />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -92,7 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Frame" />
+        <item itemvalue="JAR Application.CorpusBuilder-1.0-jar-with-dependencies.jar (1)" />
+        <item itemvalue="JAR Application.CorpusBuilder-1.0-jar-with-dependencies.jar" />
+        <item itemvalue="JAR Application.CorpusBuilder-1.0.jar" />
+        <item itemvalue="JAR Application.KWICSearcher-1.0-jar-with-dependencies.jar" />
+        <item itemvalue="JAR Application.KWICSearcher-1.0.jar" />
       </list>
     </recent_temporary>
   </component>
