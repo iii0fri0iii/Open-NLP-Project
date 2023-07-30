@@ -1,22 +1,12 @@
-
-
 import javax.swing.*;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.LabelUI;
 import javax.swing.plaf.PanelUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.text.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
 
 public class Design {
     public static Color color1 = new Color(115, 201, 177);
-
-
 
     public Design() {
         super();
@@ -31,8 +21,7 @@ public class Design {
     }
 
     public static void applyButtonStyle(JButton button) {
-        Dimension size = new Dimension(160, 30);
-        button.setMaximumSize(size);
+
 
         button.setUI(new CustomButtonUI());
 
@@ -64,6 +53,11 @@ public class Design {
         });
     }
     public static void spoilerButtonStyler(JButton button){
+        Dimension size = new Dimension(1000, 80);
+        button.setMaximumSize(size);
+        button.setUI(new CustomButtonUI());
+
+
         button.setUI(new BasicButtonUI() {
             @Override
             public void paint(Graphics g, JComponent c) {
@@ -95,7 +89,7 @@ public class Design {
 
     public static void applyRadioButtonStyle(JRadioButton radioButton) {
         radioButton.setUI(new CustomRadioButtonUI());
-        radioButton.setForeground(Color.decode("#F6F6F2"));
+        radioButton.setForeground(Color.BLACK);
     }
 
     public static void applyPanelStyle(JPanel panel) {
@@ -138,7 +132,7 @@ public class Design {
 class CustomButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
     private static final int ARC_WIDTH = 15;
     private static final int ARC_HEIGHT = 15;
-    private static final int BUTTON_WIDTH = 150; // Set your desired width here DOESNT WORK!!!!!!!!!
+    private static final int BUTTON_WIDTH = 150;
 
     @Override
     protected void installDefaults(AbstractButton b) {
@@ -177,8 +171,6 @@ class CustomRadioButtonUI extends javax.swing.plaf.basic.BasicButtonUI {
     protected void installDefaults(AbstractButton b) {
         super.installDefaults(b);
         b.setOpaque(false); // Set the button to be non-opaque
-
-        // Set the background to be semi-transparent (e.g., 50% transparent white)
         Color transparentWhite = new Color(255, 255, 255, 128);
         b.setBackground(transparentWhite);
 
@@ -221,33 +213,6 @@ class CustomRadioButtonIcon implements Icon {
     }
 }
 
-class RoundedCornerBorder extends AbstractBorder {
-    private static final int ARC_WIDTH = 15;
-    private static final int ARC_HEIGHT = 15;
-
-    @Override
-    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-        Graphics2D g2d = (Graphics2D) g.create();
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        g2d.setColor(c.getForeground());
-        g2d.drawRoundRect(x, y, width - 1, height - 1, ARC_WIDTH, ARC_HEIGHT);
-
-        g2d.dispose();
-    }
-
-    @Override
-    public Insets getBorderInsets(Component c) {
-        return new Insets(4, 8, 4, 8);
-    }
-
-    @Override
-    public Insets getBorderInsets(Component c, Insets insets) {
-        insets.set(4, 8, 4, 8);
-        return insets;
-    }
-}
-
 class CustomPanelUI extends PanelUI {
     @Override
     public void paint(Graphics g, JComponent c) {
@@ -266,26 +231,5 @@ class CustomPanelUI extends PanelUI {
         g2d.dispose();
     }
 }
-
-
-class ImagePanel extends JPanel {
-    private Image backgroundImage;
-
-    public ImagePanel(String imagePath) {
-        backgroundImage = new ImageIcon(imagePath).getImage();
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
-    }
-
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(backgroundImage.getWidth(this), backgroundImage.getHeight(this));
-    }
-}
-
 
 

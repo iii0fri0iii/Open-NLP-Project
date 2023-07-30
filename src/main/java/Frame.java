@@ -53,27 +53,30 @@ public class Frame{
 
 
         Dimension size = new Dimension(95, 30);
-
-        JButton loadButton = new JButton(" LOAD ");
+        String folderEmoji = "\uD83D\uDCC2";
+        JButton loadButton = new JButton(" LOAD "+folderEmoji+" ");
         loadButton.setMaximumSize(size);
         loadButton.addActionListener(new LoadButtonHandler());
+        String XMLEmoji = "\uD83D\uDCE5";
 
-        JButton saveButton = new JButton(" SAVE TO XML ");
+        JButton saveButton = new JButton(" SAVE TO XML "+XMLEmoji+" ");
         saveButton.setMaximumSize(size);
         saveButton.addActionListener(new SaveButtonHandler());
+        String magnifyingGlass = "\uD83D\uDD0D";
+        String clear="\uD83D\uDD03";
 
 
-        JButton searchButton = new JButton(" SEARCH ");
+        JButton searchButton = new JButton(" SEARCH "+magnifyingGlass+" ");
         searchButton.setMaximumSize(size);
         searchButton.addActionListener(new SearchButtonHandler());
 
-        JButton clearAllButton = new JButton(" CLEAR ALL ");
+        JButton clearAllButton = new JButton(" CLEAR ALL "+clear+" ");
         clearAllButton.setMaximumSize(size);
         clearAllButton.addActionListener(new ClearAllButtonHandler());
 
-        JRadioButton lemma = new JRadioButton("Lemma");
+        JRadioButton lemma = new JRadioButton("LEMMA");
         //JRadioButton pos = new JRadioButton("POS");
-        JRadioButton word = new JRadioButton("Word");
+        JRadioButton word = new JRadioButton("WORD");
 
         buttonGroup.add(lemma);
         //buttonGroup.add(pos);
@@ -110,7 +113,7 @@ public class Frame{
         panel2.add(Box.createRigidArea(new Dimension(0,5)));
 
         JButton spoilerButton = new JButton("ADDITIONAL FILTERS");
-        spoilerButton.setMaximumSize(new Dimension(frame.getWidth(),30));
+        spoilerButton.setMaximumSize(new Dimension(frame.getWidth(),100));
         spoilerButton.addActionListener(new SpoilerButtonHandler());
         spoilerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -199,7 +202,7 @@ public class Frame{
         panelSpoiler.add(panelDisplayedResults);
         Design.applyPanelStyle(panelDisplayedResults);
 
-        JLabel displayedResults= new JLabel("Amount of displayed results");
+        JLabel displayedResults= new JLabel( "AMOUNT OF DISPLAYED RESULS");
         displayedResults.setMaximumSize(new Dimension(300,30));
 
         JSlider slider = new JSlider(JSlider.HORIZONTAL,
