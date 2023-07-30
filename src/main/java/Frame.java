@@ -32,6 +32,7 @@ public class Frame{
 
     HashMap<String, Integer> words = null;
     private List<List<List<String>>> src;
+    public List<List<List<String>>> finalresults;
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
     private boolean hasFile = false;
@@ -50,20 +51,20 @@ public class Frame{
 
         Dimension size = new Dimension(95, 30);
 
-        JButton loadButton = new JButton("load");
+        JButton loadButton = new JButton(" LOAD ");
         loadButton.setMaximumSize(size);
         loadButton.addActionListener(new LoadButtonHandler());
 
-        JButton saveButton = new JButton("save to XML");
+        JButton saveButton = new JButton(" SAVE TO XML ");
         saveButton.setMaximumSize(size);
         saveButton.addActionListener(new SaveButtonHandler());
 
 
-        JButton searchButton = new JButton("search");
+        JButton searchButton = new JButton(" SEARCH ");
         searchButton.setMaximumSize(size);
         searchButton.addActionListener(new SearchButtonHandler());
 
-        JButton clearAllButton = new JButton("clear all");
+        JButton clearAllButton = new JButton(" CLEAR ALL ");
         clearAllButton.setMaximumSize(size);
         clearAllButton.addActionListener(new ClearAllButtonHandler());
 
@@ -94,10 +95,11 @@ public class Frame{
         panel1.add(firstTextField);
         panel1.add(box1);
         panel1.add(Box.createHorizontalGlue());
-        panel1.add(saveButton);
-        panel1.add(Box.createRigidArea(new Dimension(5,0)));
-        panel1.add(searchButton);
         panel1.add(clearAllButton);
+        panel1.add(Box.createRigidArea(new Dimension(10,0)));
+        panel1.add(saveButton);
+        panel1.add(Box.createRigidArea(new Dimension(10,0)));
+        panel1.add(searchButton);
         //panel with spoiler panel
         JPanel panel2=new JPanel();
         BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
@@ -105,7 +107,7 @@ public class Frame{
 
         panel2.add(Box.createRigidArea(new Dimension(0,5)));
 
-        JButton spoilerButton = new JButton("Additional filters");
+        JButton spoilerButton = new JButton("ADDITIONAL FILTERS");
         spoilerButton.setMaximumSize(new Dimension(frame.getWidth(),30));
         spoilerButton.addActionListener(new SpoilerButtonHandler());
         spoilerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -172,7 +174,7 @@ public class Frame{
         Design.applyPanelStyle(panelNeighbours);
         panelSpoiler.add(panelNeighbours);
 
-        JLabel neighbours= new JLabel("Neighbours");
+        JLabel neighbours= new JLabel("NEIGHBORS");
         neighbours.setMaximumSize(size);
 
         Integer[] neighboursStrings = {0, 1,2,3,4,5,6,7,8,9,10};
@@ -454,7 +456,7 @@ public class Frame{
     private class SaveButtonHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
             try {
-                XMLSaver.wholeFileSaver(src);
+                XMLSaver.wholeFileSaver(finalresults);
             }
             catch (Exception ex){
                 ex.getMessage();
