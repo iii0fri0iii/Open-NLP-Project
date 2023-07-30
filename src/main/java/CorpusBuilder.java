@@ -19,7 +19,6 @@ import java.util.List;
 /**
  * Create a CorpusBuilder which generates POS tags and Lemmas for text.
  *
- * @param text The text which should be annotated.
  */
 public class CorpusBuilder {
     private String text;
