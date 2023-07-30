@@ -25,6 +25,8 @@ public class Frame{
 
     private String searchBy;
 
+    private String s; //users input in the text field, word, pos or lemma
+
     private DefaultListModel model = new DefaultListModel();
     private JList posList = new JList(model);
     List<Object> posListStringInitial = null;
@@ -36,6 +38,7 @@ public class Frame{
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
     private boolean hasFile = false;
+    private boolean isCleared = false;
 
 
     Frame(){
@@ -57,6 +60,10 @@ public class Frame{
         JButton searchButton = new JButton("search");
         searchButton.setMaximumSize(size);
         searchButton.addActionListener(new SearchButtonHandler());
+
+        JButton clearAllButton = new JButton("clear all");
+        searchButton.setMaximumSize(size);
+        //searchButton.addActionListener(new ClearAllButtonHandler());
 
         JRadioButton lemma = new JRadioButton("Lemma");
         JRadioButton pos = new JRadioButton("POS");
@@ -86,6 +93,7 @@ public class Frame{
         panel1.add(box1);
         panel1.add(Box.createHorizontalGlue());
         panel1.add(searchButton);
+        panel1.add(clearAllButton);
         //panel with spoiler panel
         JPanel panel2=new JPanel();
         BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
@@ -254,6 +262,14 @@ public class Frame{
     }
 
 
+//    public class ClearAllButtonHandler implements ActionListener {
+//        public void actionPerformed(ActionEvent e){
+//            isCleared = true;
+//            firstTextField.setText("");
+//            firstTextField.setEditable(true);
+//        }
+//    }
+
     public class LoadButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String[] options = { "Load File", "Load Link" };
@@ -299,6 +315,7 @@ public class Frame{
                 String link = JOptionPane.showInputDialog(frame, "Enter the link:");
 
                 if (link != null && !link.isEmpty()) {
+                    hasFile = true;
                     try {
                         // Fetch the web page content using Jsoup
                         Document doc = Jsoup.connect(link).get();
@@ -422,8 +439,8 @@ public class Frame{
                                 }
                                 if (!posListSelected.isEmpty()) {
                                     if (containsPos(pos)) {
-                                ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
-                                results.add(outputArrayList);
+                                        ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
+                                        results.add(outputArrayList);
                                     }
                                 }else {
                                     ArrayList<String> outputArrayList = getContextWords(src.get(i), k, numberOfNeighbours);
