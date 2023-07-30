@@ -10,8 +10,8 @@ import java.util.*;
 import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
-
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 
 public class Frame{
@@ -319,10 +319,12 @@ public class Frame{
                     try {
                         // Fetch the web page content using Jsoup
                         Document doc = Jsoup.connect(link).get();
-                        String htmlContent = doc.html();
+                        //String htmlContent = doc.html();
+                        Elements divsDescendant = doc.select("div");
+                        String webContent=divsDescendant.text();
 
                         // Process the web page content as needed
-                        CorpusBuilder corp = new CorpusBuilder(htmlContent);
+                        CorpusBuilder corp = new CorpusBuilder(webContent);
                         corp.getSentences();
                         corp.getTokens();
                         corp.getPosTags();
