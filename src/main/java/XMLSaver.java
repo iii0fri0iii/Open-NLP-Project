@@ -50,9 +50,18 @@ public class XMLSaver {
                 Characters token = eventFactory.createCharacters(word.get(0));
                 Characters pos = eventFactory.createCharacters(word.get(1));
                 Characters lemma = eventFactory.createCharacters(word.get(2));
+                Attribute attr;
                 writer.add(indent);
                 writer.add(indent);
                 writer.add(startLevel2);
+                System.out.println(word);
+                if (word.size()==4){
+                    attr = eventFactory.createAttribute("interest", "yes");
+                }
+                else {
+                    attr = eventFactory.createAttribute("interest", "no");
+                }
+                writer.add(attr);
                 writer.add(newLine);
                 writer.add(indent);
                 writer.add(indent);

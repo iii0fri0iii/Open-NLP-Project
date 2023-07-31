@@ -32,7 +32,7 @@ public class Frame{
 
     HashMap<String, Integer> words = null;
     private List<List<List<String>>> src;
-    public List<List<List<String>>> finalresults;
+    public static List<List<List<String>>> finalresults = new ArrayList<>();
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
     private boolean hasFile = false;
@@ -333,9 +333,13 @@ public class Frame{
             posListStringInitial=posListString;
             posListSelected=new ArrayList<>();
             searchBy = "POS";
-            lemma.setEnabled(true);
-            word.setEnabled(true);
+            try{lemma.setEnabled(true);}
+            catch(Exception ex){
+            }
+            try{word.setEnabled(true);}
+            catch(Exception ez){}
             buttonGroup.clearSelection();
+            finalresults.clear();
         }
     }
 
@@ -470,8 +474,10 @@ public class Frame{
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
             searchBy = button.getText();
-            lemma.setEnabled(false);
-            word.setEnabled(false);
+            try{lemma.setEnabled(false);}
+            catch(Exception ex){}
+            try{word.setEnabled(false);}
+            catch(Exception ez){}
         }
     }
 
@@ -559,6 +565,8 @@ public class Frame{
                     Design.textOutputStyle(outputArrayList.get(0), outputArrayList.get(1), outputArrayList.get(2), outputArea);
                     i++;
                 }
+                if(numberOfDisplayedResults<finalresults.size())
+                finalresults=finalresults.subList(0, numberOfDisplayedResults);
             }
             else{
                 JOptionPane.showMessageDialog(frame, "Please select the file first.");
@@ -611,20 +619,29 @@ public class Frame{
             }
         }
 
+        List<List<String>> templist = new ArrayList<>();
+        List<String> specialIndex= new ArrayList<>();
+
         if (index >= numNeighbours) {
             string1 = String.join(" ", sentenceArrayList.subList((index - numNeighbours), index));
+            templist.addAll(sentenceList.subList((index - numNeighbours), index));
         } else {
             string1 = String.join(" ", sentenceArrayList.subList(0, index));
+            templist.addAll(sentenceList.subList(0, index));
         }
+        specialIndex=sentenceList.get(index);
+        specialIndex.add("new");
+        templist.add(specialIndex);
 
         if (index < sentenceList.size() - numNeighbours - 1) {
             string3 = String.join(" ", sentenceArrayList.subList(index + 1, index + numNeighbours + 1));
+            templist.addAll(sentenceList.subList(index + 1, index + numNeighbours + 1));
         } else {
             string3 = String.join(" ", sentenceArrayList.subList(index + 1, sentenceList.size()));
+            templist.addAll(sentenceList.subList(index + 1, sentenceList.size()));
         }
-
         string2 = sentenceArrayList.get(index);
-
+        finalresults.add(templist);
         return new ArrayList<String>(Arrays.asList(string1, string2, string3));
     }
     private void showInstructionMessage() {
