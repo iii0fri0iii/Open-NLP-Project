@@ -20,9 +20,9 @@ public class Frame{
 
     private JTextPane outputArea;
 
-    private String searchBy = "POS";
+    private String searchBy = "POS"; //variable that we pass to the method of the search button, default - pos tag
 
-    private String s; //users input in the text field, word, pos or lemma
+    private String s; //users input in the text field, word or lemma
 
     private DefaultListModel model = new DefaultListModel();
     private JList posList = new JList(model);
@@ -30,13 +30,12 @@ public class Frame{
     List<Object> posListString = null;
     List<String> posListSelected = new ArrayList<>();
 
-    HashMap<String, Integer> words = null;
-    private List<List<List<String>>> src;
+    private List<List<List<String>>> src;  //result of CorpusBuilder method
     public static List<List<List<String>>> finalresults = new ArrayList<>();
     private int numberOfNeighbours=2;
     private int numberOfDisplayedResults = 10;
-    private boolean hasFile = false;
-    private boolean isCleared = true;
+    private boolean hasFile = false; //if user uploaded the file true, otherwise false
+    private boolean isCleared = true; //start of the program or if user has used the clear all button - true, otherwise - false
     private JButton lemma = null;
     private JButton word = null;
     private ButtonGroup buttonGroup = new ButtonGroup();
@@ -75,20 +74,13 @@ public class Frame{
         clearAllButton.addActionListener(new ClearAllButtonHandler());
 
         JRadioButton lemma = new JRadioButton("LEMMA");
-        //JRadioButton pos = new JRadioButton("POS");
         JRadioButton word = new JRadioButton("WORD");
-
         buttonGroup.add(lemma);
-        //buttonGroup.add(pos);
         buttonGroup.add(word);
-
         lemma.addActionListener(new WordPosLemmaButtonHandler());
-        //pos.addActionListener(new WordPosLemmaButtonHandler());
         word.addActionListener(new WordPosLemmaButtonHandler());
-
         Box box1 = Box.createVerticalBox();
         box1.add(lemma);
-        //box1.add(pos);
         box1.add(word);
 
         JPanel panel1=new JPanel();
@@ -105,6 +97,7 @@ public class Frame{
         panel1.add(saveButton);
         panel1.add(Box.createRigidArea(new Dimension(10,0)));
         panel1.add(searchButton);
+
         //panel with spoiler panel
         JPanel panel2=new JPanel();
         BoxLayout bBoxLayout = new BoxLayout(panel2,BoxLayout.Y_AXIS);
@@ -131,39 +124,39 @@ public class Frame{
         model.addElement("CC Coordinating conjunction");
         model.addElement("CD Cardinal number");
         model.addElement("DT Determiner");
-                model.addElement("EX Existential there");
-                model.addElement("FW Foreign word");
-                model.addElement("IN Preposition or subordinating conjunction");
-                model.addElement("JJ Adjective");
-                model.addElement("JJR Adjective; comparative");
-                model.addElement("JJS Adjective; superlative");
-                model.addElement("LS List item marker");
-                model.addElement("MD Modal");
-                model.addElement("NN Noun; singular or mass");
-                model.addElement("NNS Noun; plural");
-                model.addElement("NNP Proper noun; singular");
-                model.addElement("NNPS Proper noun; plural");
-                model.addElement("PDT Predeterminer");
-                model.addElement("POS Possessive ending");
-                model.addElement("PRP Personal pronoun");
-                model.addElement("PRP$ Possessive pronoun");
-                model.addElement("RB Adverb");
-                model.addElement("RBR Adverb; comparative");
-                model.addElement("RBS Adverb; superlative");
-                model.addElement("RP Particle");
-                model.addElement("SYM Symbol");
-                model.addElement("TO to");
-                model.addElement("UH Interjection");
-                model.addElement("VB Verb, base form");
-                model.addElement("VBD Verb, past tense");
-                model.addElement("VBG Verb, gerund or present participle");
-                model.addElement("VBN Verb, past participle");
-                model.addElement("VBP Verb, non3rd person singular present");
-                model.addElement("VBZ Verb, 3rd person singular present");
-                model.addElement("WDT Whdeterminer");
-                model.addElement("WP Whpronoun");
-                model.addElement("WP$ Possessive whpronoun");
-                model.addElement("WRB Whadverb");
+        model.addElement("EX Existential there");
+        model.addElement("FW Foreign word");
+        model.addElement("IN Preposition or subordinating conjunction");
+        model.addElement("JJ Adjective");
+        model.addElement("JJR Adjective; comparative");
+        model.addElement("JJS Adjective; superlative");
+        model.addElement("LS List item marker");
+        model.addElement("MD Modal");
+        model.addElement("NN Noun; singular or mass");
+        model.addElement("NNS Noun; plural");
+        model.addElement("NNP Proper noun; singular");
+        model.addElement("NNPS Proper noun; plural");
+        model.addElement("PDT Predeterminer");
+        model.addElement("POS Possessive ending");
+        model.addElement("PRP Personal pronoun");
+        model.addElement("PRP$ Possessive pronoun");
+        model.addElement("RB Adverb");
+        model.addElement("RBR Adverb; comparative");
+        model.addElement("RBS Adverb; superlative");
+        model.addElement("RP Particle");
+        model.addElement("SYM Symbol");
+        model.addElement("TO to");
+        model.addElement("UH Interjection");
+        model.addElement("VB Verb, base form");
+        model.addElement("VBD Verb, past tense");
+        model.addElement("VBG Verb, gerund or present participle");
+        model.addElement("VBN Verb, past participle");
+        model.addElement("VBP Verb, non3rd person singular present");
+        model.addElement("VBZ Verb, 3rd person singular present");
+        model.addElement("WDT Whdeterminer");
+        model.addElement("WP Whpronoun");
+        model.addElement("WP$ Possessive whpronoun");
+        model.addElement("WRB Whadverb");
         posListString= Arrays.asList(model.toArray());
         posListStringInitial=posListString;
                 posList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -238,13 +231,10 @@ public class Frame{
         frame.getContentPane().add(panel2);
         frame.getContentPane().add(panel3);
 
-        //This is the common size of the buttons
-
         frame.addWindowListener(new MyWindowListener());
         frame.setVisible(true);
 
-
-        // Create the JTextArea for displaying the output
+        // JTextPane for displaying the output
         outputArea = new JTextPane();
         outputArea.setEditable(false);
 
@@ -254,8 +244,6 @@ public class Frame{
         frame.getContentPane().add(bottomPanel);
 
         Design.applyTextFieldStyle(firstTextField);
-
-
         Design.applyPanelStyle(panel1);
         Design.applyPanelStyle(panel2);
         Design.applyButtonStyle(loadButton);
@@ -264,33 +252,28 @@ public class Frame{
         Design.applyButtonStyle(clearAllButton);
         Design.spoilerButtonStyler(spoilerButton);
         Design.applyRadioButtonStyle(lemma);
-        //Design.applyRadioButtonStyle(pos);
         Design.applyRadioButtonStyle(word);
         Design.applyDesign(frame);
 
         showInstructionMessage();
-
-
     }
     public class SpoilerButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (panelSpoiler.isVisible()){
-                panelSpoiler.setVisible(false);
-
-            } else {
-
-                panelSpoiler.setVisible(true);
-            }
+            panelSpoiler.setVisible(!panelSpoiler.isVisible()); //user can show or hide additional filters
         }
     }
 
 
+    /**
+     * Clear All Button handler, that resets all variables to default value in order to perform a new search
+     */
     public class ClearAllButtonHandler implements ActionListener {
         public void actionPerformed(ActionEvent e){
             isCleared = true;
             firstTextField.setText("");
             firstTextField.setEditable(true);
             outputArea.setText("");
+            //resetting pos tags
             model.clear();
             model.addElement("CC Coordinating conjunction");
             model.addElement("CD Cardinal number");
@@ -357,8 +340,9 @@ public class Frame{
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
-                    hasFile = true;
+                    hasFile = true; //file has been selected
 
+                    //reading the file
                     String text="";
                     Scanner inputStream;
                     try{
@@ -372,12 +356,14 @@ public class Frame{
                         text=text+inputStream.nextLine();
                     }
 
+                    //running open nlp on the file
                     CorpusBuilder corp= new CorpusBuilder(text);
                     corp.getSentences();
                     corp.getTokens();
                     corp.getPosTags();
                     corp.getLemmas();
 
+                    //result of CorpusBuilder, list of lists of lists of strings
                     src = corp.getWordPosLemma();
 
                     inputStream.close();
@@ -388,7 +374,7 @@ public class Frame{
                 String link = JOptionPane.showInputDialog(frame, "Enter the link:");
 
                 if (link != null && !link.isEmpty()) {
-                    hasFile = true;
+                    hasFile = true; //file has been selected
                     try {
                         // Fetch the web page content using Jsoup
                         Document doc = Jsoup.connect(link).get();
@@ -397,12 +383,14 @@ public class Frame{
                         String webContent=divsDescendant.text();
 
                         // Process the web page content as needed
+                        //running open nlp on the file
                         CorpusBuilder corp = new CorpusBuilder(webContent);
                         corp.getSentences();
                         corp.getTokens();
                         corp.getPosTags();
                         corp.getLemmas();
 
+                        //result of CorpusBuilder, list of lists of lists of strings
                         src = corp.getWordPosLemma();
 
 
@@ -418,6 +406,9 @@ public class Frame{
     }
 
 
+    /**
+     * Set number of neighbours
+     */
     private class spinnerListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
             JSpinner spinner= (JSpinner) e.getSource();
@@ -425,15 +416,17 @@ public class Frame{
                 numberOfNeighbours=(int)spinnerModel.getValue();
         }
     }
+
+    /**
+     * Set number of displayed results
+     */
     private class sliderListener implements ChangeListener {
         public void stateChanged(ChangeEvent e) {
 
         JSlider source = (JSlider) e.getSource();
         if(!source.getValueIsAdjusting())
-
         {
              numberOfDisplayedResults= source.getValue();
-
         }
     }
     }
@@ -462,9 +455,6 @@ public class Frame{
                 String item= (String) model.getElementAt(i);
                 posListSelected.add(item.substring(0,item.indexOf(" ")));
             }
-
-
-
         }
 
     }
@@ -499,6 +489,8 @@ public class Frame{
                 s = firstTextField.getText();
                 isCleared = false;
                 firstTextField.setEditable(false);
+                lemma.setEnabled(false);
+                word.setEnabled(false);
             }
             outputArea.setText("");
             ArrayList<ArrayList> results = new ArrayList<>();
@@ -566,7 +558,7 @@ public class Frame{
                     i++;
                 }
                 if(numberOfDisplayedResults<finalresults.size())
-                finalresults=finalresults.subList(0, numberOfDisplayedResults);
+                finalresults=finalresults.subList(0, numberOfDisplayedResults); //output results for saving to the xml file
             }
             else{
                 JOptionPane.showMessageDialog(frame, "Please select the file first.");
@@ -601,10 +593,10 @@ public class Frame{
     }
     /**
      * Helper method that gets a list from CorpusBuilder, index of the word and the number of neighbours
-     * @param sentenceList
-     * @param index
+     * @param sentenceList a sentence from CorpusBuilder, src.get(i)
+     * @param index index of a searched word in src.get(i)
      * @param numNeighbours
-     * @return a string with word and his neighbours
+     * @return an ArrayList of three strings: neighbours to the left, searched word, neighbours to the right
      */
     private static ArrayList<String> getContextWords (List<List<String>> sentenceList, int index, int numNeighbours){
         ArrayList<String> sentenceArrayList = new ArrayList<>();
@@ -619,9 +611,11 @@ public class Frame{
             }
         }
 
+        //variables for xml saving
         List<List<String>> templist = new ArrayList<>();
         List<String> specialIndex= new ArrayList<>();
 
+        //left neighbours
         if (index >= numNeighbours) {
             string1 = String.join(" ", sentenceArrayList.subList((index - numNeighbours), index));
             templist.addAll(sentenceList.subList((index - numNeighbours), index));
@@ -633,6 +627,7 @@ public class Frame{
         specialIndex.add("new");
         templist.add(specialIndex);
 
+        //right neighbours
         if (index < sentenceList.size() - numNeighbours - 1) {
             string3 = String.join(" ", sentenceArrayList.subList(index + 1, index + numNeighbours + 1));
             templist.addAll(sentenceList.subList(index + 1, index + numNeighbours + 1));
@@ -640,6 +635,8 @@ public class Frame{
             string3 = String.join(" ", sentenceArrayList.subList(index + 1, sentenceList.size()));
             templist.addAll(sentenceList.subList(index + 1, sentenceList.size()));
         }
+
+        //the word itself
         string2 = sentenceArrayList.get(index);
         finalresults.add(templist);
         return new ArrayList<String>(Arrays.asList(string1, string2, string3));
