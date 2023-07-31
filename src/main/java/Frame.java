@@ -475,6 +475,7 @@ public class Frame{
         public void actionPerformed(ActionEvent e){
             try {
                 XMLSaver.wholeFileSaver(finalresults);
+                JOptionPane.showMessageDialog(frame, "Results have been saved to output.xml file in the working directory.");
             }
             catch (Exception ex){
                 ex.getMessage();
