@@ -2,29 +2,56 @@
 <text>
 	<sentence>
 		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
+			<token>It</token>
+			<pos>PRP</pos>
+			<lemma>it</lemma>
 		</word>
 		<word interest="no">
-			<token>coolest</token>
-			<pos>JJ</pos>
-			<lemma>coolest</lemma>
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
 		</word>
 		<word interest="yes">
-			<token>guy</token>
+			<token>had</token>
+			<pos>VBN</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>negative</token>
+			<pos>JJ</pos>
+			<lemma>negative</lemma>
+		</word>
+		<word interest="no">
+			<token>population</token>
 			<pos>NN</pos>
-			<lemma>guy</lemma>
+			<lemma>population</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>It</token>
+			<pos>PRP</pos>
+			<lemma>it</lemma>
 		</word>
 		<word interest="no">
-			<token>ever</token>
-			<pos>RB</pos>
-			<lemma>ever</lemma>
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="yes">
+			<token>had</token>
+			<pos>VBN</pos>
+			<lemma>have</lemma>
 		</word>
 		<word interest="no">
-			<token>.</token>
-			<pos>.</pos>
-			<lemma>.</lemma>
+			<token>negative</token>
+			<pos>JJ</pos>
+			<lemma>negative</lemma>
+		</word>
+		<word interest="no">
+			<token>population</token>
+			<pos>NN</pos>
+			<lemma>population</lemma>
 		</word>
 	</sentence>
 </text>

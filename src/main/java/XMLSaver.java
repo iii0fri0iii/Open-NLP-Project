@@ -56,7 +56,6 @@ public class XMLSaver {
                 writer.add(indent);
                 writer.add(indent);
                 writer.add(startLevel2);
-                System.out.println(word);
                 if (word.size()>=4&&!yesfound){
                     attr = eventFactory.createAttribute("interest", "yes");
                     word.remove(word.size()-1);
@@ -65,7 +64,6 @@ public class XMLSaver {
                 else {
                     attr = eventFactory.createAttribute("interest", "no");
                 }
-                System.out.println(word);
                 writer.add(attr);
                 writer.add(newLine);
                 writer.add(indent);

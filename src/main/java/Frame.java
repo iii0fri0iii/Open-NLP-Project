@@ -490,8 +490,10 @@ public class Frame{
                 s = firstTextField.getText();
                 isCleared = false;
                 firstTextField.setEditable(false);
-                lemma.setEnabled(false);
-                word.setEnabled(false);
+                try{lemma.setEnabled(false);}
+                catch(Exception ex){}
+                try{word.setEnabled(false);}
+                catch(Exception ex){}
             }
             else{
                 finalresults.clear();
