@@ -500,6 +500,9 @@ public class Frame{
                 isCleared = false;
                 firstTextField.setEditable(false);
             }
+            else{
+                finalresults.clear();
+            }
             outputArea.setText("");
             ArrayList<ArrayList> results = new ArrayList<>();
             if (hasFile) {
@@ -629,7 +632,7 @@ public class Frame{
             string1 = String.join(" ", sentenceArrayList.subList(0, index));
             templist.addAll(sentenceList.subList(0, index));
         }
-        specialIndex=sentenceList.get(index);
+        specialIndex=new ArrayList<>(sentenceList.get(index));
         specialIndex.add("new");
         templist.add(specialIndex);
 

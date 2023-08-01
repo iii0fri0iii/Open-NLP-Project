@@ -12,6 +12,7 @@ public class XMLSaver {
         XMLEventWriter writer = outputFactory.createXMLEventWriter(
                 new FileOutputStream("out.xml"));
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
+        boolean yesfound;
 
         Characters indent = eventFactory.createCharacters("\t");
         Characters newLine = eventFactory.createCharacters("\n");
@@ -46,6 +47,7 @@ public class XMLSaver {
             writer.add(indent);
             writer.add(startLevel1);
             writer.add(newLine);
+            yesfound=false;
             for(List<String> word : sent){
                 Characters token = eventFactory.createCharacters(word.get(0));
                 Characters pos = eventFactory.createCharacters(word.get(1));
@@ -55,12 +57,15 @@ public class XMLSaver {
                 writer.add(indent);
                 writer.add(startLevel2);
                 System.out.println(word);
-                if (word.size()==4){
+                if (word.size()>=4&&!yesfound){
                     attr = eventFactory.createAttribute("interest", "yes");
+                    word.remove(word.size()-1);
+                    yesfound=true;
                 }
                 else {
                     attr = eventFactory.createAttribute("interest", "no");
                 }
+                System.out.println(word);
                 writer.add(attr);
                 writer.add(newLine);
                 writer.add(indent);

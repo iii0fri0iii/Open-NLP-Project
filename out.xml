@@ -2,272 +2,128 @@
 <text>
 	<sentence>
 		<word interest="no">
-			<token>irredentist</token>
-			<pos>NN</pos>
-			<lemma>irredentist</lemma>
+			<token>The</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
 		</word>
 		<word interest="no">
-			<token>sentiments</token>
-			<pos>NNS</pos>
-			<lemma>sentiment</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>WDT</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>led</token>
-			<pos>VBD</pos>
-			<lemma>lead</lemma>
-		</word>
-		<word interest="no">
-			<token>to</token>
-			<pos>TO</pos>
-			<lemma>to</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>Turkic</token>
+			<token>Armed</token>
 			<pos>NNP</pos>
-			<lemma>turkic</lemma>
+			<lemma>armed</lemma>
 		</word>
 		<word interest="no">
-			<token>origin</token>
-			<pos>NN</pos>
-			<lemma>origin</lemma>
+			<token>Forces</token>
+			<pos>NNPS</pos>
+			<lemma>force</lemma>
 		</word>
 		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
+			<token>have</token>
+			<pos>VBP</pos>
+			<lemma>have</lemma>
 		</word>
 		<word interest="no">
-			<token>founded</token>
-			<pos>VBN</pos>
-			<lemma>found</lemma>
-		</word>
-		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
-		</word>
-		<word interest="no">
-			<token>region</token>
-			<pos>NN</pos>
-			<lemma>region</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>thrived</token>
-			<pos>VBN</pos>
-			<lemma>thrive</lemma>
-		</word>
-		<word interest="no">
-			<token>on</token>
-			<pos>IN</pos>
-			<lemma>on</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>peasant</token>
-			<pos>NN</pos>
-			<lemma>peasant</lemma>
-		</word>
-		<word interest="no">
-			<token>revolt</token>
-			<pos>NN</pos>
-			<lemma>revolt</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>expelled</token>
-			<pos>VBN</pos>
-			<lemma>expel</lemma>
-		</word>
-		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>of</token>
-			<pos>IN</pos>
-			<lemma>of</lemma>
-		</word>
-		<word interest="no">
-			<token>fear</token>
-			<pos>NN</pos>
-			<lemma>fear</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>such</token>
-			<pos>PDT</pos>
-			<lemma>such</lemma>
-		</word>
-		<word interest="no">
-			<token>a</token>
-			<pos>DT</pos>
-			<lemma>a</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>until</token>
-			<pos>IN</pos>
-			<lemma>until</lemma>
-		</word>
-		<word interest="no">
-			<token>1946</token>
+			<token>36,950</token>
 			<pos>CD</pos>
-			<lemma>1946</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
+			<lemma>36,950</lemma>
 		</word>
 		<word interest="no">
-			<token>a</token>
-			<pos>DT</pos>
-			<lemma>a</lemma>
-		</word>
-		<word interest="no">
-			<token>one-party</token>
+			<token>active</token>
 			<pos>JJ</pos>
-			<lemma>one-party</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>new</token>
-			<pos>JJ</pos>
-			<lemma>new</lemma>
+			<lemma>active</lemma>
 		</word>
 		<word interest="no">
-			<token>constitution</token>
-			<pos>NN</pos>
-			<lemma>constitution</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>provided</token>
-			<pos>VBN</pos>
-			<lemma>provide</lemma>
-		</word>
-		<word interest="no">
-			<token>for</token>
-			<pos>IN</pos>
-			<lemma>for</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>Election</token>
-			<pos>NNP</pos>
-			<lemma>election</lemma>
-		</word>
-		<word interest="no">
-			<token>Commission</token>
-			<pos>NNP</pos>
-			<lemma>commission</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>WDT</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>includes</token>
-			<pos>VBZ</pos>
-			<lemma>include</lemma>
-		</word>
-		<word interest="no">
-			<token>members</token>
+			<token>troops</token>
 			<pos>NNS</pos>
-			<lemma>member</lemma>
+			<lemma>troop</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
 		</word>
 	</sentence>
 	<sentence>
 		<word interest="no">
-			<token>corruption</token>
-			<pos>NN</pos>
-			<lemma>corruption</lemma>
-		</word>
-		<word interest="no">
-			<token>revelations</token>
-			<pos>NNS</pos>
-			<lemma>revelation</lemma>
-		</word>
-		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
-		</word>
-		<word interest="no">
-			<token>triggered</token>
+			<token>accelerated</token>
 			<pos>VBD</pos>
-			<lemma>trigger</lemma>
+			<lemma>accelerate</lemma>
 		</word>
 		<word interest="no">
-			<token>yet</token>
+			<token>outward</token>
 			<pos>RB</pos>
-			<lemma>yet</lemma>
+			<lemma>outward</lemma>
+		</word>
+		<word interest="no">
+			<token>migration</token>
+			<pos>CD</pos>
+			<lemma>migration</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="yes">
+			<token>have</token>
+			<pos>VBP</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>been</token>
+			<pos>VBN</pos>
+			<lemma>be</lemma>
+		</word>
+		<word interest="no">
+			<token>"</token>
+			<pos>``</pos>
+			<lemma>"</lemma>
+		</word>
+		<word interest="no">
+			<token>catastrophic</token>
+			<pos>JJ</pos>
+			<lemma>catastrophic</lemma>
+		</word>
+		<word interest="no">
+			<token>"</token>
+			<pos>''</pos>
+			<lemma>"</lemma>
 		</word>
 	</sentence>
 	<sentence>
 		<word interest="no">
-			<token>Peace</token>
-			<pos>NNP</pos>
-			<lemma>peace</lemma>
+			<token>Bulgarian</token>
+			<pos>JJ</pos>
+			<lemma>bulgarian</lemma>
 		</word>
 		<word interest="no">
-			<token>reported</token>
-			<pos>VBD</pos>
-			<lemma>report</lemma>
+			<token>instruments</token>
+			<pos>NNS</pos>
+			<lemma>instrument</lemma>
 		</word>
 		<word interest="yes">
-			<token>that</token>
-			<pos>IN</pos>
-			<lemma>that</lemma>
+			<token>have</token>
+			<pos>VBP</pos>
+			<lemma>have</lemma>
 		</word>
 		<word interest="no">
-			<token>less</token>
-			<pos>JJR</pos>
-			<lemma>little</lemma>
+			<token>been</token>
+			<pos>VBN</pos>
+			<lemma>be</lemma>
 		</word>
 		<word interest="no">
-			<token>than</token>
+			<token>used</token>
+			<pos>VBN</pos>
+			<lemma>use</lemma>
+		</word>
+		<word interest="no">
+			<token>in</token>
 			<pos>IN</pos>
-			<lemma>than</lemma>
+			<lemma>in</lemma>
+		</word>
+		<word interest="no">
+			<token>the</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
 		</word>
 	</sentence>
 </text>

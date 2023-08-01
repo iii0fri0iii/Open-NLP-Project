@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="did great colourss">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/XMLSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLSaver.java" afterDir="false" />
@@ -131,6 +121,8 @@
       <workItem from="1688287931605" duration="9047000" />
       <workItem from="1689490021124" duration="5678000" />
       <workItem from="1690796481871" duration="6797000" />
+      <workItem from="1690809002843" duration="1119000" />
+      <workItem from="1690892187477" duration="2873000" />
     </task>
     <task id="LOCAL-00001" summary="обновляю">
       <created>1687084851965</created>
