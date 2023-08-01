@@ -2,128 +2,29 @@
 <text>
 	<sentence>
 		<word interest="no">
-			<token>The</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
-		</word>
-		<word interest="no">
-			<token>Armed</token>
-			<pos>NNP</pos>
-			<lemma>armed</lemma>
-		</word>
-		<word interest="no">
-			<token>Forces</token>
-			<pos>NNPS</pos>
-			<lemma>force</lemma>
-		</word>
-		<word interest="yes">
-			<token>have</token>
-			<pos>VBP</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>36,950</token>
-			<pos>CD</pos>
-			<lemma>36,950</lemma>
-		</word>
-		<word interest="no">
-			<token>active</token>
-			<pos>JJ</pos>
-			<lemma>active</lemma>
-		</word>
-		<word interest="no">
-			<token>troops</token>
-			<pos>NNS</pos>
-			<lemma>troop</lemma>
-		</word>
-		<word interest="no">
-			<token>,</token>
-			<pos>,</pos>
-			<lemma>,</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>accelerated</token>
-			<pos>VBD</pos>
-			<lemma>accelerate</lemma>
-		</word>
-		<word interest="no">
-			<token>outward</token>
-			<pos>RB</pos>
-			<lemma>outward</lemma>
-		</word>
-		<word interest="no">
-			<token>migration</token>
-			<pos>CD</pos>
-			<lemma>migration</lemma>
-		</word>
-		<word interest="no">
-			<token>,</token>
-			<pos>,</pos>
-			<lemma>,</lemma>
-		</word>
-		<word interest="yes">
-			<token>have</token>
-			<pos>VBP</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>been</token>
-			<pos>VBN</pos>
-			<lemma>be</lemma>
-		</word>
-		<word interest="no">
-			<token>"</token>
-			<pos>``</pos>
-			<lemma>"</lemma>
-		</word>
-		<word interest="no">
-			<token>catastrophic</token>
-			<pos>JJ</pos>
-			<lemma>catastrophic</lemma>
-		</word>
-		<word interest="no">
-			<token>"</token>
-			<pos>''</pos>
-			<lemma>"</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>Bulgarian</token>
-			<pos>JJ</pos>
-			<lemma>bulgarian</lemma>
-		</word>
-		<word interest="no">
-			<token>instruments</token>
-			<pos>NNS</pos>
-			<lemma>instrument</lemma>
-		</word>
-		<word interest="yes">
-			<token>have</token>
-			<pos>VBP</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>been</token>
-			<pos>VBN</pos>
-			<lemma>be</lemma>
-		</word>
-		<word interest="no">
-			<token>used</token>
-			<pos>VBN</pos>
-			<lemma>use</lemma>
-		</word>
-		<word interest="no">
-			<token>in</token>
-			<pos>IN</pos>
-			<lemma>in</lemma>
-		</word>
-		<word interest="no">
 			<token>the</token>
 			<pos>DT</pos>
 			<lemma>the</lemma>
+		</word>
+		<word interest="no">
+			<token>coolest</token>
+			<pos>JJ</pos>
+			<lemma>coolest</lemma>
+		</word>
+		<word interest="yes">
+			<token>guy</token>
+			<pos>NN</pos>
+			<lemma>guy</lemma>
+		</word>
+		<word interest="no">
+			<token>ever</token>
+			<pos>RB</pos>
+			<lemma>ever</lemma>
+		</word>
+		<word interest="no">
+			<token>.</token>
+			<pos>.</pos>
+			<lemma>.</lemma>
 		</word>
 	</sentence>
 </text>
