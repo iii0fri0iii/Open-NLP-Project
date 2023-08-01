@@ -2,56 +2,650 @@
 <text>
 	<sentence>
 		<word interest="no">
-			<token>It</token>
-			<pos>PRP</pos>
-			<lemma>it</lemma>
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
 		</word>
 		<word interest="no">
-			<token>has</token>
-			<pos>VBZ</pos>
-			<lemma>have</lemma>
+			<token>award-winning</token>
+			<pos>JJ</pos>
+			<lemma>award-winning</lemma>
 		</word>
 		<word interest="yes">
-			<token>had</token>
-			<pos>VBN</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>negative</token>
-			<pos>JJ</pos>
-			<lemma>negative</lemma>
-		</word>
-		<word interest="no">
-			<token>population</token>
+			<token>chef</token>
 			<pos>NN</pos>
-			<lemma>population</lemma>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>returns</token>
+			<pos>VBZ</pos>
+			<lemma>return</lemma>
 		</word>
 	</sentence>
 	<sentence>
 		<word interest="no">
-			<token>It</token>
-			<pos>PRP</pos>
-			<lemma>it</lemma>
+			<token>A</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
 		</word>
 		<word interest="no">
-			<token>has</token>
-			<pos>VBZ</pos>
-			<lemma>have</lemma>
+			<token>young</token>
+			<pos>JJ</pos>
+			<lemma>young</lemma>
 		</word>
 		<word interest="yes">
-			<token>had</token>
-			<pos>VBN</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>negative</token>
-			<pos>JJ</pos>
-			<lemma>negative</lemma>
-		</word>
-		<word interest="no">
-			<token>population</token>
+			<token>chef</token>
 			<pos>NN</pos>
-			<lemma>population</lemma>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>Carmen</token>
+			<pos>NNP</pos>
+			<lemma>carmen</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>York</token>
+			<pos>NNP</pos>
+			<lemma>york</lemma>
+		</word>
+		<word interest="no">
+			<token>City</token>
+			<pos>NNP</pos>
+			<lemma>city</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>de</token>
+			<pos>IN</pos>
+			<lemma>de</lemma>
+		</word>
+		<word interest="no">
+			<token>cuisine</token>
+			<pos>NN</pos>
+			<lemma>cuisine</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>but</token>
+			<pos>CC</pos>
+			<lemma>but</lemma>
+		</word>
+		<word interest="no">
+			<token>inexperienced</token>
+			<pos>JJ</pos>
+			<lemma>inexperienced</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>joins</token>
+			<pos>VBZ</pos>
+			<lemma>join</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>new</token>
+			<pos>JJ</pos>
+			<lemma>new</lemma>
+		</word>
+		<word interest="no">
+			<token>sous</token>
+			<pos>JJ</pos>
+			<lemma>sous</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>under</token>
+			<pos>IN</pos>
+			<lemma>under</lemma>
+		</word>
+		<word interest="no">
+			<token>Carmy</token>
+			<pos>NNP</pos>
+			<lemma>carmy</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>turned</token>
+			<pos>VBD</pos>
+			<lemma>turn</lemma>
+		</word>
+		<word interest="no">
+			<token>pastry</token>
+			<pos>NN</pos>
+			<lemma>pastry</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>spurred</token>
+			<pos>VBN</pos>
+			<lemma>spur</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>old</token>
+			<pos>JJ</pos>
+			<lemma>old</lemma>
+		</word>
+		<word interest="no">
+			<token>executive</token>
+			<pos>NN</pos>
+			<lemma>executive</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>in</token>
+			<pos>IN</pos>
+			<lemma>in</lemma>
+		</word>
+		<word interest="no">
+			<token>New</token>
+			<pos>NNP</pos>
+			<lemma>new</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>Copenhagen-based</token>
+			<pos>JJ</pos>
+			<lemma>copenhagen-based</lemma>
+		</word>
+		<word interest="no">
+			<token>dessert</token>
+			<pos>NN</pos>
+			<lemma>dessert</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>trains</token>
+			<pos>VBZ</pos>
+			<lemma>train</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>the</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
+		</word>
+		<word interest="no">
+			<token>executive</token>
+			<pos>NN</pos>
+			<lemma>executive</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>at</token>
+			<pos>IN</pos>
+			<lemma>at</lemma>
+		</word>
+		<word interest="no">
+			<token>Ever</token>
+			<pos>NNP</pos>
+			<lemma>ever</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>as</token>
+			<pos>IN</pos>
+			<lemma>a</lemma>
+		</word>
+		<word interest="no">
+			<token>the</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>de</token>
+			<pos>IN</pos>
+			<lemma>de</lemma>
+		</word>
+		<word interest="no">
+			<token>cuisine</token>
+			<pos>NN</pos>
+			<lemma>cuisine</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>Beard</token>
+			<pos>NNP</pos>
+			<lemma>beard</lemma>
+		</word>
+		<word interest="no">
+			<token>Award-winning</token>
+			<pos>NNP</pos>
+			<lemma>award-winning</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>Carmen</token>
+			<pos>NNP</pos>
+			<lemma>carmen</lemma>
+		</word>
+		<word interest="no">
+			<token>"</token>
+			<pos>``</pos>
+			<lemma>"</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>of</token>
+			<pos>IN</pos>
+			<lemma>of</lemma>
+		</word>
+		<word interest="no">
+			<token>America-trained</token>
+			<pos>JJ</pos>
+			<lemma>america-trained</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>and</token>
+			<pos>CC</pos>
+			<lemma>and</lemma>
+		</word>
+		<word interest="no">
+			<token>Chicago</token>
+			<pos>NNP</pos>
+			<lemma>chicago</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>now</token>
+			<pos>RB</pos>
+			<lemma>now</lemma>
+		</word>
+		<word interest="no">
+			<token>the</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>de</token>
+			<pos>IN</pos>
+			<lemma>de</lemma>
+		</word>
+		<word interest="no">
+			<token>cuisine</token>
+			<pos>NN</pos>
+			<lemma>cuisine</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>skilled</token>
+			<pos>JJ</pos>
+			<lemma>skilled</lemma>
+		</word>
+		<word interest="no">
+			<token>pastry</token>
+			<pos>NN</pos>
+			<lemma>pastry</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>and</token>
+			<pos>CC</pos>
+			<lemma>and</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>more</token>
+			<pos>JJR</pos>
+			<lemma>many</lemma>
+		</word>
+		<word interest="no">
+			<token>skilled</token>
+			<pos>JJ</pos>
+			<lemma>skilled</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>(</token>
+			<pos>-LRB-</pos>
+			<lemma>(</lemma>
+		</word>
+		<word interest="no">
+			<token>implied</token>
+			<pos>VBN</pos>
+			<lemma>imply</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>a</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
+		</word>
+		<word interest="no">
+			<token>custom</token>
+			<pos>NN</pos>
+			<lemma>custom</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>'s</token>
+			<pos>POS</pos>
+			<lemma>'s</lemma>
+		</word>
+		<word interest="no">
+			<token>coat</token>
+			<pos>NN</pos>
+			<lemma>coat</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>award-winning</token>
+			<pos>JJ</pos>
+			<lemma>award-winning</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>returns</token>
+			<pos>VBZ</pos>
+			<lemma>return</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>A</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
+		</word>
+		<word interest="no">
+			<token>young</token>
+			<pos>JJ</pos>
+			<lemma>young</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>Carmen</token>
+			<pos>NNP</pos>
+			<lemma>carmen</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>York</token>
+			<pos>NNP</pos>
+			<lemma>york</lemma>
+		</word>
+		<word interest="no">
+			<token>City</token>
+			<pos>NNP</pos>
+			<lemma>city</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>de</token>
+			<pos>IN</pos>
+			<lemma>de</lemma>
+		</word>
+		<word interest="no">
+			<token>cuisine</token>
+			<pos>NN</pos>
+			<lemma>cuisine</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>but</token>
+			<pos>CC</pos>
+			<lemma>but</lemma>
+		</word>
+		<word interest="no">
+			<token>inexperienced</token>
+			<pos>JJ</pos>
+			<lemma>inexperienced</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>joins</token>
+			<pos>VBZ</pos>
+			<lemma>join</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>new</token>
+			<pos>JJ</pos>
+			<lemma>new</lemma>
+		</word>
+		<word interest="no">
+			<token>sous</token>
+			<pos>JJ</pos>
+			<lemma>sous</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>under</token>
+			<pos>IN</pos>
+			<lemma>under</lemma>
+		</word>
+		<word interest="no">
+			<token>Carmy</token>
+			<pos>NNP</pos>
+			<lemma>carmy</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>turned</token>
+			<pos>VBD</pos>
+			<lemma>turn</lemma>
+		</word>
+		<word interest="no">
+			<token>pastry</token>
+			<pos>NN</pos>
+			<lemma>pastry</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>spurred</token>
+			<pos>VBN</pos>
+			<lemma>spur</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>old</token>
+			<pos>JJ</pos>
+			<lemma>old</lemma>
+		</word>
+		<word interest="no">
+			<token>executive</token>
+			<pos>NN</pos>
+			<lemma>executive</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>in</token>
+			<pos>IN</pos>
+			<lemma>in</lemma>
+		</word>
+		<word interest="no">
+			<token>New</token>
+			<pos>NNP</pos>
+			<lemma>new</lemma>
+		</word>
+	</sentence>
+	<sentence>
+		<word interest="no">
+			<token>Copenhagen-based</token>
+			<pos>JJ</pos>
+			<lemma>copenhagen-based</lemma>
+		</word>
+		<word interest="no">
+			<token>dessert</token>
+			<pos>NN</pos>
+			<lemma>dessert</lemma>
+		</word>
+		<word interest="yes">
+			<token>chef</token>
+			<pos>NN</pos>
+			<lemma>chef</lemma>
+		</word>
+		<word interest="no">
+			<token>who</token>
+			<pos>WP</pos>
+			<lemma>who</lemma>
+		</word>
+		<word interest="no">
+			<token>trains</token>
+			<pos>VBZ</pos>
+			<lemma>train</lemma>
 		</word>
 	</sentence>
 </text>
