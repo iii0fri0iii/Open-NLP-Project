@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="Добавил инструкцию">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="XML choise">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/XMLSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLSaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690721788128</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="XML choise">
+      <created>1691250238886</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1691250238887</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +303,7 @@
     <MESSAGE value="radio buttons" />
     <MESSAGE value="did great colours" />
     <MESSAGE value="Добавил инструкцию" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил инструкцию" />
+    <MESSAGE value="XML choise" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML choise" />
   </component>
 </project>
