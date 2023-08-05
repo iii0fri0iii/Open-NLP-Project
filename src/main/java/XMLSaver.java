@@ -7,10 +7,10 @@ import java.util.*;
 import javax.xml.stream.events.*;
 
 public class XMLSaver {
-    public static void wholeFileSaver(List<List<List<String>>> src) throws FileNotFoundException, XMLStreamException {
+    public static void wholeFileSaver(List<List<List<String>>> src, String filename) throws FileNotFoundException, XMLStreamException {
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
         XMLEventWriter writer = outputFactory.createXMLEventWriter(
-                new FileOutputStream("out.xml"));
+                new FileOutputStream(filename));
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
         boolean yesfound;
 

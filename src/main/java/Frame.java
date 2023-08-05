@@ -473,9 +473,16 @@ public class Frame{
 
     private class SaveButtonHandler implements ActionListener{
         public void actionPerformed(ActionEvent e){
+            String filename=JOptionPane.showInputDialog("Type xml file name");
+            if (filename.isEmpty()){
+                filename="out.xml";
+            }
+            if(filename.length()<5||!filename.endsWith(".xml")){
+                filename+=".xml";
+            }
             try {
-                XMLSaver.wholeFileSaver(finalresults);
-                JOptionPane.showMessageDialog(frame, "Results have been saved to output.xml file in the working directory.");
+                XMLSaver.wholeFileSaver(finalresults, filename);
+                JOptionPane.showMessageDialog(frame, "Results have been saved to " + filename+ " file in the working directory.");
             }
             catch (Exception ex){
                 ex.getMessage();
