@@ -1,3 +1,4 @@
+import javax.lang.model.element.Element;
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLOutputFactory;
@@ -7,7 +8,7 @@ import java.util.*;
 import javax.xml.stream.events.*;
 
 public class XMLSaver {
-    public static void wholeFileSaver(List<List<List<String>>> src, String filename) throws FileNotFoundException, XMLStreamException {
+    public static void wholeFileSaver(List<List<List<String>>> src, String filename, String URL) throws FileNotFoundException, XMLStreamException {
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
         XMLEventWriter writer = outputFactory.createXMLEventWriter(
                 new FileOutputStream(filename));
@@ -19,11 +20,11 @@ public class XMLSaver {
 
         StartDocument startDocument = eventFactory.createStartDocument();
         StartElement startRoot = eventFactory.createStartElement(
-                "", "", "text");
+                "", "", "results");
 
-        EndElement endRoot = eventFactory.createEndElement("", "", "text");
+        EndElement endRoot = eventFactory.createEndElement("", "", "results");
         StartElement startLevel1 = eventFactory.createStartElement(
-                "", "", "sentence");
+                "", "", "result");
         StartElement startLevel2 = eventFactory.createStartElement(
                 "", "", "word");
         StartElement startLevel31 = eventFactory.createStartElement(
@@ -36,12 +37,13 @@ public class XMLSaver {
         EndElement endLevel31 = eventFactory.createEndElement("", "", "token");
         EndElement endLevel32 = eventFactory.createEndElement("", "", "pos");
         EndElement endLevel33 = eventFactory.createEndElement("", "", "lemma");
-        EndElement endLevel1 = eventFactory.createEndElement("", "", "sentence");
+        EndElement endLevel1 = eventFactory.createEndElement("", "", "result");
         EndDocument endDocument = eventFactory.createEndDocument();
 
         writer.add(startDocument);
         writer.add(newLine);
         writer.add(startRoot);
+        writer.add(eventFactory.createAttribute("url", URL));
         writer.add(newLine);
         for(List<List<String>> sent : src){
             writer.add(indent);

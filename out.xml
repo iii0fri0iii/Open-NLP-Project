@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<text>
-	<sentence>
+<results url="https://en.wikipedia.org/wiki/Bulgaria">
+	<result>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>Bulgaria</token>
+			<pos>NNP</pos>
+			<lemma>bulgaria</lemma>
+		</word>
+		<word interest="yes">
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>been</token>
+			<pos>VBN</pos>
+			<lemma>be</lemma>
+		</word>
+		<word interest="no">
+			<token>a</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
+		</word>
+	</result>
+	<result>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>and</token>
+			<pos>CC</pos>
+			<lemma>and</lemma>
+		</word>
+		<word interest="yes">
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>taken</token>
+			<pos>VBN</pos>
+			<lemma>take</lemma>
+		</word>
+		<word interest="no">
+			<token>a</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
+		</word>
+	</result>
+	<result>
+		<word interest="no">
+			<token>The</token>
+			<pos>DT</pos>
+			<lemma>the</lemma>
+		</word>
+		<word interest="no">
+			<token>treasure</token>
+			<pos>NN</pos>
+			<lemma>treasure</lemma>
+		</word>
+		<word interest="yes">
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>been</token>
+			<pos>VBN</pos>
+			<lemma>be</lemma>
+		</word>
+		<word interest="no">
+			<token>valuable</token>
+			<pos>JJ</pos>
+			<lemma>valuable</lemma>
+		</word>
+	</result>
+	<result>
 		<word interest="no">
 			<token>the</token>
 			<pos>DT</pos>
@@ -26,8 +107,8 @@
 			<pos>DT</pos>
 			<lemma>the</lemma>
 		</word>
-	</sentence>
-	<sentence>
+	</result>
+	<result>
 		<word interest="no">
 			<token>,</token>
 			<pos>,</pos>
@@ -53,183 +134,48 @@
 			<pos>IN</pos>
 			<lemma>in</lemma>
 		</word>
-	</sentence>
-	<sentence>
+	</result>
+	<result>
 		<word interest="no">
-			<token>leadership</token>
+			<token>mountainous</token>
+			<pos>JJ</pos>
+			<lemma>mountainous</lemma>
+		</word>
+		<word interest="no">
+			<token>southwest</token>
 			<pos>NN</pos>
-			<lemma>leadership</lemma>
-		</word>
-		<word interest="no">
-			<token>also</token>
-			<pos>RB</pos>
-			<lemma>also</lemma>
+			<lemma>southwest</lemma>
 		</word>
 		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
+			<token>has</token>
+			<pos>VBZ</pos>
 			<lemma>have</lemma>
 		</word>
 		<word interest="no">
-			<token>aspirations</token>
-			<pos>NNS</pos>
-			<lemma>aspiration</lemma>
-		</word>
-		<word interest="no">
-			<token>of</token>
-			<pos>IN</pos>
-			<lemma>of</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>1980s</token>
+			<token>two</token>
 			<pos>CD</pos>
-			<lemma>1980s</lemma>
+			<lemma>two</lemma>
 		</word>
 		<word interest="no">
-			<token>Bulgaria</token>
+			<token>distinct</token>
+			<pos>JJ</pos>
+			<lemma>distinct</lemma>
+		</word>
+	</result>
+	<result>
+		<word interest="no">
+			<token>Iskar</token>
 			<pos>NNP</pos>
-			<lemma>bulgaria</lemma>
+			<lemma>iskar</lemma>
 		</word>
-		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>transformed</token>
-			<pos>VBN</pos>
-			<lemma>transform</lemma>
-		</word>
-		<word interest="no">
-			<token>into</token>
-			<pos>IN</pos>
-			<lemma>into</lemma>
-		</word>
-	</sentence>
-	<sentence>
 		<word interest="no">
 			<token>,</token>
 			<pos>,</pos>
 			<lemma>,</lemma>
 		</word>
-		<word interest="no">
-			<token>it</token>
-			<pos>PRP</pos>
-			<lemma>it</lemma>
-		</word>
 		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>increased</token>
-			<pos>VBN</pos>
-			<lemma>increase</lemma>
-		</word>
-		<word interest="no">
-			<token>to</token>
-			<pos>TO</pos>
-			<lemma>to</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>and</token>
-			<pos>CC</pos>
-			<lemma>and</lemma>
-		</word>
-		<word interest="no">
-			<token>science</token>
-			<pos>NN</pos>
-			<lemma>science</lemma>
-		</word>
-		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>dropped</token>
-			<pos>VBN</pos>
-			<lemma>drop</lemma>
-		</word>
-		<word interest="no">
-			<token>.</token>
-			<pos>.</pos>
-			<lemma>.</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>print</token>
-			<pos>NN</pos>
-			<lemma>print</lemma>
-		</word>
-		<word interest="no">
-			<token>media</token>
-			<pos>NNS</pos>
-			<lemma>medium</lemma>
-		</word>
-		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>no</token>
-			<pos>DT</pos>
-			<lemma>no</lemma>
-		</word>
-		<word interest="no">
-			<token>legal</token>
-			<pos>JJ</pos>
-			<lemma>legal</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>Illyrian</token>
-			<pos>NNP</pos>
-			<lemma>illyrian</lemma>
-		</word>
-		<word interest="no">
-			<token>tribes</token>
-			<pos>NNS</pos>
-			<lemma>tribe</lemma>
-		</word>
-		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
-			<lemma>have</lemma>
-		</word>
-		<word interest="no">
-			<token>separated</token>
-			<pos>VBN</pos>
-			<lemma>separate</lemma>
-		</word>
-		<word interest="no">
-			<token>by</token>
-			<pos>IN</pos>
-			<lemma>by</lemma>
-		</word>
-	</sentence>
-	<sentence>
-		<word interest="no">
-			<token>'s</token>
-			<pos>POS</pos>
-			<lemma>'s</lemma>
-		</word>
-		<word interest="no">
-			<token>conversion</token>
-			<pos>NN</pos>
-			<lemma>conversion</lemma>
-		</word>
-		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
+			<token>has</token>
+			<pos>VBZ</pos>
 			<lemma>have</lemma>
 		</word>
 		<word interest="no">
@@ -238,36 +184,90 @@
 			<lemma>a</lemma>
 		</word>
 		<word interest="no">
-			<token>political</token>
-			<pos>JJ</pos>
-			<lemma>political</lemma>
+			<token>length</token>
+			<pos>NN</pos>
+			<lemma>length</lemma>
 		</word>
-	</sentence>
-	<sentence>
+	</result>
+	<result>
 		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
-		</word>
-		<word interest="no">
-			<token>Byzantines</token>
+			<token>Climate</token>
 			<pos>NNP</pos>
-			<lemma>byzantine</lemma>
+			<lemma>climate</lemma>
+		</word>
+		<word interest="no">
+			<token>Bulgaria</token>
+			<pos>NNP</pos>
+			<lemma>bulgaria</lemma>
 		</word>
 		<word interest="yes">
-			<token>had</token>
-			<pos>VBD</pos>
+			<token>has</token>
+			<pos>VBZ</pos>
 			<lemma>have</lemma>
 		</word>
 		<word interest="no">
-			<token>conquered</token>
-			<pos>VBN</pos>
-			<lemma>conquer</lemma>
+			<token>a</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
 		</word>
 		<word interest="no">
-			<token>the</token>
-			<pos>DT</pos>
-			<lemma>the</lemma>
+			<token>varied</token>
+			<pos>JJ</pos>
+			<lemma>varied</lemma>
 		</word>
-	</sentence>
-</text>
+	</result>
+	<result>
+		<word interest="no">
+			<token>,</token>
+			<pos>,</pos>
+			<lemma>,</lemma>
+		</word>
+		<word interest="no">
+			<token>Bulgaria</token>
+			<pos>NNP</pos>
+			<lemma>bulgaria</lemma>
+		</word>
+		<word interest="yes">
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>variable</token>
+			<pos>JJ</pos>
+			<lemma>variable</lemma>
+		</word>
+		<word interest="no">
+			<token>and</token>
+			<pos>CC</pos>
+			<lemma>and</lemma>
+		</word>
+	</result>
+	<result>
+		<word interest="no">
+			<token>topographical</token>
+			<pos>JJ</pos>
+			<lemma>topographical</lemma>
+		</word>
+		<word interest="no">
+			<token>conditions</token>
+			<pos>NNS</pos>
+			<lemma>condition</lemma>
+		</word>
+		<word interest="yes">
+			<token>has</token>
+			<pos>VBZ</pos>
+			<lemma>have</lemma>
+		</word>
+		<word interest="no">
+			<token>produced</token>
+			<pos>VBN</pos>
+			<lemma>produce</lemma>
+		</word>
+		<word interest="no">
+			<token>a</token>
+			<pos>DT</pos>
+			<lemma>a</lemma>
+		</word>
+	</result>
+</results>

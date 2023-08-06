@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="XML choise">
+    <list default="true" id="990f553a-7720-4ae2-9361-4947b0095cc3" name="Changes" comment="XML choise1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0-jar-with-dependencies.jar.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0/CorpusBuilder-1.0.jar.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/CorpusBuilderJar/CorpusBuilder/CorpusBuilder/maven-metadata.xml.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/XMLSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLSaver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +120,7 @@
       <workItem from="1687968192552" duration="85000" />
       <workItem from="1688287931605" duration="9047000" />
       <workItem from="1689490021124" duration="5678000" />
+      <workItem from="1691323111941" duration="1941000" />
     </task>
     <task id="LOCAL-00001" summary="обновляю">
       <created>1687084851965</created>
@@ -281,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691250238887</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="XML choise1.0">
+      <created>1691250660791</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1691250660791</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +306,7 @@
     <MESSAGE value="did great colours" />
     <MESSAGE value="Добавил инструкцию" />
     <MESSAGE value="XML choise" />
-    <option name="LAST_COMMIT_MESSAGE" value="XML choise" />
+    <MESSAGE value="XML choise1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="XML choise1.0" />
   </component>
 </project>

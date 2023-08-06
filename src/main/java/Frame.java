@@ -26,6 +26,7 @@ public class Frame{
 
     private DefaultListModel model = new DefaultListModel();
     private JList posList = new JList(model);
+    public String URL;
     List<Object> posListStringInitial = null;
     List<Object> posListString = null;
     List<String> posListSelected = new ArrayList<>();
@@ -340,6 +341,7 @@ public class Frame{
                 int result = fileChooser.showOpenDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
+                    URL= selectedFile.getName();
                     hasFile = true; //file has been selected
 
                     //reading the file
@@ -372,6 +374,7 @@ public class Frame{
             }else if (choice == 1) {
                 //Load Link
                 String link = JOptionPane.showInputDialog(frame, "Enter the link:");
+                URL=link;
 
                 if (link != null && !link.isEmpty()) {
                     hasFile = true; //file has been selected
@@ -481,7 +484,7 @@ public class Frame{
                 filename+=".xml";
             }
             try {
-                XMLSaver.wholeFileSaver(finalresults, filename);
+                XMLSaver.wholeFileSaver(finalresults, filename, URL);
                 JOptionPane.showMessageDialog(frame, "Results have been saved to " + filename+ " file in the working directory.");
             }
             catch (Exception ex){
