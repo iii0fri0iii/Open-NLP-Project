@@ -7,7 +7,7 @@
 - Design.java: helper class for design details
 - XMLSaver.java: helper class for saving the file to xml
 ## Final Presentation
-- FinalPresentaion.pptx
+- FinalPresentaion.pptx: detailed description of the project
 ## Documentation for OpenNLP
 - en-lemmatizer.bin
 - en-pos-maxent.bin
