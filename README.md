@@ -1,4 +1,6 @@
 # Open-NLP-Project
+## CorpusBuilderJar/CorpusBuilder/CorpusBuilder/1.0
+- CorpusBuilder-1.0-jar-with-dependencies.jar: the final jar file
 ## src/main/java
 - CorpusBuilder.java: Open NLP methods
 - Frame.java: main GUI file
